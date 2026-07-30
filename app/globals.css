@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #05070a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(54, 183, 255, 0.12), transparent 26rem),
+    radial-gradient(circle at 84% 22%, rgba(255, 49, 88, 0.12), transparent 24rem),
+    #05070a;
+  color: #fff;
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+
+img {
+  display: block;
+}
+
+::selection {
+  background: rgba(54, 183, 255, 0.35);
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #36b7ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.glass-line {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025));
+  backdrop-filter: blur(18px);
+}
+
+.image-vignette::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(5, 7, 10, 0.18), rgba(5, 7, 10, 0.72)),
+    linear-gradient(90deg, rgba(5, 7, 10, 0.72), rgba(5, 7, 10, 0.06) 54%, rgba(5, 7, 10, 0.48));
+  pointer-events: none;
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent);
+}

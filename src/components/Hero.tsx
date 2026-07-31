@@ -36,6 +36,20 @@ export function Hero() {
           <span>为真实竞赛环境而生的机器人系统</span>
           <span className="h-px w-10 bg-pnx-red" />
         </div>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="training"
+            className="inline-flex min-h-12 items-center border border-pnx-blue bg-pnx-blue px-5 py-3 text-sm font-bold text-black transition hover:bg-transparent hover:text-pnx-blue"
+          >
+            培训资料
+          </a>
+          <a
+            href="#about"
+            className="inline-flex min-h-12 items-center border border-white/18 px-5 py-3 text-sm font-bold text-white/76 transition hover:border-white/40 hover:text-white"
+          >
+            了解战队
+          </a>
+        </div>
       </motion.div>
 
       <motion.a

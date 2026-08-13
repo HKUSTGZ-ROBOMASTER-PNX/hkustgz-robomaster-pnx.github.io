@@ -30,6 +30,8 @@ function MediaCard({ title, href, src, alt, focus, wide, delay = 0 }: MediaCardP
             alt={alt}
             className="aspect-video w-full object-cover transition duration-700 group-hover:scale-105"
             style={{ objectPosition: focus ?? "center" }}
+            loading="lazy"
+            decoding="async"
           />
         </a>
       </article>

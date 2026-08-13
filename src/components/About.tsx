@@ -32,6 +32,8 @@ export function About() {
               alt={images.about.alt}
               className="aspect-[4/3] w-full object-cover"
               style={{ objectPosition: images.about.focus }}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </Reveal>

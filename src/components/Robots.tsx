@@ -31,6 +31,8 @@ export function Robots() {
                   alt={robot.alt}
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   style={{ objectPosition: robot.focus }}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">

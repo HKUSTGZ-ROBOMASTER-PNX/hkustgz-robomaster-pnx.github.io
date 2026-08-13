@@ -27,6 +27,8 @@ export function Technology() {
                       alt={tech.alt}
                       className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
                       style={{ objectPosition: tech.focus }}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute left-4 top-4 rounded-full border border-white/18 bg-black/35 p-3 text-pnx-blue backdrop-blur">

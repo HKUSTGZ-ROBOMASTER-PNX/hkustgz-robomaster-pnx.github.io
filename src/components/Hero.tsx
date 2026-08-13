@@ -8,12 +8,14 @@ export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="image-vignette absolute inset-0">
-        <img
-          src={images.hero.src}
-          alt={images.hero.alt}
-          className="h-full w-full object-cover"
-          style={{ objectPosition: images.hero.focus }}
-        />
+          <img
+            src={images.hero.src}
+            alt={images.hero.alt}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: images.hero.focus }}
+            fetchPriority="high"
+            decoding="async"
+          />
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,10,0.1),rgba(5,7,10,0.35)_42%,#05070a_100%)]" />
       <div className="grid-fade absolute inset-x-0 bottom-0 h-1/2 opacity-50" />

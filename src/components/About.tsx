@@ -28,12 +28,14 @@ export function About() {
           <div className="absolute -bottom-5 -right-5 h-28 w-28 border-b border-r border-pnx-red/80" />
           <div className="relative overflow-hidden border border-white/12 bg-white/5">
             <img
-              src={images.about.src}
+              src={images.about.src.replace(/\.jpg$/i, ".webp")}
               alt={images.about.alt}
               className="aspect-[4/3] w-full object-cover"
               style={{ objectPosition: images.about.focus }}
               loading="lazy"
               decoding="async"
+              width="1200"
+              height="900"
             />
           </div>
         </Reveal>

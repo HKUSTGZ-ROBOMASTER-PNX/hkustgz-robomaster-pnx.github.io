@@ -9,12 +9,14 @@ export function Hero() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="image-vignette absolute inset-0">
           <img
-            src={images.hero.src}
+            src={images.hero.src.replace(/\.jpg$/i, ".webp")}
             alt={images.hero.alt}
             className="h-full w-full object-cover"
             style={{ objectPosition: images.hero.focus }}
             fetchPriority="high"
             decoding="async"
+            width="1920"
+            height="1080"
           />
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,10,0.1),rgba(5,7,10,0.35)_42%,#05070a_100%)]" />

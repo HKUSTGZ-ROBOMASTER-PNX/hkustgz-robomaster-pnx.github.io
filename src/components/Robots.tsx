@@ -27,12 +27,14 @@ export function Robots() {
             <Reveal key={robot.title} delay={index * 0.08} className={index === 0 ? "lg:col-span-2" : undefined}>
               <article className="group relative min-h-[420px] overflow-hidden border border-white/12 bg-white/[0.03]">
                 <img
-                  src={robot.src}
+                  src={robot.src.replace(/\.jpg$/i, ".webp")}
                   alt={robot.alt}
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   style={{ objectPosition: robot.focus }}
                   loading="lazy"
                   decoding="async"
+                  width="1200"
+                  height="800"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">

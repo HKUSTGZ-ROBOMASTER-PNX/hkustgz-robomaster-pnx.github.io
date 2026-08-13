@@ -40,7 +40,7 @@ export function Gallery() {
   const yearPhotos = useMemo(() => photos.filter((photo) => photo.year === year), [year]);
   const activePhoto = yearPhotos[activeIndex];
   const hasPhotos = yearPhotos.length > 0;
-  const activeSrc = activePhoto ? `photos/${year}/${activePhoto.number}.jpg` : undefined;
+  const activeSrc = activePhoto ? `photos/${year}/${activePhoto.number}.webp` : undefined;
 
   const move = (direction: number) => {
     if (!hasPhotos) return;
@@ -63,7 +63,7 @@ export function Gallery() {
       const photo = yearPhotos[(activeIndex + offset + yearPhotos.length) % yearPhotos.length];
       if (photo) {
         const image = new window.Image();
-        image.src = `photos/${year}/${photo.number}.jpg`;
+        image.src = `photos/${year}/${photo.number}.webp`;
       }
     });
   }, [activeIndex, hasPhotos, year, yearPhotos]);
@@ -99,7 +99,7 @@ export function Gallery() {
             onFocus={() => setIsInteractionPaused(true)} onBlur={() => setIsInteractionPaused(false)}>
             <button type="button" onClick={() => move(-1)} disabled={!hasPhotos} className="grid size-11 shrink-0 place-items-center border border-white/20 bg-black/40 text-white transition hover:border-pnx-blue hover:text-pnx-blue disabled:opacity-30" aria-label="上一张照片"><ChevronLeft aria-hidden="true" /></button>
             <figure className="overflow-hidden border border-white/12 bg-black shadow-glow">
-              {activePhoto && activeSrc ? <img key={activeSrc} src={activeSrc} alt={`${activePhoto.year} 年照片 ${activePhoto.number}`} loading="lazy" decoding="async" className="aspect-[16/10] w-full animate-in object-cover duration-500 fade-in" /> : <div className="flex aspect-[16/10] items-center justify-center bg-white/[0.03] text-sm text-white/45">{year} 年照片整理中</div>}
+              {activePhoto && activeSrc ? <img key={activeSrc} src={activeSrc} alt={`${activePhoto.year} 年照片 ${activePhoto.number}`} loading="lazy" decoding="async" width="1600" height="1000" className="aspect-[16/10] w-full animate-in object-cover duration-500 fade-in" /> : <div className="flex aspect-[16/10] items-center justify-center bg-white/[0.03] text-sm text-white/45">{year} 年照片整理中</div>}
             </figure>
             <button type="button" onClick={() => move(1)} disabled={!hasPhotos} className="grid size-11 shrink-0 place-items-center border border-white/20 bg-black/40 text-white transition hover:border-pnx-blue hover:text-pnx-blue disabled:opacity-30" aria-label="下一张照片"><ChevronRight aria-hidden="true" /></button>
           </div>

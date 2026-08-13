@@ -26,12 +26,14 @@ function MediaCard({ title, href, src, alt, focus, wide, delay = 0 }: MediaCardP
           className="group block overflow-hidden border border-white/12 bg-black transition hover:border-pnx-blue/70 hover:shadow-glow"
         >
           <img
-            src={src}
+            src={src.replace(/\.jpg$/i, ".webp")}
             alt={alt}
             className="aspect-video w-full object-cover transition duration-700 group-hover:scale-105"
             style={{ objectPosition: focus ?? "center" }}
             loading="lazy"
             decoding="async"
+            width="1280"
+            height="720"
           />
         </a>
       </article>

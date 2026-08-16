@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
 import { trainingConfig } from "@/data/training";
+import { FeishuDocument } from "@/components/FeishuDocument";
 
 export const metadata: Metadata = {
   title: "PNX 培训中心 | PNX Robotics",
@@ -50,6 +51,12 @@ export default function TrainingPage() {
               <ArrowUpRight size={16} />
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="pb-10">
+        <div className="mx-auto w-[min(1080px,calc(100%-20px))]">
+          <FeishuDocument />
         </div>
       </section>
 

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:pages": "cross-env GITHUB_PAGES=true next build",
+    "sync:feishu": "node scripts/sync-feishu-doc.mjs",
     "start": "next start"
   },
   "dependencies": {

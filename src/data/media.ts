@@ -205,7 +205,7 @@ export const technologyDetails = [
   { title: "硬件组", description: "负责原理图、PCB Layout、加工、焊接与测试，覆盖电机驱动、控制板、超级电容、无线充电与升降压模块。" },
   { title: "电控组", description: "以 STM32 和 C/C++ 为基础，连接硬件与算法，完成通信、传感器读取、运动控制、姿态解算、PID 与整车联调。" },
   { title: "算法组", description: "在高性能平台处理相机与激光雷达数据，开发自瞄、导航、雷达和飞镖制导，并落地 Linux、ROS2、OpenCV 与轻量神经网络。" },
-  { title: "软件组（筹）", description: "完善队内软件生态，包括自定义客户端、模拟器与管理系统，让比赛信息和团队协作更加高效。" }
+  { title: "软件组", description: "完善队内软件生态，包括自定义客户端、模拟器与管理系统，让比赛信息和团队协作更加高效。" }
 ] as const;
 
 export const recruitmentResources = [

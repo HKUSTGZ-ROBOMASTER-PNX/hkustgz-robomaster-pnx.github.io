@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { images, robotTags } from "@/data/media";
+import { combatRoles, images, operators, robotTags } from "@/data/media";
 import { Reveal } from "./Reveal";
 
 export function Robots() {
@@ -49,6 +49,33 @@ export function Robots() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-16">
+          <div className="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <p className="eyebrow">兵种与操作手</p>
+              <h3 className="mt-3 text-2xl font-bold sm:text-3xl">每个位置，都是完整系统的一部分。</h3>
+            </div>
+            <p className="max-w-lg text-sm leading-6 text-white/55">从结构、控制到战术执行，机器人与人共同构成赛场上的作战单元。</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {combatRoles.map((role) => (
+              <article key={role.title} className="border border-white/12 bg-white/[0.035] p-5">
+                <p className="text-xs font-bold tracking-[0.14em] text-pnx-blue">{role.type}</p>
+                <h4 className="mt-3 text-lg font-bold">{role.title}</h4>
+                <p className="mt-3 text-sm leading-6 text-white/60">{role.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {operators.map((operator) => (
+              <article key={operator.title} className="border-l-2 border-pnx-red bg-white/[0.03] px-5 py-4">
+                <h4 className="font-bold">{operator.title}</h4>
+                <p className="mt-2 text-sm leading-6 text-white/60">{operator.description}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

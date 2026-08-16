@@ -1,5 +1,5 @@
 import { Cpu, Gauge, Microchip, Wrench } from "lucide-react";
-import { images } from "@/data/media";
+import { images, technologyDetails } from "@/data/media";
 import { Reveal } from "./Reveal";
 
 const icons = [Cpu, Gauge, Microchip, Wrench];
@@ -46,6 +46,17 @@ export function Technology() {
             );
           })}
         </div>
+
+        <Reveal className="mt-6">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-5">
+            {technologyDetails.map((detail) => (
+              <article key={detail.title} className="border border-white/10 bg-white/[0.025] p-5">
+                <h3 className="text-lg font-bold">{detail.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/58">{detail.description}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

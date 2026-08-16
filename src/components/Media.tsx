@@ -1,4 +1,4 @@
-import { images } from "@/data/media";
+import { images, recruitmentResources } from "@/data/media";
 import { Reveal } from "./Reveal";
 
 type MediaCardProps = {
@@ -115,6 +115,21 @@ export function Media() {
             />
           ))}
         </div>
+
+        <Reveal className="mt-14">
+          <div className="mb-6">
+            <p className="eyebrow">招新参考</p>
+            <h3 className="mt-3 text-2xl font-bold">从赛事规则开始了解 RoboMaster。</h3>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            {recruitmentResources.map((resource) => (
+              <a key={resource.href} href={resource.href} target="_blank" rel="noreferrer" className="group border border-white/12 bg-white/[0.035] p-5 transition hover:border-pnx-blue/70 hover:bg-white/[0.06]">
+                <p className="text-xs font-bold tracking-[0.14em] text-pnx-blue">{resource.source}</p>
+                <p className="mt-3 font-bold leading-6 text-white/82 group-hover:text-white">{resource.title}</p>
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

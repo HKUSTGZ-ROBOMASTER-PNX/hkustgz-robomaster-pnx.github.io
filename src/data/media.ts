@@ -150,3 +150,72 @@ export const stats = [
 ];
 
 export const robotTags = ["自主系统", "机械设计", "嵌入式控制"];
+
+export const combatRoles = [
+  {
+    title: "英雄｜苍穹之锤",
+    type: "核心兵种",
+    description: "发射 42mm 大弹丸，兼具远程吊射与近战速杀能力，对发射机构的精准度要求极高。"
+  },
+  {
+    title: "工程｜动力引擎",
+    type: "核心兵种",
+    description: "通过机械臂结构与自定义控制器完成复杂存取、兑换任务，双臂与单臂方案各有挑战。"
+  },
+  {
+    title: "无人机｜空中之王",
+    type: "核心兵种",
+    description: "稳定飞行与悬停，发射 17mm 弹丸支援地面单位，并从空中获得全场视野。"
+  },
+  {
+    title: "步兵｜钢铁先锋",
+    type: "传统兵种",
+    description: "跨越复杂地形、穿梭战场，承担侦察、干扰与火力输出等多项任务。"
+  },
+  {
+    title: "哨兵｜未来战士",
+    type: "全自动兵种",
+    description: "自主导航、自主决策并在战场上选择运动位置与打击目标，稳定性决定下限，决策能力决定上限。"
+  },
+  {
+    title: "飞镖｜雷霆之击",
+    type: "全自动兵种",
+    description: "由云台手控制开启，执行超远程精确制导与爆炸打击。"
+  },
+  {
+    title: "雷达｜全视之眼",
+    type: "感知系统",
+    description: "从制高点识别、定位并解析对手信息，为己方机器人提供易伤与决策支持。"
+  },
+  {
+    title: "重装与蜂群无人机",
+    type: "2026 新兵种",
+    description: "重装完成三级装配并承担经济获取与大弹丸打击；蜂群由 4 架超小型无人机执行拦截、干扰与撞击任务。"
+  }
+] as const;
+
+export const operators = [
+  { title: "重装操作手 × 1", description: "完成既定任务，需要极致的冷静和专注。" },
+  { title: "步兵操作手 × 2", description: "执行保护、干扰与击杀，依据场上局势作出即时战术决策。" },
+  { title: "云台手 × 1", description: "控制无人机起降与飞镖发射，获取全局信息并指挥其他操作手。" }
+] as const;
+
+export const technologyDetails = [
+  { title: "机械组", description: "从 SolidWorks 建模、参数优化到 3D 打印、CNC、车铣钳焊与激光切割，把结构设计制造成可上场的钢铁机器。" },
+  { title: "硬件组", description: "负责原理图、PCB Layout、加工、焊接与测试，覆盖电机驱动、控制板、超级电容、无线充电与升降压模块。" },
+  { title: "电控组", description: "以 STM32 和 C/C++ 为基础，连接硬件与算法，完成通信、传感器读取、运动控制、姿态解算、PID 与整车联调。" },
+  { title: "算法组", description: "在高性能平台处理相机与激光雷达数据，开发自瞄、导航、雷达和飞镖制导，并落地 Linux、ROS2、OpenCV 与轻量神经网络。" },
+  { title: "软件组（筹）", description: "完善队内软件生态，包括自定义客户端、模拟器与管理系统，让比赛信息和团队协作更加高效。" }
+] as const;
+
+export const recruitmentResources = [
+  { title: "RoboMaster 赛事指南（第一期）", href: "https://www.bilibili.com/video/BV1xGwezFEUN/", source: "赛事入门" },
+  { title: "RoboMaster 赛事指南（第二期）", href: "https://www.bilibili.com/video/BV18kdPBiEsy/", source: "赛事入门" },
+  { title: "RoboMaster 赛事指南（第三期）", href: "https://www.bilibili.com/video/BV1ao3u6LE4W/", source: "赛事入门" },
+  { title: "赛事指南与 2026 规则发布", href: "https://www.bilibili.com/video/BV1gjdGB4Eba", source: "哔哩哔哩" },
+  { title: "一项机器人赛事，走出 20 万青年工程师", href: "https://www.peopleapp.com/column/30052888650-500007643026", source: "人民日报" },
+  { title: "2026 全国总决赛图片直播", href: "https://www.xxpie.com/m/album?id=6a4e2a26a6f44227be62780c&source=SHARE_LINK&r=1766", source: "现场影像" },
+  { title: "2026 赛季区域赛图片直播", href: "https://www.xxpie.com/m/album?id=69fca7f595e0d24fcfb46b9b&source=SHARE_LINK&r=2157", source: "现场影像" },
+  { title: "哈工大竞培营", href: "https://space.bilibili.com/46946247/lists", source: "参考资料" },
+  { title: "中科大电控", href: "https://space.bilibili.com/337732684/lists/1043942?type=season", source: "参考资料" }
+] as const;

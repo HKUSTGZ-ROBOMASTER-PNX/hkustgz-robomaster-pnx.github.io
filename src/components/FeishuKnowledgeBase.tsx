@@ -136,7 +136,7 @@ export function FeishuKnowledgeBase() {
   if (!documents.length) return <div className="rounded border border-dashed border-white/18 bg-white/[0.025] p-6 text-sm leading-7 text-white/60">尚未同步知识库内容。运行 <code className="text-pnx-blue">npm run sync:feishu</code> 即可同步整个知识库。</div>;
 
   return (
-    <article className="mx-auto max-w-7xl">
+    <article className="w-full">
       <div className="mb-8 border-b border-white/10 pb-8">
         <p className="eyebrow">PNX Knowledge Base</p>
         <h2 className="mt-3 text-3xl font-black sm:text-5xl">PNX 培训知识库</h2>

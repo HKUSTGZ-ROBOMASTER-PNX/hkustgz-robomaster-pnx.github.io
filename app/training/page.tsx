@@ -13,7 +13,7 @@ export default function TrainingPage() {
     <main className="min-h-screen bg-pnx-ink text-white">
       <section className="relative overflow-hidden pb-5 pt-7">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(54,183,255,0.14),transparent_26rem),radial-gradient(circle_at_82%_18%,rgba(255,49,88,0.08),transparent_24rem)]" />
-        <div className="section-shell relative">
+        <div className="relative w-full px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <a
               href="../"
@@ -33,22 +33,11 @@ export default function TrainingPage() {
             </a>
           </div>
 
-          <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="eyebrow">Training</p>
-              <h1 className="mt-3 text-3xl font-black tracking-normal sm:text-5xl">
-                {trainingConfig.title}
-              </h1>
-              <p className="mt-3 text-sm leading-6 text-white/62 sm:text-base">
-                {trainingConfig.description}
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       <section className="pb-20">
-        <div className="section-shell">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <FeishuKnowledgeBase />
         </div>
       </section>

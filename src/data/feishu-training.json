@@ -2,450 +2,421 @@
   "sourceUrl": "https://zanpw3z2hb6.feishu.cn/wiki/G6LBwIS2xiOCJGkoWybc5JS9nuh",
   "documentId": "P6ocdpiAUoRolKxlIRzc8PJznof",
   "title": "新RMer生存指南",
-  "syncedAt": "2026-08-18T05:55:03.758Z",
+  "syncedAt": "2026-08-18T06:02:18.529Z",
   "blocks": [
     {
-      "id": "P6ocdpiAUoRolKxlIRzc8PJznof",
-      "type": "paragraph",
-      "text": ""
-    },
-    {
       "id": "doxcnrExFnINxUYobP7SdV976ye",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "欢迎各位参加RoboMaster比赛，这是一个充满热情和技术的比赛，只要你有“足够充分”的投入，相信你能够在这里学到很多。"
     },
     {
       "id": "doxcn5o1S7ClMpIvf3u7q5oGZOf",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "新生往往在刚了解这个比赛的时候很积极，但是慢慢的因为各种原因选择退出，为了减少你的误解，这里进行说明:"
     },
     {
       "id": "doxcnurXu8tMc1XyTSRaQSMy4Hb",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "思想"
     },
     {
       "id": "doxcnYAquiDdtcJukFdGIAZdzhb",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "你是来参加比赛的，不是来上课学习的，请摆脱高中时期的喂饭式教育。我们会有相应的课程来对你们进行培训，但是学长学姐并不是你爸你妈，没有义务照顾一个等着别人指挥不自己主动学习的队员。"
     },
     {
       "id": "doxcn7MGQYC1oJUAwPrtUcFKy2e",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "请准备好交出你的个人时间。这个比赛的学习和备赛周期很长，需要投入大量的时间，包括平常工作日的闲暇时间和周六日，以及长假期国庆，寒假，五一，暑假等。具体要求的最低时间请听安排负责人安排。要知道肝的队员可以做到寒假只有必要的春节7天回家，其他时候都在干活。虽然不是要求所有人都做到这样，如果没有这个准备，那么就对双方都好点，果断退出吧。"
     },
     {
       "id": "doxcnyNRYnPHN6mL60fd5GtxV9g",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "队伍的分工并不是绝对的，组员之间的工作也不是独立的。机器人的很多功能都是各种因素耦合在一起的，双方都需要根据反馈进行迭代，所以机械同学请务必主动留意追踪电控们的调试过程和结果。电控请留意机械安装中可能存在的问题，同样对于硬件和视觉。这些部分会在另外的文档中做出更详细的说明"
     },
     {
       "id": "doxcnfo1EQocotOVlpV7oSRTO5e",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "队伍的经验不等于绝对，请多在QQ讨论群和论坛看看别人的开源，肯定能够拓展你的眼界。"
     },
     {
       "id": "doxcnc8IvMFV0lSBx4vFYMZw5rg",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "一些规则"
     },
     {
       "id": "doxcnb0DSp4fmxiSA7nSG6v0ivl",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "消息:"
     },
     {
       "id": "doxcncQ8m5SQz3JC3B1bACjsUCf",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "飞书是我们战队的通知与工作软件，请不要设置为免打扰，否则错过的后果自负"
     },
     {
       "id": "doxcnDMvkGdyqMaYBuWmOYlcUwe",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "工具使用："
     },
     {
       "id": "doxcnvnJPuUNg7cff2yKf0eKH2c",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "任何工具使用完成后需要放回原位"
     },
     {
       "id": "doxcn0MouqIxEhhvePZ0iXiRbLQ",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "重要物资领取需要告知相应的负责人（电机，开发板等）"
     },
     {
       "id": "doxcnBXZICfUWDDxq9mXjmZDhIh",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "不懂的，不会用的，没见过的工具不要随意上手，找学长学姐指导后再上手，防止掉手指头"
     },
     {
       "id": "doxcnMTiFDHPCKvtYIeLLNgrquc",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "实验室安全："
     },
     {
       "id": "doxcnWZ3b6Yg9tvy5usMQmM2cSd",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "硬件区禁止饮食，含有有毒物质（为了你的健康）"
     },
     {
       "id": "doxcn1pxJgJsFFuetij1asvEG8b",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "禁止使用硬件区的设备充电，或者在旁边磨板子（特别是碳板）"
     },
     {
       "id": "doxcndxENcciIFfpEwFoEP2bxoc",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "电池使用完成后放入防爆柜，不懂请看 硬件通识课【电池使用】持续更新"
     },
     {
       "id": "doxcnEdszDQJYGYCStFGKt6lPxe",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "其他安全机电系统通识课【安全篇】 "
     },
     {
       "id": "doxcnZwMWmKnGsXXfCyLMU5p0ff",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "有关重要物资："
     },
     {
       "id": "doxcnjry4Qf5r9KfklrnaXym1eb",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "Robomaster比赛使用很多的大疆行业产品，可以追溯到十几年前的机型，因此绝大部分物资都已停产，无法通过正式渠道购买，二手纷杂，假货众多，价格高昂，所以对于下列物资请小心使用，坏一个少一个，相比来说那些电机已经是小事情了。"
     },
     {
       "id": "doxcnO8Z4olUNSRC2QX2JynB1pI",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "大疆DR16遥控器与DT7接收机"
     },
     {
       "id": "doxcncxZnWEtPWSy3Bib6hMmAPf",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "TB系列电池与电池架，二手市场可以做到上千的库存价"
     },
     {
       "id": "doxcn2NWa1n3IxoZST4wRak4Cub",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "裁判系统->硬件产品->当前赛季 你就可以知道裁判系统都要多少钱。并且裁判系统一般非卖，也不提供维修服务，一套往往上万块"
     },
     {
       "id": "doxcnEEHEl3wPdvG4R3CnUP17jD",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": " "
     },
     {
       "id": "doxcnQj87NjH8jmjv5DSIIgyMVd",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "有关资料"
     },
     {
       "id": "doxcn7XBTK7MssriaEffhlZ4Tkb",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "RM鼓励开放的比赛生态，所以常常能够在论坛上看到优秀的开源。虽然我们队的实力还是弱队，但是一些重要，完整的资料未经作者允许不得私自分享"
     },
     {
       "id": "doxcnUOHWminGQGw20uayrGuAkc",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "论坛地址：https://bbs.robomaster.com/"
     },
     {
       "id": "doxcnBemMrqOQTpWE1f7BUAsbPA",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "qq交流群：rm有很多自组织的交流群，比如RM工程交流群，RM步兵哨兵合家欢等等，这些交流群里可以和其他战队的队员进行技术交流和问答（万能群友），但是消息比较杂（容易水群），需要自行判断甄别。"
     },
     {
       "id": "doxcn41F9MNJb4hpN094glcDjM7",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "一些建议"
     },
     {
       "id": "doxcneouCBk7jugXUB59fkyXmLh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请认领你的福利：各种学生认证的优惠合集介绍传送门 有了之后可以免费使用 github copilet"
     },
     {
       "id": "doxcngzz3tlvs5vMOkb9VtFMoog",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "学会使用基本的git，方便你的代码管理"
     },
     {
       "id": "doxcntj0rbWu2p5YdsRPStxYBcc",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "使用文档记录自己的学习路径："
     },
     {
       "id": "doxcn2DdpPOGoluNXKEtBGEZVbg",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "记录知识和踩过的坑，以及解决办法和借鉴网站链接，能够帮助你进行反思和解决别人遇到的类似问题"
     },
     {
       "id": "doxcnAIXnE1vDHULr0e3YdfZ5ce",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "形式不定，不过这里推荐markdown语言，轻量方便。软件有很多，重要是用的顺手，如notion（免费），typora（付费）obsidian或者直接记录在飞书，"
     },
     {
       "id": "doxcnCCUCkEZn1a5xjNd8DvasBg",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "电脑小白建议"
     },
     {
       "id": "doxcnXKCtZICBNepH9UADQBbgQh",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "我们的培训均是以大家具备基本的使用电脑的能力为基础的，包括基本的管理电脑内存储的文件及文件目录，压缩/解压压缩包，网盘上传/下载，使用浏览器浏览网页，使用适当的软件打开常见的音视频/文档/表格等文件格式等。"
     },
     {
       "id": "doxcnYxujGWRzEzcU1nmSTcmVRg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "但是考虑到部分同学可能由于家庭原因接触电脑机会较少等，如果同学们感到自己对电脑操作不熟练，可以在B站搜索关键词“电子扫盲”，进行相关的学习。同时我们也分享一部分相关的课程："
     },
     {
       "id": "doxcncjDEKJs2Z5xMVJau0mPSJf",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "【【准大一电脑小白】七天入门电脑基础知识第一课-哔哩哔哩】 https://b23.tv/yWE61ge"
     },
     {
       "id": "doxcn8MYRQEmEUOOvruK9yVqvB9",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "【电子扫盲课，第一节 最基础认识电脑-哔哩哔哩】 https://b23.tv/Ag3mDXy"
     },
     {
       "id": "doxcn4HPW2AxBROINDbEKhGq8dd",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "【[喂饭级]一期献给准大学生们的电脑入门喂饭级教程-哔哩哔哩】 https://b23.tv/OmqPcPW"
     },
     {
       "id": "doxcnErBWqOEVamGn13bbbJU6We",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "【电子扫盲课—网盘下载压缩文件及解压缩教学-哔哩哔哩】 https://b23.tv/JzQzKdo"
     },
     {
       "id": "doxcn59LuTxfW55CXwTsSEXumUb",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "其他一些建议"
     },
     {
       "id": "doxcn8aiknTl7BUTxPAQWwHmKPh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请注意管理你的C盘： C盘在出厂设置时默认为系统盘，所以在安装软件时都会默认装在C盘，但是C盘本身会有所有数据的缓存以及系统个垃圾，当C盘太拥挤时电脑会很卡，如果等到那时再清理就会变得无比困难，最简单的方法已经是重装系统了"
     },
     {
       "id": "doxcn0NbwWeklUghv6k8mCbaJUc",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请不要在软件安装目录中出现中文与奇怪字符：在一部分的工程软件安装中，中文和奇怪字符(@#$)出现在路径会报出莫名其妙的错误，特别是当电脑的用户名为中文时"
     },
     {
       "id": "doxcnBbXOWL6tuE5zVlCpxOt1ef",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "尝试科学数据跨境：学校科学数据跨境教程请看这里 更新：现在不确定是否可以用，试试看"
     },
     {
       "id": "doxcndRsKTIz7lqpukwypmBbINh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请摆脱百度搜狗360等浏览器：很多时候这些浏览器并不能给到最直接有用的结果，并且有广告，推荐Google或者Edge浏览器（比较搜索CubeMX下载和STEAM中文版时两个浏览器给出的结果，你会发现这些浏览器劣等结果的权重往往莫名其妙的高"
     },
     {
       "id": "doxcnPibG1YZs2DN4aw2KdDJcQg",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请务必从官网下载软件：懂得辨别如真假steam这样的陷阱"
     },
     {
       "id": "doxcnpz4gWO7EPu3B3LZRwUJ8uh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请设置一下打开文件后缀名如果你连什么是压缩文件都不知道：打开文件后缀名教程请看这里"
     },
     {
       "id": "doxcnWdJvr9fQMZ2yx7fSdtWEZe",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "关于压缩文件："
     },
     {
       "id": "doxcngV0bROsve1HWSetiuS3hAe",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请自行搜索其定义 "
     },
     {
       "id": "doxcntZmUCLd5KLfTVWQ1Ch48Ic",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "常见的压缩文件后缀有如：zip，7z，rar等"
     },
     {
       "id": "doxcnlvErCW8nD0djqrxg1Vsw5c",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "请不要在压缩文件里面打开压缩文件"
     },
     {
       "id": "doxcnPKRLkP5VSZwrEAurHgSMrd",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "推荐解压软件Bandizip， WinRAR"
     },
     {
       "id": "doxcndYAGPzu5uRHOuRVEJ9Plcg",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "常见快捷键："
     },
     {
       "id": "doxcn1oFz7LsRbvn3RwxTdJC0yc",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Ctrl + C：复制"
     },
     {
       "id": "doxcnRDJlMCgPbksCbt75un1dnQ",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Ctrl + V：粘贴"
     },
     {
       "id": "doxcn3pk6P4nGlSaD7EsQ9FrUab",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Ctrl + Z：撤回"
     },
     {
       "id": "doxcnO9fDSlLNip5Tkuokyblstb",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Ctrl + X：剪切"
     },
     {
       "id": "doxcnAs1Q41wmIUWKw8oWlM5MVb",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Ctrl + A：全选"
     },
     {
       "id": "doxcn7j2g7GML6dMg64nq0rs7Fe",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "如何在软件卡死的时候杀死进程：打开任务管理器如何打开任务管理器教程请看这里"
     },
     {
       "id": "doxcnQDJLkbCFCs6G85ZXNVvOfe",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "其他的请浏览器或者b站搜索小白建议，不再赘述"
     },
     {
       "id": "doxcnn8PKAZGUZlBhAGKPVqqlec",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "如何学习"
     },
     {
       "id": "doxcnu3bUJFD77nzP1EuuzCVMWc",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "参加机器人比赛，你将面对的不仅仅是应用一些课本的内容，更多的是涉及工程实践，解决实际问题。这其中囊括了非常多方面的知识，没有任何单一的课程，体系能够让你从入门到入土，也并没有时间能够让你学完所有知识再去应用。因此在这里有必要提醒各位怎样学习适应这样的环境。"
     },
     {
       "id": "doxcnOKwhQivsYDQRd1WX6ZrRxl",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "有关培训"
     },
     {
       "id": "doxcnfPEPKnU3QOUrt0TiPWFFog",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "培训是为了能够让你掌握一些基本的比赛知识，但是这仅仅是基础。作为同样是参赛队员的学长学姐并没有时间精力，也没有义务把所有的知识喂给你，文档和培训都是需要花费队伍的人力物力的。当然在RM圈子不乏有很多愿意花时间写文档做培训的队员，有他们在把宝贵的经验留下来就是想后人少走一些弯路。"
     },
     {
       "id": "doxcn9thSaAO31VXBox9mRPuZKc",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "更有源神把他们的培训开源了出来，放在了b站，供大家参考学习。因此这里放一些非常有价值的其他学校的培训课程给大家参考。只要你有心，肯定是能够学到不少东西的。"
     },
     {
       "id": "doxcnMfyTwlg5sCv0cRBhv2dRwb",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "同济26赛季培训 https://space.bilibili.com/651837546/lists/6386496?type=season"
     },
     {
       "id": "doxcn8rKqXXLOJirLdGR8X65LPd",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "中科大电控培训 https://space.bilibili.com/337732684/lists/1043942?type=season"
     },
     {
       "id": "doxcnW4wbw4oPJsPPw46AUOzdeg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "南科大25赛季培训 https://space.bilibili.com/645940972/lists/6284851?type=season"
     },
     {
       "id": "doxcny8ak81mtDRrMacP0XUAJhg",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "有关学习思路与路径"
     },
     {
       "id": "doxcnSL1TVLSYGJIV7l56pxFHVD",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "对于机械来说，理论的知识体系学习并不适用于所有的场景。厉害的机械工程师的知识面是非常广的，因此主动思考，搜索不同设计的方案，利用b站和淘宝，能够有更好的收获。"
     },
     {
       "id": "doxcnA6QvJbznNOJaO3SfGgivOs",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "对于电控，参考知识库 README，已经很详细了"
     },
     {
       "id": "doxcn54B9zj0cSCxF0qgZsjDiYe",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "对于硬件，推荐一些b站的各个大厂的账号（德州仪器，MPS芯源系统），有很多视频公开课能够帮助你学习。以及b站账号（工科男孙老师，expert电子实验室，JT硬件乐趣），也可以参考硬件组知识库Readme&学习路径"
     },
     {
       "id": "doxcnGdUkQPQLkZrqRh2bujSFyd",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "对于视觉，不清楚，说不定notion上有@ou_dd9b6e40373661df5db1df89437757b5帮我写写（"
     },
     {
       "id": "doxcnVkldk2DBfhH42pzpfikG8d",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "适合RMer的学习指南"
     },
     {
       "id": "doxcn27DL1qbg6SZBZ4OsKaLuxg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "请阅读https://bbs.robomaster.com/article/810113?source=1"
     },
     {
       "id": "doxcnXU9Dh5ZjU4fz8QAWdpex5b",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "交流群"
     },
     {
       "id": "doxcnFQPofzhWxXsVXb5wMuKd2g",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "请有心的同学务必加入交流群，能够带来太多太多有用的消息（也有大水群），请看https://bbs.robomaster.com/article/9490?source=4"
     },
     {
       "id": "doxcneepySRmjMdz2sXXKok8uXH",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "同时有问题多在队内群或者qq群里发言，前提是满足下面的如何提问环节的基本要求"
     },
     {
       "id": "doxcncKLTVPCYKHk45RPTXvlU7c",
@@ -453,373 +424,341 @@
     },
     {
       "id": "doxcntFM9iOMpBYJFwqpZgq7Nph",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     },
     {
       "id": "doxcnIWlIaSwKfQwNrbVIu5k24d",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "如何搜索提问"
     },
     {
       "id": "doxcnJO8VBbjh2Dk4vi4ZLQTr8e",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "包括如何在搜索引擎上查找你需要的资料或答案，以及前者不奏效时如何有效地向他人描述你的问题和疑惑。"
     },
     {
       "id": "doxcnh4sgS6X4QPsG8CbDBTa0Df",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "阅读使用手册/技巧和入门指南"
     },
     {
       "id": "doxcnGM5y5Z2AjiwMfG6iBkI9mg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "阅读产品说明书，而不是把他丢进垃圾桶。"
     },
     {
       "id": "doxcnQI25hEFqfKSvhVFD8adnfx",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "有屏幕的电子产品通常有入门提示，跟着它，一步一步走下来。"
     },
     {
       "id": "doxcnEGZCujk8R76WqCmVhiuIce",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "购买其他物品时向商家索要资料。如非本人购买请淘宝拍照搜索，善用淘宝也能够学到很多。"
     },
     {
       "id": "doxcnVpkRwaVXgZreTPwWATuczd",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "看看队伍提供的文档有没有提及"
     },
     {
       "id": "doxcnRmvGzB0ap90bUiSsqrnWvf",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "使用搜索引擎："
     },
     {
       "id": "doxcnZ6RNewmggb1RcZgRwjeScg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "将默认修改引擎修改为bing/Google，不要使用百度搜索：其中劣等结果的权重往往莫名其妙的高。"
     },
     {
       "id": "doxcnihqPnxBYpbwhUqbvJux1dh",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "键入问题时，使用陈述句和祈使句，不要添加“什么”，”吗“，“?”等表达疑问的词或符号。"
     },
     {
       "id": "doxcnd4t42H8skOVa0oUduwvXkh",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "搜索引擎支持特定模式的查找，如允许/禁止同义词，结果必须包含/不包含特定的词，索引结果必须为文件，搜索结果为特定网站等，见："
     },
     {
       "id": "doxcn5WVPJkso6nUgufr1oQ3Msf",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "20个Tips使用搜索引擎更高效 - 知乎 (zhihu.com)"
     },
     {
       "id": "doxcnOEuJtUuLanA1Nn5tdSzFoH",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "[如何在互联网高效搜索信息？关于搜索引擎的分享与总结 - 少数派 (sspai.com)](https://sspai.com/post/73134#!)"
     },
     {
       "id": "doxcnZryNdbxznqY8XDG0UFGwJc",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     },
     {
       "id": "doxcncWRjTjvEAD8NNhyFL6vUUh",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "在特定的网站上检索"
     },
     {
       "id": "doxcnAKB6pLCqHZS67qPRvZH8tc",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": " 🚫 除非链接由本教程给出/你自己有能力辨别，否则不要使用或亲信CSDN/腾讯开发者社区/阿里云社区/华为开发者等网站的内容或代码。永远不要运行你不知道会造成什么后果的脚本和代码或运行网上给出的配置，特别是当你不知道此修改是否可逆时。"
     },
     {
       "id": "doxcnvLZ652wXDpTZFtRs1otKgg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "可以通过前面介绍的site: 限定符指定搜索结果，或直接前往对应网站。"
     },
     {
       "id": "doxcn14KDUwTHlnzO5U9MlDKvjc",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "对于特定的库、软件，最好的文档永远是官方文档，他们几乎都会提供上手的tutorial，并建立相关的用户社区。"
     },
     {
       "id": "doxcnGqzjPmuZ7t5bNnLFxJyYNe",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "对于开源软件，Github/GitLab上的issues和wiki是你解决问题的最佳途径。"
     },
     {
       "id": "doxcnB7hOA3CMAJL3bLU3TBALyh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Community - Stack Overflow 是回答质量最高的编程/IT/计算机/AI技术网站。后续扩展出了Stack Exchange，包含了数学物理和各类工科问答社区。"
     },
     {
       "id": "doxcnA3NhAsEnSDJhoAKPjCLuZf",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "Reddit - Dive into anything 是类似百度贴吧的bbs社区，设有各个学科、工程的讨论板块。"
     },
     {
       "id": "doxcnFHZ4DTYM4zQdvsjg6MOm9d",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "知乎是国内理工科问答质量较高的社区。Quora和知乎类似。"
     },
     {
       "id": "doxcn53oRr6AP2zsrd4YOVYSmJh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "SegmentFault 思否 整体设计参考StackOverflow，也是国内质量较高的IT社区。"
     },
     {
       "id": "doxcnYlKQdTMOXzmGS9IoFZH1Xc",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "企业的开发者社区适合其产品相关问题的提问解答，而CSDN抄袭/讹误内容远远超过优质内容的数量，对于入门的新人很难鉴别其正误，极度不建议使用。"
     },
     {
       "id": "doxcnL5nb3iK38gDuzbtKgnHKAh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "古月居/鱼香是国内新兴的在入门者圈子较有影响力的ROS社区，但其上的非官方创作者质量普遍偏低。"
     },
     {
       "id": "doxcn04HfDh39tOyj30Vt1CsSKc",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "稀土掘金、博客园、简书、51CTO都主要面向IT从业者，有一些高质量的内容，但也需要注意甄别。"
     },
     {
       "id": "doxcnoyirz5Zduy8EOFV4sCV3Fh",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "国外的相关社区包括：Medium – Where good ideas find you、dev、simpleprogrammer、Google Developers、daniweb。"
     },
     {
       "id": "doxcnFzEJZWzSYZMGi1A5wF9W4g",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "向ChatGPT等LLM提问"
     },
     {
       "id": "doxcntWFKDDu3OnOsr5FfAqgXEf",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "对于简单的编程语言、电脑配置问题，询问LLM几乎总能给出比劣质社区更好的答案。关于如何使用LLM：如何使用ChatGPT等LLM ，这也是笔者不推荐你在CSDN等网站上获取答案的原因。"
     },
     {
       "id": "doxcnCJGL6yVowsVwql2qSwMYAc",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "适合RMer的提问艺术"
     },
     {
       "id": "doxcntn3iBzUR2JZQrQLq882e2c",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "请阅读https://bbs.robomaster.com/article/810096?source=1 提问的艺术，你会有所收获"
     },
     {
       "id": "doxcnuhWJzuDYOPPpdfJ8a0bhze",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "问问你身边的小伙伴有没有遇到相同的问题"
     },
     {
       "id": "doxcnvufF5uKZGQi0jGCdXVaNTb",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "以上办法都试过，准备好相关日志或者材料，问问学长学姐或者交流群"
     },
     {
       "id": "doxcnAF0tOKOWLfnMTsqeb3s1ff",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     },
     {
       "id": "doxcnZHGlFYNaKk16Ddey0klWhf",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "大家都是学生，我们是做技术的，不是养孩子的，大家都有正事要做，我们不是幼儿园教师"
     },
     {
       "id": "doxcnB16yt6lakwOz69SQmrlTHb",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "提问清晰，你好我好大家好"
     },
     {
       "id": "doxcnmVM7LJ9neikhVn3Rv0lA2d",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     },
     {
       "id": "doxcn17QcVWYMtYmSY1dDgSVZ6g",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "如何拍屏"
     },
     {
       "id": "doxcnQZHv3awyJIN1S4r3p6F2gh",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "请使用正规截屏工具，推荐snipaste，或者参考如何截图教程请看这里"
     },
     {
       "id": "doxcn3SwKpBRRlhfxHriKoUkGBb",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "bad/good"
     },
     {
       "id": "doxcnkRomrqG0bJ4RGQCHirySce",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     },
     {
       "id": "doxcnDQvNsnSH7kHV2aT3zPfMjb",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "比赛相关网址链接等"
     },
     {
       "id": "doxcnJn7OB4MxHFvmwxrXQl1tMh",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "1. RM比赛入门指南"
     },
     {
       "id": "doxcnerGq78HLGbBIansFbe8OSw",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "科学数据跨境篇"
     },
     {
       "id": "doxcnQQdXSVrdpwKBSKMtSlyrXw",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "校园跨境上网一般在日常学习够用，但是部分网站如（GPT仍需要个人跨境上网"
     },
     {
       "id": "doxcntEv0O3HIcaRDMJf4qRseHh",
       "type": "heading",
-      "level": 3,
-      "text": ""
+      "level": 2,
+      "text": "校园科学数据跨境"
     },
     {
       "id": "doxcnTCn9Hvq4pnTtngUKe0HCwd",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "更新：现在不确定是否可以用，试试看"
     },
     {
       "id": "doxcniQSR9dEO50AQkjtFVURORc",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "一站式办事大厅传送门"
     },
     {
       "id": "doxcn1qyfiy1rH6lbpI6VRXNJqd",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "首先找到一站式办事大厅，你会有如下的界面"
     },
     {
       "id": "doxcnpsJjKntoEjap0KapM9yo8b",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "找到国际学术研究网申请，点击"
     },
     {
       "id": "doxcnWfOiidPAQJGtPdin3Xkiad",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "进入网站之后往下翻，我们有"
     },
     {
       "id": "doxcnCBtMtI1I8t0weoCGQWpWke",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "Dept. Of End User 选择UG"
     },
     {
       "id": "doxcn6fczPDq5Y96OtDwqhPKGph",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "Leader of End User 要发邮件问问书院或者选填军训时的辅导员"
     },
     {
       "id": "doxcnUP2pEOJSpfR382uVKT8fYb",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "Network Type 选择开通科学数据跨境（重要数据以上）研究（遵守..."
     },
     {
       "id": "doxcnRpoYcJ4GTZGPgUUi60HOtg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "其他自己填自己的就好了"
     },
     {
       "id": "doxcnKQYrEuKPqh8gR42pILTSn0",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "申请完之后要一般来说一两天就搞定了，如果超过这个时间没结果就问问书院。可能书院有统一安排某个辅导员来处理"
     },
     {
       "id": "doxcnEFpORhDj6vyDC8RZ7BOBhd",
-      "type": "quote",
-      "text": ""
+      "type": "ordered",
+      "text": "申请通过后，可能要等待一两天才有效果"
     },
     {
       "id": "doxcn0co4GnLXkfuWjCdALTAKFd",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     },
     {
       "id": "doxcnQI4ELrZk1IqPwbEmnI1E9d",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "Ref"
     },
     {
       "id": "doxcna8epYAbHloGjssp519SlSe",
-      "type": "code",
-      "text": ""
+      "type": "bullet",
+      "text": "PNX 算法组 notion文档 from Neo.zng "
     },
     {
       "id": "doxcne0hspc8j9fuQ4P6DNmT1kg",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "#ToModify 正式队员和梯队队员"
     },
     {
       "id": "doxcnZeGlrDSBEsqVQjFwDTJAYf",
       "type": "heading",
-      "level": 2,
-      "text": ""
+      "level": 1,
+      "text": "修改记录"
     },
     {
       "id": "JZvQdNoBCoTtBGxG7NbcrLMxnce",
-      "type": "heading",
-      "level": 1,
-      "text": ""
+      "type": "paragraph",
+      "text": "2025.11.2 第一版落成"
     },
     {
       "id": "T3Sndyjiyoiz3gxvNG0ceQdmnCd",
-      "type": "heading",
-      "level": 1,
+      "type": "paragraph",
       "text": ""
     }
   ]

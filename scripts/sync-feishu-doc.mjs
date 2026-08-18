@@ -76,23 +76,25 @@ async function listWikiNodes(spaceId, accessToken, parentNodeToken = "") {
 }
 
 const blockPropertyNames = {
-  1: "text",
-  2: "heading1",
-  3: "heading2",
-  4: "heading3",
-  5: "heading4",
-  6: "heading5",
-  7: "heading6",
-  8: "heading7",
-  9: "heading8",
-  10: "bullet",
-  11: "ordered",
-  12: "code",
-  13: "quote"
+  2: "text",
+  3: "heading1",
+  4: "heading2",
+  5: "heading3",
+  6: "heading4",
+  7: "heading5",
+  8: "heading6",
+  9: "heading7",
+  10: "heading8",
+  11: "heading9",
+  12: "bullet",
+  13: "ordered",
+  14: "code",
+  15: "quote"
 };
 
 function getContent(block) {
-  const value = block[blockPropertyNames[block.block_type]] ?? {};
+  const preferredName = blockPropertyNames[block.block_type];
+  const value = block[preferredName] ?? Object.values(block).find((candidate) => candidate?.elements) ?? {};
   const elements = value.elements ?? [];
   return elements.map((element) => {
     if (element.text_run?.content) return element.text_run.content;
@@ -105,8 +107,7 @@ function getContent(block) {
 function convertBlock(block) {
   const type = block.block_type;
   const names = {
-    1: "paragraph",
-    2: "heading",
+    2: "paragraph",
     3: "heading",
     4: "heading",
     5: "heading",
@@ -114,10 +115,12 @@ function convertBlock(block) {
     7: "heading",
     8: "heading",
     9: "heading",
-    10: "bullet",
-    11: "ordered",
-    12: "code",
-    13: "quote",
+    10: "heading",
+    11: "heading",
+    12: "bullet",
+    13: "ordered",
+    14: "code",
+    15: "quote",
     22: "divider"
   };
   const convertedType = names[type];
@@ -125,7 +128,7 @@ function convertBlock(block) {
   return {
     id: block.block_id,
     type: convertedType,
-    ...(convertedType === "heading" ? { level: Math.max(1, type - 1) } : {}),
+    ...(convertedType === "heading" ? { level: Math.max(1, type - 2) } : {}),
     ...(convertedType !== "divider" ? { text: getContent(block) } : {})
   };
 }

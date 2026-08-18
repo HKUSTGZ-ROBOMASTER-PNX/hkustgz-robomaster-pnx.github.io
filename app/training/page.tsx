@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { trainingConfig } from "@/data/training";
 import { FeishuDocument } from "@/components/FeishuDocument";
 
@@ -43,48 +43,13 @@ export default function TrainingPage() {
                 {trainingConfig.description}
               </p>
             </div>
-            <a
-              href="#training-embed"
-              className="inline-flex w-fit items-center gap-2 text-sm font-bold text-white/70 transition hover:text-pnx-blue"
-            >
-              进入内嵌文档
-              <ArrowUpRight size={16} />
-            </a>
           </div>
         </div>
       </section>
 
-      <section className="pb-10">
-        <div className="mx-auto w-[min(1080px,calc(100%-20px))]">
+      <section className="pb-20">
+        <div className="section-shell">
           <FeishuDocument />
-        </div>
-      </section>
-
-      <section id="training-embed" className="pb-10">
-        <div className="mx-auto w-[min(1680px,calc(100%-20px))]">
-          <div className="overflow-hidden border border-white/12 bg-black shadow-glow">
-            <iframe
-              src={trainingConfig.feishuUrl}
-              title="PNX 飞书培训文档"
-              className="h-[88vh] min-h-[820px] w-full bg-white"
-              loading="eager"
-              referrerPolicy="origin"
-              allow="fullscreen; clipboard-read; clipboard-write"
-            />
-          </div>
-
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/58">
-            <span>{trainingConfig.fallbackDescription}</span>
-            <a
-              href={trainingConfig.feishuUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 font-bold text-pnx-blue transition hover:text-white"
-            >
-              打开飞书原文
-              <ArrowUpRight size={15} />
-            </a>
-          </div>
         </div>
       </section>
     </main>

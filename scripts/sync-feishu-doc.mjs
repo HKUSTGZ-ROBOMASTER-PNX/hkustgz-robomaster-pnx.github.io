@@ -54,7 +54,7 @@ async function resolveWikiNode(token, accessToken) {
   return response.data?.node;
 }
 
-async function listWikiNodes(spaceId, accessToken, parentNodeToken = "") {
+async function listWikiNodes(spaceId, accessToken, parentNodeToken = "", depth = 0) {
   const nodes = [];
   let pageToken = "";
   do {
@@ -69,8 +69,8 @@ async function listWikiNodes(spaceId, accessToken, parentNodeToken = "") {
 
   const nested = [];
   for (const node of nodes) {
-    nested.push(node);
-    if (node.has_child) nested.push(...await listWikiNodes(spaceId, accessToken, node.node_token));
+    nested.push({ ...node, depth });
+    if (node.has_child) nested.push(...await listWikiNodes(spaceId, accessToken, node.node_token, depth + 1));
   }
   return nested;
 }
@@ -133,6 +133,25 @@ function convertBlock(block) {
   };
 }
 
+async function fetchDocument(documentId, accessToken) {
+  const blocks = [];
+  let pageToken = "";
+  do {
+    const url = new URL(`https://open.feishu.cn/open-apis/docx/v1/documents/${documentId}/blocks`);
+    url.searchParams.set("page_size", "500");
+    if (pageToken) url.searchParams.set("page_token", pageToken);
+    const page = await requestJson(url, authOptions(accessToken));
+    blocks.push(...(page.data?.items ?? []));
+    pageToken = page.data?.page_token ?? "";
+  } while (pageToken);
+
+  const document = await requestJson(`https://open.feishu.cn/open-apis/docx/v1/documents/${documentId}`, authOptions(accessToken));
+  return {
+    title: document.data?.document?.title ?? "未命名文档",
+    blocks: blocks.map(convertBlock).filter(Boolean)
+  };
+}
+
 const tokenResponse = await requestJson("https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal", {
   method: "POST",
   headers: { "Content-Type": "application/json; charset=utf-8" },
@@ -141,59 +160,39 @@ const tokenResponse = await requestJson("https://open.feishu.cn/open-apis/auth/v
 
 const accessToken = tokenResponse.tenant_access_token;
 const wiki = parseWikiUrl(wikiUrl);
-let documentId = configuredDocumentId && !configuredDocumentId.includes("需要填写") ? configuredDocumentId : "";
-let sourceUrl = wikiUrl;
-let documentTitle = "PNX 培训中心";
-
-if (!documentId) {
-  if (!wiki.isSpace) {
-    const node = await resolveWikiNode(wiki.token, accessToken);
-    if (!node?.obj_token || !["docx", "doc"].includes(node.obj_type)) {
-      throw new Error(`知识库节点不是可读取的新版文档：${node?.title ?? wiki.token}`);
-    }
-    documentId = node.obj_token;
-    documentTitle = node.title ?? documentTitle;
-  } else {
-    const nodes = await listWikiNodes(wiki.token, accessToken);
-    const documents = nodes.filter((node) => ["docx", "doc"].includes(node.obj_type));
-    if (documents.length !== 1) {
-      console.log(`知识库中发现 ${documents.length} 个文档，请将具体文档 URL 配置到 FEISHU_WIKI_URL 后再同步：`);
-      for (const node of documents) {
-        console.log(`- ${node.title} | https://zanpw3z2hb6.feishu.cn/wiki/${node.node_token}`);
-      }
-      process.exit(documents.length ? 2 : 1);
-    }
-    documentId = documents[0].obj_token;
-    documentTitle = documents[0].title ?? documentTitle;
-    sourceUrl = `https://zanpw3z2hb6.feishu.cn/wiki/${documents[0].node_token}`;
+let targets;
+if (configuredDocumentId && !configuredDocumentId.includes("需要填写")) {
+  targets = [{ obj_token: configuredDocumentId, node_token: "", title: "PNX 培训中心", depth: 0 }];
+} else if (!wiki.isSpace) {
+  const node = await resolveWikiNode(wiki.token, accessToken);
+  if (!node?.obj_token || node.obj_type !== "docx") {
+    throw new Error(`知识库节点不是可读取的新版文档：${node?.title ?? wiki.token}`);
   }
+  targets = [{ ...node, depth: 0 }];
+} else {
+  const nodes = await listWikiNodes(wiki.token, accessToken);
+  targets = nodes.filter((node) => node.obj_type === "docx");
 }
 
-const blocks = [];
-let pageToken = "";
-do {
-  const url = new URL(`https://open.feishu.cn/open-apis/docx/v1/documents/${documentId}/blocks`);
-  url.searchParams.set("page_size", "500");
-  if (pageToken) url.searchParams.set("page_token", pageToken);
-  const page = await requestJson(url, {
-    headers: { Authorization: `Bearer ${accessToken}` }
+if (!targets.length) throw new Error("知识库中没有找到可读取的新版文档。");
+
+const syncedAt = new Date().toISOString();
+const documents = [];
+for (const target of targets) {
+  console.log(`正在同步：${target.title ?? target.obj_token}`);
+  const document = await fetchDocument(target.obj_token, accessToken);
+  documents.push({
+    nodeToken: target.node_token,
+    documentId: target.obj_token,
+    title: document.title,
+    depth: target.depth ?? 0,
+    sourceUrl: target.node_token ? `https://zanpw3z2hb6.feishu.cn/wiki/${target.node_token}` : wikiUrl,
+    blocks: document.blocks
   });
-  blocks.push(...(page.data?.items ?? []));
-  pageToken = page.data?.page_token ?? "";
-} while (pageToken);
+}
 
-const document = await requestJson(`https://open.feishu.cn/open-apis/docx/v1/documents/${documentId}`, {
-  headers: { Authorization: `Bearer ${accessToken}` }
-});
-
-const output = {
-  sourceUrl,
-  documentId,
-  title: document.data?.document?.title ?? documentTitle,
-  syncedAt: new Date().toISOString(),
-  blocks: blocks.map(convertBlock).filter(Boolean)
-};
+const output = { sourceUrl: wikiUrl, spaceId: wiki.isSpace ? wiki.token : "", syncedAt, documents };
 
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
-console.log(`已同步 ${output.blocks.length} 个网页块到 ${outputPath}`);
+console.log(`已同步 ${documents.length} 篇文档到 ${outputPath}`);

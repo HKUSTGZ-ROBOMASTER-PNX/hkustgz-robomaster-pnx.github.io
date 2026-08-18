@@ -1,4 +1,4 @@
-import trainingDocument from "@/data/feishu-training.json";
+const trainingDocument = { title: "PNX 培训中心", syncedAt: "" };
 
 type TrainingBlock = {
   id: string;
@@ -7,9 +7,7 @@ type TrainingBlock = {
   text?: string;
 };
 
-const blocks = (trainingDocument.blocks as TrainingBlock[]).filter(
-  (block) => block.type === "divider" || Boolean(block.text?.trim())
-);
+const blocks: TrainingBlock[] = [];
 
 function renderSingleBlock(block: TrainingBlock) {
   const text = block.text?.trim() ?? "";

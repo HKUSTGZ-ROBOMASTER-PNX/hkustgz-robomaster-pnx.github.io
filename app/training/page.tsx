@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { trainingConfig } from "@/data/training";
-import { FeishuDocument } from "@/components/FeishuDocument";
+import { FeishuKnowledgeBase } from "@/components/FeishuKnowledgeBase";
 
 export const metadata: Metadata = {
   title: "PNX 培训中心 | PNX Robotics",
@@ -49,7 +49,7 @@ export default function TrainingPage() {
 
       <section className="pb-20">
         <div className="section-shell">
-          <FeishuDocument />
+          <FeishuKnowledgeBase />
         </div>
       </section>
     </main>

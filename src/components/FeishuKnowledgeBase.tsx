@@ -1,7 +1,7 @@
 "use client";
 
-import { Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { ChevronDown, ChevronRight, FileText, Folder, Search } from "lucide-react";
+import { useMemo, useState, type ReactNode } from "react";
 import trainingDocument from "@/data/feishu-training.json";
 
 type TrainingBlock = {
@@ -19,7 +19,18 @@ type KnowledgeDocument = {
   blocks: TrainingBlock[];
 };
 
+type KnowledgeNode = {
+  nodeToken: string;
+  parentNodeToken: string;
+  title: string;
+  depth?: number;
+  objType?: string;
+  documentId?: string;
+  hasChild?: boolean;
+};
+
 const documents = (trainingDocument.documents ?? []) as KnowledgeDocument[];
+const nodes = (trainingDocument.nodes ?? []) as KnowledgeNode[];
 
 function visibleBlocks(document: KnowledgeDocument) {
   return document.blocks.filter((block) => block.type === "divider" || Boolean(block.text?.trim()));
@@ -69,8 +80,53 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
 export function FeishuKnowledgeBase() {
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(documents[0]?.documentId ?? "");
+  const [expanded, setExpanded] = useState<Set<string>>(
+    () => new Set(nodes.filter((node) => (node.depth ?? 0) < 2).map((node) => node.nodeToken))
+  );
   const selected = documents.find((document) => document.documentId === selectedId) ?? documents[0];
   const filteredDocuments = useMemo(() => documents.filter((document) => document.title.toLowerCase().includes(query.trim().toLowerCase())), [query]);
+  const childrenByParent = useMemo(() => {
+    const result = new Map<string, KnowledgeNode[]>();
+    for (const node of nodes) {
+      const siblings = result.get(node.parentNodeToken) ?? [];
+      siblings.push(node);
+      result.set(node.parentNodeToken, siblings);
+    }
+    return result;
+  }, []);
+
+  const toggleNode = (nodeToken: string) => {
+    setExpanded((current) => {
+      const next = new Set(current);
+      if (next.has(nodeToken)) next.delete(nodeToken);
+      else next.add(nodeToken);
+      return next;
+    });
+  };
+
+  const renderDocumentButton = (document: KnowledgeDocument, depth = 0) => (
+    <button key={document.documentId} type="button" onClick={() => setSelectedId(document.documentId)} className={`flex w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
+      <FileText size={15} className="mt-1 shrink-0 text-white/35" aria-hidden="true" />
+      <span>{document.title}</span>
+    </button>
+  );
+
+  const renderNode = (node: KnowledgeNode): ReactNode => {
+    const children = childrenByParent.get(node.nodeToken) ?? [];
+    const document = node.documentId ? documents.find((item) => item.documentId === node.documentId) : undefined;
+    const isExpanded = expanded.has(node.nodeToken);
+    return (
+      <div key={node.nodeToken}>
+        <div className="flex items-start">
+          {children.length > 0 ? <button type="button" onClick={() => toggleNode(node.nodeToken)} className="mt-2 grid size-5 shrink-0 place-items-center text-white/45 hover:text-pnx-blue" aria-label={isExpanded ? `收起${node.title}` : `展开${node.title}`}>
+            {isExpanded ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
+          </button> : <span className="w-5 shrink-0" />}
+          {document ? renderDocumentButton(document, node.depth ?? 0) : <div className="flex min-w-0 items-start gap-2 py-2 text-sm font-semibold leading-6 text-white/70" style={{ paddingLeft: `${8 + Math.min(node.depth ?? 0, 5) * 12}px` }}><Folder size={15} className="mt-1 shrink-0 text-pnx-blue/70" aria-hidden="true" /><span>{node.title}</span></div>}
+        </div>
+        {children.length > 0 && isExpanded && <div>{children.map(renderNode)}</div>}
+      </div>
+    );
+  };
 
   if (!documents.length) return <div className="rounded border border-dashed border-white/18 bg-white/[0.025] p-6 text-sm leading-7 text-white/60">尚未同步知识库内容。运行 <code className="text-pnx-blue">npm run sync:feishu</code> 即可同步整个知识库。</div>;
 
@@ -88,7 +144,7 @@ export function FeishuKnowledgeBase() {
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-white/35" />
           </label>
           <nav className="mt-4 max-h-[calc(100vh-150px)] space-y-1 overflow-y-auto pr-2" aria-label="知识库文档列表">
-            {filteredDocuments.map((document) => <button key={document.documentId} type="button" onClick={() => setSelectedId(document.documentId)} className={`block w-full border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${12 + Math.min(document.depth ?? 0, 4) * 12}px` }}>{document.title}</button>)}
+            {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document)) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map(renderNode)}
           </nav>
         </aside>
         <section className="min-w-0">

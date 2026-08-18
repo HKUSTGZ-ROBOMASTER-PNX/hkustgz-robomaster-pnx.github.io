@@ -1,10 +1,1426 @@
 {
   "sourceUrl": "https://zanpw3z2hb6.feishu.cn/wiki/space/7666438057763015890",
   "spaceId": "7666438057763015890",
-  "syncedAt": "2026-08-18T06:12:21.580Z",
+  "syncedAt": "2026-08-18T06:28:51.298Z",
+  "nodes": [
+    {
+      "nodeToken": "Bu9xwoq1eiKtYAkua7Tc6azMn8g",
+      "parentNodeToken": "",
+      "title": "知识库首页",
+      "depth": 0,
+      "objType": "docx",
+      "documentId": "Z1FMd7iNGoQ8QXx0vuDcH9TFn3g",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
+      "parentNodeToken": "",
+      "title": "通识课大纲",
+      "depth": 0,
+      "objType": "docx",
+      "documentId": "SL7NdXFoEoK0a0x3ghxcuMrMn7g",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "G6LBwIS2xiOCJGkoWybc5JS9nuh",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
+      "title": "新RMer生存指南",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "P6ocdpiAUoRolKxlIRzc8PJznof",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
+      "title": "机电系统通识课",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "RdHOdRaj0otu94xx4r8cuUqinab",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "AmI8wJPOIiPwHmkX1RecgH4ZnMf",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【基础篇】系统组成-未完成",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Zuw7dRErhoBzuWxvo3tcNLNknqg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "KI8swdxZMim0EfkgTIycejVsnfd",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【基础篇】执行器-未完成",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "O5bMdXYcuo5rPVxTg8mcflgdnHc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "AmDPwA6bHiQFhykqWXYc0OT4nOc",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【基础篇】传感器-未完成 ",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "CKdpdT8RxoRHQfxytwmcydjSnAh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "HFVvwnZQ5i9ArxkzUdXc0KwrnVh",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【比赛篇】-比赛模块 ",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "VK2zdXPEnozi7wxKVsBcep8rn4e",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "ErOXwB5LOiqjBwkhDK0csVJOnMc",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【比赛篇】-常见模块",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "VHAidXTfxojFCdxShjfcTJTqnvh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "ADAJw8UUpisEsdkCAgTc8wjnnZd",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【高级篇】-设计&协作",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Ls4EdVj9joGenyxm42BcPp0BnLb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Kv34wKf0BiIc2JkFWwrcmicKnTb",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【高级篇】-导线",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "AewidsFxjoS6PPx9b33cQoDCnwf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Ey80wh8u1ia1oUkATUNcCw2knDh",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【高级篇】-布线",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "GQ79dTUmoor4w7xtyk0cbQMTnRd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "RkuKweX6Ni9p9Sk1NIyc4v30nff",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "title": "机电系统【维护篇】持续更新",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "UzaPdRHgHovna0xy86EcEFUwnvd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
+      "title": "常用工具与安全",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "EdfXdySmBoxXv1xwcwwccmoFnAf",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "QL6swgg45iq7Lpk3J6ucGP1jngc",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "title": "【安全】电池篇-持续更新",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "KSFodIc2MoSW9TxYYDBcmFUgnqh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "BwzuwirHIi42Xkkz1qUc7kIbnjh",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "title": "【安全】通用",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Sx0Dd7ZPSoqb0BxgkLCcUYmtnNc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Mqs5wCsRkiFSA6kyxQzcmmPunid",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "title": "【工具】3D打印",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "DF5GdhIrsor56ExJKrWc9ZFNnBd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "TrDXwjqEbibYq3kiPAPc2cednce",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "title": "【工具】示波器",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Qg6hdxX7bo7RQ6xTMGrcqOgJn5d",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "C0bywQNr6i48FwksITKcvCfXndc",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "title": "【工具】万用表",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "BP66dWqV0oiYLYxelw5cUWiSnAb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
+      "title": "嵌入式通识课",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "Dyxwdt1LPoBDSXxjzhRc7LE5nKg",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "QSclwayTYip71akYiRccu3QEnob",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "title": "【基础】PCB入门",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "ULqAd2jvToXO2UxuHQocWhTDnlf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OlPawMdHZiFt3rkROC5cpcXCnhh",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "title": "【基础】EDA使用学习",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "WoH2dCAgsoKSvOxt6IqcIJb2nET",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "N1MpwgUH6i34Izk9aJQczf3knDh",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "title": "【基础】分电板",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Jb4xdl7i6osw9Vx115Rc4ceVnPe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "W1Bqw8P5uikp27kxP8xcnn6FnTd",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "title": "【基础】分电板-布局讲解",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "AoIqdNBsNoB7ucxHu5OcjlOTnFg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "RP3Pwg05BiwgVbkk7fIcETFjnrb",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "title": "【工具】电烙铁&热风枪",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "KnkPdjEkro7KTaxIUfkcCYwunIf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "KPhmwLK1wiBLG1kcHg6ctwPdngf",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "title": "【工具】电源",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Qgg1dHpxsoGzRyxmNHocAqhpnge",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OuCfwZrL6inkIYkXRaGcdamAnxd",
+      "parentNodeToken": "",
+      "title": "视觉组培训文档",
+      "depth": 0,
+      "objType": "docx",
+      "documentId": "RSw8dPsWuom2GvxDZRncZsbPnxg",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "EBEgwgo6jiJ9CQkNcOEc6xdEnjc",
+      "parentNodeToken": "OuCfwZrL6inkIYkXRaGcdamAnxd",
+      "title": "培训内容参考",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "CZy5dh9g1oPscgxXBXNcxm3DnYc",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "EAWqwSCY6iCi2ykR2wbcCdXUn9c",
+      "parentNodeToken": "EBEgwgo6jiJ9CQkNcOEc6xdEnjc",
+      "title": "系统安装与使用",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "N1BhdXZtSoSKqTxxYVscq9tdn7c",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "Aa82wP4vbiOgyMkgyNWcwM4BnHf",
+      "parentNodeToken": "EAWqwSCY6iCi2ykR2wbcCdXUn9c",
+      "title": "wsl：在你的Windows电脑上部署linux系统",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "IwmXd9lDgoR7kfx9PNEc8C4Sn2f",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "J4MwwkYuyiqyNXkMEiJcxReJnmd",
+      "parentNodeToken": "EAWqwSCY6iCi2ykR2wbcCdXUn9c",
+      "title": "Ubuntu 双系统",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "DlvEd2N1koQ4I1xw5KPcuxLOn2b",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "parentNodeToken": "OuCfwZrL6inkIYkXRaGcdamAnxd",
+      "title": "算法组课程文档",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "LUnAdN2cKoHMyZxZ1cpcegVWn3g",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "U1WfwhD7HiSVmHklEN2cHwhMndh",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "计算机基础知识",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "H0bJdsQ6LozrW6xfRvTcyBzXnTc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "A4crwtH5NiKOMMk2VDoczTJlnWf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "C/C++/Python编程能力",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XiPDdDfvnonEwZxFF0McZYHunTc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "P7iwwzphliAZwWk80KFcSeXvnig",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "C++面向对象编程",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "QgiwdanvuoepnHx10LTcG7ztnfg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Bq8uwAMoDi27wmkBOqVc9ttTnlb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "Linux与shell基本能力",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XU8Adtv0Eov3bExKRz5cKg4HnFb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Metew79UNi3fQ0kP5BJc0cT5n6b",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "机器人通识",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "F7PBd2TlEouigaxqumucBe4XnWc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Bqpwwq5vjiVheUk2rZDc3SM0n6b",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "opencv与图像处理基础",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "B0jydScx8oc002xkQijceL5Nnrd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "SEUUwqbYji61eHk7bJocuBjRnjd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "cmake基础使用",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "K5DgdatktoBx8AxZyWEcApkgncD",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "QXTFwfUvaifc7YkzbnYc8mT9nPd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "从 Git 到 GitHub：代码的版本管理",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Y381dEm41oeptdx43fkcdig8nnh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "MRevwPgjaiBY87kj95Jc1AIinId",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "C++多线程",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "VVbgdBUrvoTd94xpKqwcU525ntd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "AVTLwhoD3i0t9NkHFZpcFWGenhb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "cam：USB/工业相机的参数修改与使",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "D9jYdItFco0fKFx8LDTcYoa7nIg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "UdScwZkNNiPBbbkAVnDcroy0nxb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "armor：灯条检测",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "WWlDd3u69ofrcEx5qS6cAjtGn7b",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "PVaGwd8QwikWsZkFD4mcfOl4nsc",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "armor：灯条匹配",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "CoDJdIvaNoXjTzxoCqScyx5dnEb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "VM2rwgCMbiExQykE0oycdjnEndf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "armor：数字识别",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "FuRDdNLXxou99DxG9TAcRnDTnBf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "LVejwbOCyiXc1VkOAWica0IOnLd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "以yolo为例:训练神经网络完成识别任务",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "VATxdBhUFoR1t6xW58McY607nng",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Gu0xwOO6timzp9kCsF6cOOcRnMc",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "rune：能量机关识别",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "NeUcdo0ZVopR5rxmDyMcLenlnnd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "PWxIwNjK5iF0D8kAzymc3Ph8nCf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "旋转的表示:欧拉角/四元数",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "MzzwdXqwWoqdEAxDRwlcWRtrnpc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "E1P6wq7gKi2jQykxYBZc0XRknhg",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "位姿变换:PNP解算敌方的三维信息",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "GVImdqTGboF5twxeUghcb8HFnte",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "MnT7wCHrCiZiwdkDiYNcKFEsnbx",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "位姿求解方法对比",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Z6QmdA9knoNXrvxDkHRcmK8onwe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "RNBywnZ3fij3ukk7kDEc4hkJnCc",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "自瞄中的坐标系:TF树的构建",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Vba0df2mqoavUYxfBqIcX9vRnFb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "YE4owshSJiVYAYktwxTcQRzCnHb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "tf2与URDF",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "TmcjdM3NgoOPIMxUKz4cLSgQn1e",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WFXkwG6DPiu0AEkJLBccCkKznih",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "imu姿态解算",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "WSlMdhdlYoQGDSxyV1wcaY1snUd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "HtSFw6YajiWSAQkNCUucfCERnKh",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "相机成像模型",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "P7BNdX5UpoknL0x7mm9cNG7Kn7e",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "S7Y0wBRgGi8ELbkgz2kcHkHrnPd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "相机标定",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "RQGNdTDKdoUCi1xsthac1og6ntg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "VlNWwsLnsiNPDlkgd1ucyHv4n5e",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "相机IMU联合标定",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "HpKOdzYSioqoPuxwAooc5nPfnzf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "JEUvwzOZti7UQTkoyQNcYzhVnaf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "静止目标的弹道解算",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "QgXbdgq8sormNgxBdNYc8HalnvX",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Qc50wpA9BiclC3kRlb7cDQXcnVf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "连续追踪与匹配",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XKw8dBrGBoo5PjxpjPocGmWRnvb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "UslHw6p1NiH4vRkF1r2c4xnnnCb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "title": "运动预测：装甲板平动",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "A2L2dWbpboJBpnxEvL3c1cxFnAb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
+      "parentNodeToken": "",
+      "title": "机械组培训文档",
+      "depth": 0,
+      "objType": "docx",
+      "documentId": "XfAKd6eqboBp25xU7tfcNNdrnse",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "EWVTwcPUAibOvQkeVkfc004rnBh",
+      "parentNodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
+      "title": "培训流程参考",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "EHHXdVZszotvRLxHTBJcaP6lnug",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "BvKdw4p0RiDGCLkWsQicZE4TnOh",
+      "parentNodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
+      "title": "机械组正式培训流程",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "AHzAdVESdoSEjgxnAvJc8g1an2t",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "parentNodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
+      "title": "机械课程文档",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "PW4GdD3FAoVPKyxb63hc316yncb",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "R4ciwvNiLibr6bkGeoJciDpJnyg",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "机械组须知",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "MArkdgNcooEktOxGiCwcg40CnEe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "YAnTwtbwriKDw8keiqmcL0ronpc",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "常用标准件介绍",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "TGyBdTDknoTOROxC4m8cqF6GnQc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "TvMbwDJkNihs5lkSlhkcBhyMnmf",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "SW画图",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "BlETduXzeodSfqxrWzhcTKdSnsf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "UyZuwYuMRi1eMBku4Qqc6Il0nMg",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "SW装配体",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "YUgwd2NKCoHGSWxgy8gc7BjXnCg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Ly5wwPxnOiBHHgkvTEfcoXrtnec",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "材料性质&加工工艺",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "JjNpd1pQtoKP3KxGWq5cm2rLnFc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "GTFCwhaRaiOcoOkTqHscuZwRnIx",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "轴系设计",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "LecSdx3XboQE4ZxlKzJc1tbVnPe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "GPHtwkgZ6i4rWqkoFYycT8mfnwc",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "机械传动",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "W7rpdRTaUoD44KxcJu3cgsDAnPh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "GaTjwKtc5iS7MFkIWSicINijnYb",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "整车设计1",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Kq2KdKTD6okH3xxq99NczZ18npg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OsdpwrVtTiI0lrkE5ltcgPchnBd",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "title": "整车设计2",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XNrpdWJAeok1aqxIJ4Pc6VKwnx3",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "parentNodeToken": "",
+      "title": "电控组培训文档",
+      "depth": 0,
+      "objType": "docx",
+      "documentId": "FnJidwYH2oRHuSxLbJPcCGT4n2j",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "title": "配置",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "D4SFdXdUtoIcAoxqjhlcv1IVnzf",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "CQBYwmiuOiN6MHk6gX8c6nTCnkf",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
+      "title": "【工具链】VSCode+Freemater（本地CMake&GNU）",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "H3rndLWsDozHvrxnEabcG3D1nob",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Zcx7wurp5iWQGEkm35bcMeEPnYf",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
+      "title": "【控制板】基本配置",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "AtWYdHRA7o4Pgsxi69QcA19Onyd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Ui7YwavnYir5V9kIKZRcRxB4nif",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
+      "title": "【控制板】DSP",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XcaNdmBm7ohoDoxBUKScrskPnpe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
+      "title": "【工具链】归档",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "DAgxdPaYfoCHmixE8wlcFan2nFg",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "K84ew0iMjiLF5gkXxyGcKtYPnrS",
+      "parentNodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
+      "title": "【工具链】Keil+FreeMaster",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "YQ1EdLDunocXXNx6sizct14tnLb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "UCu0wPyNwiBzgCkq5C1cQU7wnMc",
+      "parentNodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
+      "title": "【工具链】CLion+Ozone",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "FjAydAt7hoP69pxblwHc8WHbnfd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "FU0gwtlkBi2Tg1kOqwNcnbUTnth",
+      "parentNodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
+      "title": "【工具链】VSCode+FreeMaster",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "Or4Qd4ckgowclwxb1XLcerNGnug",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "title": "嵌入式",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "CTBMdqzpZoQKYyx8153cnivsnMb",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "OhGrwCQkbicRzHk7DGbcXKdonVg",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【基础】通识",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "MbR9dtggqoDMQOxLW21cmvCWnLd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "GRQbwQ6pGiCEoDkJuKQcFpMUn0e",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【基础】嵌入式系统",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "OmevdbCdFosrktx3CS8cPTbun2e",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WNRcw3Meui8kfak76gBcfBHMnKe",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【基础】GPIO",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "UEMgdjyUgoDMNHx6K0Cc5ZQtnzc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WdD7wLpkdi5hLQkZE5fcsl0mnbf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【基础】中断EXTI",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "BipzdytVtoyoQTxBxGTc0G1Xnkf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "C6yrwb45KiHTa9kEepscPrecnHd",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】前置知识",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Ld70dCyBLozY4QxrAtpcJ1DGn5f",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Tf1VwJThXi5PI4k0aqTcVa8lnEf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】UART",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "PhHvdozn5oT0orxVPWocHO78ndd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OXkmwDmB4ikuaxkXpmscONxpnuh",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】DMA",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "AMkrdAXxzoU9HsxKaqac0RGhnte",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "QnvvwIVHjiND7ZkULelctFmHn9b",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】PWM",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Y0jldaFitoKiLJxly7Oc3TV9n3f",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "V7gmw5A2xiWT00k03D9cQ93hnHh",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】I2C/SPI",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "NMncde4nqowpTGx2FdAcKcATnmh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "J3eQwZeE2iK3HOkYEFAcOeZFnQc",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】CAN",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "LdN3dXVIfos9hYxd00mcZA74nCd",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "IVKuwMg5biiphRkLuGjcMaJAnNe",
+      "parentNodeToken": "J3eQwZeE2iK3HOkYEFAcOeZFnQc",
+      "title": "CAN任务",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "ZxoldGmnxodqdjxXsShcpyc9n7e",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Xid0wzJq4imhijkR1BYc3y4enMg",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】FDCAN",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Pc3RdudJqoYM1NxKW3VceG97nCh",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "GcfiwgsEyikDLRkvPsMcuysmnih",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】USB",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "NTKudEsNQophNnx5fywcVnFXnib",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Qc8PwPjasiz87QkO2cIc0oqJnog",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信】EtherCAT",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Bwd2dHBeMoQ9P4xQTppc9Yu8nVf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Gqd4wJeSji6ua8kLVoacOR2cnOb",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【系统】时钟",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Tg4LdOjwHojRzVxOqopcEECynkd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "CFW3wWwOjiA21pksmgIcERi2nkf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【系统】ADC",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "DLs4dHCPQo8Jq5x7Iosci5Lfnie",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Wy4cwTXkTicgbsknOyWcVC6EnMd",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【架构】C++类与代码架构",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "RPgsd1pZeoZsqYxEe4LcS3dLnDh",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "KuCfwz6EYioIEVkPSB6cx2MCnoc",
+      "parentNodeToken": "Wy4cwTXkTicgbsknOyWcVC6EnMd",
+      "title": "HW: 编写一个c++类",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "KeK9d40waoK8SVxjLuJceY1mnNb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "NCm8wtkcNi2yRQkK3zycK0hInvd",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【架构】裸机开发",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "T2qSd3g1MoavMdxglvTctS42nne",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "NrZmws671iXmEgkDNUrc9gLXnOf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【架构】整体控制逻辑",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "TLzOdxgeqoQC63x8e80cQLdEnjc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "CRRWwfoDJi5pJSkajrzcxPfhn4g",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【架构】ThreadX",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "OyqydkPnBorWGmx1NXycp7UHnzg",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "JXHGwJ1MOiwVWikTUeGcHXIjnlb",
+      "parentNodeToken": "CRRWwfoDJi5pJSkajrzcxPfhn4g",
+      "title": "任务：ThreadX简单任务",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "VbZoddnaJoZSxRxxPWYcyaoin9c",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "LB9LwJ0BJimJt0kZFTucczG2nUe",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【控制板】STM32H723",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "I42jd37AyoXFtexh9HCcJmC0nhe",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "KhALwMDAbirpWzkL1qYc6mvLndB",
+      "parentNodeToken": "LB9LwJ0BJimJt0kZFTucczG2nUe",
+      "title": "自制H723主控资料",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "NXy1dRSZqoJAgixd2rkcGXU5nOe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "S8IQw6YwhifR5zk2ix7cHOf2n6d",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【通信协议】BMI088",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "BZ4sdMv0PoiR96xvGqbcsSe0nWe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "title": "【嵌入式】HPM芯片开发经验与教程",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "QbrCdT5vYoO4jbxeaW0csssrnTb",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "Myv8w0o67ivlPUkaXKacs3tOnYe",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "HPMicro 简介与选型",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "XOJmdT2DEozY0Rxgr2vcHfnAnad",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "JsONwrQv6i0KxpkeHAKcHBjWnef",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "配置HPM开发环境",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "ZjxDdWhFgos4U2xtc10cnNIcnpc",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "WKKaweoauiycSCk4tPUcTN10nUb",
+      "parentNodeToken": "JsONwrQv6i0KxpkeHAKcHBjWnef",
+      "title": "自研HPM5361开发板资料",
+      "depth": 4,
+      "objType": "docx",
+      "documentId": "O2wOdENG4oZ0rDxHkobcCbACncb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "UOhzwXFZPi7oUWkEtrkcImprnJg",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "开发工具与调试手段",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "YjjpdFZQMo56EZxEGmucboOYng8",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WupPwc562iqJCukLssocahzcnoP",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "中断",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "MF8PdWH19oiPN4xhlF0c0QQWn3b",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OczCws5CViXfxmk9E0acjbaCn6e",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "CAN",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "D6PjdrhfaoJmMRxkommctzoqnLd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WMORwj2fmiysHykkDDecIykSnnb",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "串口（UART）与DMA的使用",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "OAsyd8K7VoDhGIxaSnlcn5ABnjq",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "LVXYwZnkii5j6ekwPJac8Hhen8c",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "title": "时钟系统与系统时基",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "BYugdbznEosMt5xwBhYcyzyznvb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "title": "控制",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "Ri2udKHuXo3sqNxGbgkcdccInJd",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "EZm4wwivJieDPwkht8RcstpznWw",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【控制器】PID控制",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "UkZWdU2ldoJiO1xW4zlcqYOtncg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "AvoswHkWgi2VXDkOze3cT77Znrf",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【控制器】滤波",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "QiKmdh6YwoltDQxXyvScJpcjnAd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "NnbIwo31XikS09kgm9RcVzqSntc",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【控制器】LQR控制",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Xsekd2BN5o536XxfliYcmL8Xn4d",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "VV9Gwer10i3g3RkWBsJcKwHAnah",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【电机】电机学模型",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "NezZdlg5rolrSkxlvFQcfhFTnvC",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "PuuWwgWgwitCdjk9h4zc35ynnte",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【电机】控制电机",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "TqKTdo9eEoirXdxkuMBcCgKznac",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "Xf03w5FG6i4cGVkRldzcbKpxntg",
+      "parentNodeToken": "PuuWwgWgwitCdjk9h4zc35ynnte",
+      "title": "任务：电机控制",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "I1W2dNzkxoQbDWxKEHKcfcdKnUc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "PLpfwgjfDi41Ztk2u6ycAwRVnwd",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【解算】底盘解算",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "RVYVdYV7soefYuxI592cXjITnWg",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "BplHw7TfXiL3aCkXw8CcMcy3nbe",
+      "parentNodeToken": "PLpfwgjfDi41Ztk2u6ycAwRVnwd",
+      "title": "任务：底盘解算",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "SrZrdAvS8oYldsxL27TceeqznUc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "RKmQwyB0ZiEwrCkCSYPc3R2JnFb",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【解算】姿态解算",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "CO2XdYKHso8qFQxijbYcn4H7n8c",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WcLXwFHadiOPrWk3c4ZcStNOnVf",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【仿真】Matlab仿真",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "MQEqden6poCjw4xnIQgck4ynnAd",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "FyJZw9kNlisfhKkKRcycwbLSnQb",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "title": "【控制器】机械臂控制",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "VwBQdPJ89oGMf3xaKPVcIHiRnHc",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "SUyDwqkUciUkPIkfkxccYqmgn6c",
+      "parentNodeToken": "FyJZw9kNlisfhKkKRcycwbLSnQb",
+      "title": "机械臂重力向量计算",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "LsqndtRx0oD37zxZG4EcwI3fnQc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "WahuwDddqi3mJakJx5tcjLGRnRf",
+      "parentNodeToken": "FyJZw9kNlisfhKkKRcycwbLSnQb",
+      "title": "机械臂重力参数标定",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "DMfBdAbBko1BtoxEkIZcb1binuf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "title": "开发",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "O5WadDGYRoTGc7xa4Omcrdf6nob",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "YxdMwAPfviL95gkxBtDcdCf0nqc",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
+      "title": "【开发】工作流",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "ZbGAddDJRo508kxoFX4ce4lcnCa",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "OKdvwMA3HifoKnkDlY0cDbi7nsF",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
+      "title": "【开发】裁判系统相关",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "PxjDdA3HGoKqe4xQBglcS4M7nSg",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "ZGqpw265Eik2XnkdMU3cpVsInsb",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
+      "title": "【开发】小经验",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "RRI7dOghkoTCiqxJkV9ci6pSned",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "DQbkwoRDbis4Pgkzqdgc4gDVnWb",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
+      "title": "【开发与维护】ECAT2CAN模块开发",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "UN1sde5qGohB66xPkBdcwaXBnYb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "QJ7zw6UNsiUEeakK3cWcmq9pnce",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "title": "测试",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "BubtdicCloYHkuxiDlNcfvM4n4d",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "UZdHwXCOLi709wkrPA5cFL5ynUf",
+      "parentNodeToken": "QJ7zw6UNsiUEeakK3cWcmq9pnce",
+      "title": "红外散布靶使用说明",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "Epw7dcExAojdPzxa1XocKlzAnue",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "ClBcwqGGgiW0EDk12UocdSlnnzc",
+      "parentNodeToken": "UZdHwXCOLi709wkrPA5cFL5ynUf",
+      "title": "红外散布靶使用说明书.pdf",
+      "depth": 3,
+      "objType": "file",
+      "documentId": "",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "SzPMwnN4eiL4Ockx0oIcBACJnGc",
+      "parentNodeToken": "UZdHwXCOLi709wkrPA5cFL5ynUf",
+      "title": "红外散布靶上位机.zip",
+      "depth": 3,
+      "objType": "file",
+      "documentId": "",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Y1ifwcXsqigjaQkP75ncY4nhnCd",
+      "parentNodeToken": "UZdHwXCOLi709wkrPA5cFL5ynUf",
+      "title": "驱动(stlink串口驱动).zip",
+      "depth": 3,
+      "objType": "file",
+      "documentId": "",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "PynLwF321iuCFUk2MQqcg5CXnsb",
+      "parentNodeToken": "UZdHwXCOLi709wkrPA5cFL5ynUf",
+      "title": "驱动安装视频.mp4",
+      "depth": 3,
+      "objType": "file",
+      "documentId": "",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "title": "上位机控制框架",
+      "depth": 1,
+      "objType": "docx",
+      "documentId": "MsXZdPzpkoBEdwxKueLcUhZ0nHb",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "P3xfwLC1FiUsxnkfLEZc3VQcnAc",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "ecat2can/usb2can",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "PQSidwsnNozdIMxqCmWcLpRln4b",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "SA7JwdCZYihx0XkQDixc6bEHnAd",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "Linux 串口通讯",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XaIJdC7whoZTEIxObxXcTjqwnYf",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "WiXrw8Cgzi9CtSkSK4UcD5RDnog",
+      "parentNodeToken": "SA7JwdCZYihx0XkQDixc6bEHnAd",
+      "title": "Linux udev 串口固定命名",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "XG67dDn73o2FyZxW8BjcAkPend6",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "ROS2 control 系列文档",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "WNytdhikho5Df5xqXW6cGZC7noc",
+      "hasChild": true
+    },
+    {
+      "nodeToken": "Am5Zwph55iOzWQkvgU2cx8vZnAb",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "title": "ROS2 控制系统概述",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "Il0fdEv2HoJULAxzKmecV68YnkD",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "ODilw7hXdiMO0Gktbz2cy1MvnIc",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "title": "ROS2 Controller Manager",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "LuOndpiHio5D3RxPVVWcmvklnCe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "KjuywWQmKi04AFk70Vec7zI5nnh",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "title": "ROS2 controller",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "IyLadq3OsoYZB4x9C1McsDN9nRc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "AfHUwZ0HBiC35HkKc9Ecyi3Mn0d",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "title": "ROS2 hardware_interface",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "J7pldpHnDopcKPxQrKKc8rPTnIb",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "V9TjwUH35irjslka303cOsgpnie",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "title": "获取机器人的 urdf 文件",
+      "depth": 3,
+      "objType": "docx",
+      "documentId": "HO0jd86Zxo0VQ0xS0vkct3IVnPc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "U1cPwscmxiM4mQkfz26c1Q3NnIb",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "RM26整车控制数据流",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "LHiCdlafyot1RXxHPhfcfEocn9d",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "ZYcmwUbzmif23MkaEyoczvBmn5f",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "机械臂控制理论",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "XhVQd84s4oFqITx9QwlcASRJnxf",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Ehr2wAZHuibNfWkFzXaczYIin1d",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "麦轮功率控制",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "CCjad3FY0osFnrxsLbic6bD3nGe",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "Kjo6wp9LyiRK0FkjZpvcfk6XnWd",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "夹爪控制",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "KetbdTrvdohdmwxMUxjcoiaLnIc",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "NjCIwMVHTi7gmAkulTocu7AlnKh",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "半自动存取矿程序",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "NdJidLQfAobA1OxFzljctyALnud",
+      "hasChild": false
+    },
+    {
+      "nodeToken": "VYFXw4NIGizW3yk9g2OcOeKBn2c",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "title": "其他",
+      "depth": 2,
+      "objType": "docx",
+      "documentId": "MbludyjoBoNRoGxxJv7c4R4vnjh",
+      "hasChild": false
+    }
+  ],
   "documents": [
     {
       "nodeToken": "Bu9xwoq1eiKtYAkua7Tc6azMn8g",
+      "parentNodeToken": "",
       "documentId": "Z1FMd7iNGoQ8QXx0vuDcH9TFn3g",
       "title": "知识库首页",
       "depth": 0,
@@ -19,6 +1435,7 @@
     },
     {
       "nodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
+      "parentNodeToken": "",
       "documentId": "SL7NdXFoEoK0a0x3ghxcuMrMn7g",
       "title": "通识课大纲",
       "depth": 0,
@@ -341,22 +1758,22 @@
         {
           "id": "PU1hd5BqnopEHdxaZ6Ac02QVnjc",
           "type": "ordered",
-          "text": "操作系统与远程控制 @ou_bf9ace36d5105612a36d873d2875aefc"
+          "text": "操作系统与远程控制 "
         },
         {
           "id": "Mx7xdsOJaoWZuwx4p7ScGf4knN5",
           "type": "ordered",
-          "text": "编译原理与IDE使用 @ou_adf0607f34284f75b757aba558f046ee"
+          "text": "编译原理与IDE使用 "
         },
         {
           "id": "HJIhdb6aToHhF3xJqsQcTnrQnxb",
           "type": "ordered",
-          "text": "C与C++语言基础(自学) 整理个自学资料 @ou_bf9ace36d5105612a36d873d2875aefc"
+          "text": "C与C++语言基础(自学) 整理个自学资料 "
         },
         {
           "id": "NOLcd3MHyoRw3ix1tVUcUOBJnXc",
           "type": "ordered",
-          "text": "代码规范与git使用 @ou_4096273222b9aaeb3001e9691014d7c5"
+          "text": "代码规范与git使用 "
         },
         {
           "id": "Un9HdHtkdoYq4SxWInXcKWuuncd",
@@ -367,6 +1784,7 @@
     },
     {
       "nodeToken": "G6LBwIS2xiOCJGkoWybc5JS9nuh",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
       "documentId": "P6ocdpiAUoRolKxlIRzc8PJznof",
       "title": "新RMer生存指南",
       "depth": 1,
@@ -757,7 +2175,7 @@
         {
           "id": "doxcnGdUkQPQLkZrqRh2bujSFyd",
           "type": "paragraph",
-          "text": "对于视觉，不清楚，说不定notion上有@ou_dd9b6e40373661df5db1df89437757b5帮我写写（"
+          "text": "对于视觉，不清楚，说不定notion上有帮我写写（"
         },
         {
           "id": "doxcnVkldk2DBfhH42pzpfikG8d",
@@ -1133,6 +2551,7 @@
     },
     {
       "nodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
       "documentId": "RdHOdRaj0otu94xx4r8cuUqinab",
       "title": "机电系统通识课",
       "depth": 1,
@@ -1152,6 +2571,7 @@
     },
     {
       "nodeToken": "AmI8wJPOIiPwHmkX1RecgH4ZnMf",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "Zuw7dRErhoBzuWxvo3tcNLNknqg",
       "title": "机电系统【基础篇】系统组成-未完成",
       "depth": 2,
@@ -1414,6 +2834,7 @@
     },
     {
       "nodeToken": "KI8swdxZMim0EfkgTIycejVsnfd",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "O5bMdXYcuo5rPVxTg8mcflgdnHc",
       "title": "机电系统【基础篇】执行器-未完成",
       "depth": 2,
@@ -1632,6 +3053,7 @@
     },
     {
       "nodeToken": "AmDPwA6bHiQFhykqWXYc0OT4nOc",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "CKdpdT8RxoRHQfxytwmcydjSnAh",
       "title": "机电系统【基础篇】传感器-未完成 ",
       "depth": 2,
@@ -1776,6 +3198,7 @@
     },
     {
       "nodeToken": "HFVvwnZQ5i9ArxkzUdXc0KwrnVh",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "VK2zdXPEnozi7wxKVsBcep8rn4e",
       "title": "机电系统【比赛篇】-比赛模块 ",
       "depth": 2,
@@ -2401,6 +3824,7 @@
     },
     {
       "nodeToken": "ErOXwB5LOiqjBwkhDK0csVJOnMc",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "VHAidXTfxojFCdxShjfcTJTqnvh",
       "title": "机电系统【比赛篇】-常见模块",
       "depth": 2,
@@ -3026,6 +4450,7 @@
     },
     {
       "nodeToken": "ADAJw8UUpisEsdkCAgTc8wjnnZd",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "Ls4EdVj9joGenyxm42BcPp0BnLb",
       "title": "机电系统【高级篇】-设计&协作",
       "depth": 2,
@@ -3885,6 +5310,7 @@
     },
     {
       "nodeToken": "Kv34wKf0BiIc2JkFWwrcmicKnTb",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "AewidsFxjoS6PPx9b33cQoDCnwf",
       "title": "机电系统【高级篇】-导线",
       "depth": 2,
@@ -4660,6 +6086,7 @@
     },
     {
       "nodeToken": "Ey80wh8u1ia1oUkATUNcCw2knDh",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "GQ79dTUmoor4w7xtyk0cbQMTnRd",
       "title": "机电系统【高级篇】-布线",
       "depth": 2,
@@ -6807,6 +8234,7 @@
     },
     {
       "nodeToken": "RkuKweX6Ni9p9Sk1NIyc4v30nff",
+      "parentNodeToken": "L6b3wubSdiwZImkEpyIc0rrnn4f",
       "documentId": "UzaPdRHgHovna0xy86EcEFUwnvd",
       "title": "机电系统【维护篇】持续更新",
       "depth": 2,
@@ -6958,6 +8386,7 @@
     },
     {
       "nodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
       "documentId": "EdfXdySmBoxXv1xwcwwccmoFnAf",
       "title": "常用工具与安全",
       "depth": 1,
@@ -6972,6 +8401,7 @@
     },
     {
       "nodeToken": "QL6swgg45iq7Lpk3J6ucGP1jngc",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
       "documentId": "KSFodIc2MoSW9TxYYDBcmFUgnqh",
       "title": "【安全】电池篇-持续更新",
       "depth": 2,
@@ -8075,6 +9505,7 @@
     },
     {
       "nodeToken": "BwzuwirHIi42Xkkz1qUc7kIbnjh",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
       "documentId": "Sx0Dd7ZPSoqb0BxgkLCcUYmtnNc",
       "title": "【安全】通用",
       "depth": 2,
@@ -8204,6 +9635,7 @@
     },
     {
       "nodeToken": "Mqs5wCsRkiFSA6kyxQzcmmPunid",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
       "documentId": "DF5GdhIrsor56ExJKrWc9ZFNnBd",
       "title": "【工具】3D打印",
       "depth": 2,
@@ -8418,6 +9850,7 @@
     },
     {
       "nodeToken": "TrDXwjqEbibYq3kiPAPc2cednce",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
       "documentId": "Qg6hdxX7bo7RQ6xTMGrcqOgJn5d",
       "title": "【工具】示波器",
       "depth": 2,
@@ -8432,6 +9865,7 @@
     },
     {
       "nodeToken": "C0bywQNr6i48FwksITKcvCfXndc",
+      "parentNodeToken": "DGKQwUGz7izApMk8o5ucpu3xnPh",
       "documentId": "BP66dWqV0oiYLYxelw5cUWiSnAb",
       "title": "【工具】万用表",
       "depth": 2,
@@ -8440,6 +9874,7 @@
     },
     {
       "nodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
+      "parentNodeToken": "EiPswLOCoiy9bskDITRcwLwgn7c",
       "documentId": "Dyxwdt1LPoBDSXxjzhRc7LE5nKg",
       "title": "嵌入式通识课",
       "depth": 1,
@@ -8464,6 +9899,7 @@
     },
     {
       "nodeToken": "QSclwayTYip71akYiRccu3QEnob",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
       "documentId": "ULqAd2jvToXO2UxuHQocWhTDnlf",
       "title": "【基础】PCB入门",
       "depth": 2,
@@ -8587,6 +10023,7 @@
     },
     {
       "nodeToken": "OlPawMdHZiFt3rkROC5cpcXCnhh",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
       "documentId": "WoH2dCAgsoKSvOxt6IqcIJb2nET",
       "title": "【基础】EDA使用学习",
       "depth": 2,
@@ -8777,6 +10214,7 @@
     },
     {
       "nodeToken": "N1MpwgUH6i34Izk9aJQczf3knDh",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
       "documentId": "Jb4xdl7i6osw9Vx115Rc4ceVnPe",
       "title": "【基础】分电板",
       "depth": 2,
@@ -9050,6 +10488,7 @@
     },
     {
       "nodeToken": "W1Bqw8P5uikp27kxP8xcnn6FnTd",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
       "documentId": "AoIqdNBsNoB7ucxHu5OcjlOTnFg",
       "title": "【基础】分电板-布局讲解",
       "depth": 2,
@@ -9118,6 +10557,7 @@
     },
     {
       "nodeToken": "RP3Pwg05BiwgVbkk7fIcETFjnrb",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
       "documentId": "KnkPdjEkro7KTaxIUfkcCYwunIf",
       "title": "【工具】电烙铁&热风枪",
       "depth": 2,
@@ -9132,6 +10572,7 @@
     },
     {
       "nodeToken": "KPhmwLK1wiBLG1kcHg6ctwPdngf",
+      "parentNodeToken": "SnqLwkIPxi8VmpkDavHcQfQqnGc",
       "documentId": "Qgg1dHpxsoGzRyxmNHocAqhpnge",
       "title": "【工具】电源",
       "depth": 2,
@@ -9140,6 +10581,7 @@
     },
     {
       "nodeToken": "OuCfwZrL6inkIYkXRaGcdamAnxd",
+      "parentNodeToken": "",
       "documentId": "RSw8dPsWuom2GvxDZRncZsbPnxg",
       "title": "视觉组培训文档",
       "depth": 0,
@@ -9154,6 +10596,7 @@
     },
     {
       "nodeToken": "EBEgwgo6jiJ9CQkNcOEc6xdEnjc",
+      "parentNodeToken": "OuCfwZrL6inkIYkXRaGcdamAnxd",
       "documentId": "CZy5dh9g1oPscgxXBXNcxm3DnYc",
       "title": "培训内容参考",
       "depth": 1,
@@ -9198,12 +10641,12 @@
         {
           "id": "MD0JdT9GDoSAKKxpXOrcAnODn5b",
           "type": "paragraph",
-          "text": "Wsl 安装 @ou_0f3f53ef9dd810d085425bc89fa15d58"
+          "text": "Wsl 安装 "
         },
         {
           "id": "WeD2dui7ponyiJxsUrPcKE1Tn9d",
           "type": "paragraph",
-          "text": "双系统安装 @ou_f204ea1aa1a9013e9bbdf6d665c4242d"
+          "text": "双系统安装 "
         },
         {
           "id": "HR2ydmIOAohNZzxzOm0cQCgbnhg",
@@ -9260,7 +10703,7 @@
           "id": "YHdrdd2QDoMpRdxCmUBcHuDdnMg",
           "type": "heading",
           "level": 1,
-          "text": "Opencv 使用基础 @ou_4096273222b9aaeb3001e9691014d7c5"
+          "text": "Opencv 使用基础 "
         },
         {
           "id": "O4tfdBWBQo1IEnx1cqjcPJGGnJb",
@@ -9276,7 +10719,7 @@
           "id": "TSf3daaSMozsgGxHlTlcphA0nub",
           "type": "heading",
           "level": 1,
-          "text": "yolo为例:神经网络迁移训练方法 @ou_4096273222b9aaeb3001e9691014d7c5"
+          "text": "yolo为例:神经网络迁移训练方法 "
         },
         {
           "id": "PeAVd7IVdoHee1xEbYQcack2nvf",
@@ -9287,7 +10730,7 @@
           "id": "K5BTd6p2Fou3bdxbdO1cdFMonCf",
           "type": "heading",
           "level": 1,
-          "text": "目标检测@ou_4096273222b9aaeb3001e9691014d7c5"
+          "text": "目标检测"
         },
         {
           "id": "Q4qPdq5kIo1HmfxWoV6csQ5onih",
@@ -9298,7 +10741,7 @@
           "id": "PFdRdsj83ofRTpxLOfpck901nBU",
           "type": "heading",
           "level": 1,
-          "text": "相机成像原理与相机标定 @ou_5d893106ff0862c41b6fab5ee4ff59c3"
+          "text": "相机成像原理与相机标定 "
         },
         {
           "id": "XXd7dUtcgoatoXxNmbuceX09nnc",
@@ -9309,7 +10752,7 @@
           "id": "Ort1dm9ECoF1uuxpE5kcPD2bnPe",
           "type": "heading",
           "level": 1,
-          "text": "位姿解算@ou_384dc2b5e4ffb387510a246695231b1f"
+          "text": "位姿解算"
         },
         {
           "id": "Ycp3dKgs5o4Np0xqvN7cmKvonef",
@@ -9325,7 +10768,7 @@
           "id": "MasPdah56oTgqxxuaVfc8Qykntg",
           "type": "heading",
           "level": 1,
-          "text": "坐标系转换, 三维世界的旋转表达@ou_384dc2b5e4ffb387510a246695231b1f"
+          "text": "坐标系转换, 三维世界的旋转表达"
         },
         {
           "id": "LObwdHSmNoQNpYxB7yqcVsRDnYd",
@@ -9336,7 +10779,7 @@
           "id": "UduydrcR8oo6iVxaUHgcFtdsn2e",
           "type": "heading",
           "level": 1,
-          "text": "串口通信@ou_384dc2b5e4ffb387510a246695231b1f"
+          "text": "串口通信"
         },
         {
           "id": "Vuvxde6ZkoipmexVXH7cG1vdnzd",
@@ -9371,6 +10814,7 @@
     },
     {
       "nodeToken": "EAWqwSCY6iCi2ykR2wbcCdXUn9c",
+      "parentNodeToken": "EBEgwgo6jiJ9CQkNcOEc6xdEnjc",
       "documentId": "N1BhdXZtSoSKqTxxYVscq9tdn7c",
       "title": "系统安装与使用",
       "depth": 2,
@@ -9385,6 +10829,7 @@
     },
     {
       "nodeToken": "Aa82wP4vbiOgyMkgyNWcwM4BnHf",
+      "parentNodeToken": "EAWqwSCY6iCi2ykR2wbcCdXUn9c",
       "documentId": "IwmXd9lDgoR7kfx9PNEc8C4Sn2f",
       "title": "wsl：在你的Windows电脑上部署linux系统",
       "depth": 3,
@@ -9716,6 +11161,7 @@
     },
     {
       "nodeToken": "J4MwwkYuyiqyNXkMEiJcxReJnmd",
+      "parentNodeToken": "EAWqwSCY6iCi2ykR2wbcCdXUn9c",
       "documentId": "DlvEd2N1koQ4I1xw5KPcuxLOn2b",
       "title": "Ubuntu 双系统",
       "depth": 3,
@@ -9922,6 +11368,7 @@
     },
     {
       "nodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
+      "parentNodeToken": "OuCfwZrL6inkIYkXRaGcdamAnxd",
       "documentId": "LUnAdN2cKoHMyZxZ1cpcegVWn3g",
       "title": "算法组课程文档",
       "depth": 1,
@@ -10472,6 +11919,7 @@
     },
     {
       "nodeToken": "U1WfwhD7HiSVmHklEN2cHwhMndh",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "H0bJdsQ6LozrW6xfRvTcyBzXnTc",
       "title": "计算机基础知识",
       "depth": 2,
@@ -10511,6 +11959,7 @@
     },
     {
       "nodeToken": "A4crwtH5NiKOMMk2VDoczTJlnWf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "XiPDdDfvnonEwZxFF0McZYHunTc",
       "title": "C/C++/Python编程能力",
       "depth": 2,
@@ -10535,6 +11984,7 @@
     },
     {
       "nodeToken": "P7iwwzphliAZwWk80KFcSeXvnig",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "QgiwdanvuoepnHx10LTcG7ztnfg",
       "title": "C++面向对象编程",
       "depth": 2,
@@ -10872,6 +12322,7 @@
     },
     {
       "nodeToken": "Bq8uwAMoDi27wmkBOqVc9ttTnlb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "XU8Adtv0Eov3bExKRz5cKg4HnFb",
       "title": "Linux与shell基本能力",
       "depth": 2,
@@ -10918,6 +12369,7 @@
     },
     {
       "nodeToken": "Metew79UNi3fQ0kP5BJc0cT5n6b",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "F7PBd2TlEouigaxqumucBe4XnWc",
       "title": "机器人通识",
       "depth": 2,
@@ -11199,6 +12651,7 @@
     },
     {
       "nodeToken": "Bqpwwq5vjiVheUk2rZDc3SM0n6b",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "B0jydScx8oc002xkQijceL5Nnrd",
       "title": "opencv与图像处理基础",
       "depth": 2,
@@ -11960,6 +13413,7 @@
     },
     {
       "nodeToken": "SEUUwqbYji61eHk7bJocuBjRnjd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "K5DgdatktoBx8AxZyWEcApkgncD",
       "title": "cmake基础使用",
       "depth": 2,
@@ -13428,6 +14882,7 @@
     },
     {
       "nodeToken": "QXTFwfUvaifc7YkzbnYc8mT9nPd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "Y381dEm41oeptdx43fkcdig8nnh",
       "title": "从 Git 到 GitHub：代码的版本管理",
       "depth": 2,
@@ -14890,6 +16345,7 @@
     },
     {
       "nodeToken": "MRevwPgjaiBY87kj95Jc1AIinId",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "VVbgdBUrvoTd94xpKqwcU525ntd",
       "title": "C++多线程",
       "depth": 2,
@@ -15139,6 +16595,7 @@
     },
     {
       "nodeToken": "AVTLwhoD3i0t9NkHFZpcFWGenhb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "D9jYdItFco0fKFx8LDTcYoa7nIg",
       "title": "cam：USB/工业相机的参数修改与使",
       "depth": 2,
@@ -15306,6 +16763,7 @@
     },
     {
       "nodeToken": "UdScwZkNNiPBbbkAVnDcroy0nxb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "WWlDd3u69ofrcEx5qS6cAjtGn7b",
       "title": "armor：灯条检测",
       "depth": 2,
@@ -15807,6 +17265,7 @@
     },
     {
       "nodeToken": "PVaGwd8QwikWsZkFD4mcfOl4nsc",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "CoDJdIvaNoXjTzxoCqScyx5dnEb",
       "title": "armor：灯条匹配",
       "depth": 2,
@@ -16160,6 +17619,7 @@
     },
     {
       "nodeToken": "VM2rwgCMbiExQykE0oycdjnEndf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "FuRDdNLXxou99DxG9TAcRnDTnBf",
       "title": "armor：数字识别",
       "depth": 2,
@@ -16477,6 +17937,7 @@
     },
     {
       "nodeToken": "LVejwbOCyiXc1VkOAWica0IOnLd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "VATxdBhUFoR1t6xW58McY607nng",
       "title": "以yolo为例:训练神经网络完成识别任务",
       "depth": 2,
@@ -17394,6 +18855,7 @@
     },
     {
       "nodeToken": "Gu0xwOO6timzp9kCsF6cOOcRnMc",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "NeUcdo0ZVopR5rxmDyMcLenlnnd",
       "title": "rune：能量机关识别",
       "depth": 2,
@@ -17418,6 +18880,7 @@
     },
     {
       "nodeToken": "PWxIwNjK5iF0D8kAzymc3Ph8nCf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "MzzwdXqwWoqdEAxDRwlcWRtrnpc",
       "title": "旋转的表示:欧拉角/四元数",
       "depth": 2,
@@ -17768,6 +19231,7 @@
     },
     {
       "nodeToken": "E1P6wq7gKi2jQykxYBZc0XRknhg",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "GVImdqTGboF5twxeUghcb8HFnte",
       "title": "位姿变换:PNP解算敌方的三维信息",
       "depth": 2,
@@ -17900,6 +19364,7 @@
     },
     {
       "nodeToken": "MnT7wCHrCiZiwdkDiYNcKFEsnbx",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "Z6QmdA9knoNXrvxDkHRcmK8onwe",
       "title": "位姿求解方法对比",
       "depth": 2,
@@ -18101,6 +19566,7 @@
     },
     {
       "nodeToken": "RNBywnZ3fij3ukk7kDEc4hkJnCc",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "Vba0df2mqoavUYxfBqIcX9vRnFb",
       "title": "自瞄中的坐标系:TF树的构建",
       "depth": 2,
@@ -18206,6 +19672,7 @@
     },
     {
       "nodeToken": "YE4owshSJiVYAYktwxTcQRzCnHb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "TmcjdM3NgoOPIMxUKz4cLSgQn1e",
       "title": "tf2与URDF",
       "depth": 2,
@@ -18235,6 +19702,7 @@
     },
     {
       "nodeToken": "WFXkwG6DPiu0AEkJLBccCkKznih",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "WSlMdhdlYoQGDSxyV1wcaY1snUd",
       "title": "imu姿态解算",
       "depth": 2,
@@ -18875,6 +20343,7 @@
     },
     {
       "nodeToken": "HtSFw6YajiWSAQkNCUucfCERnKh",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "P7BNdX5UpoknL0x7mm9cNG7Kn7e",
       "title": "相机成像模型",
       "depth": 2,
@@ -18992,6 +20461,7 @@
     },
     {
       "nodeToken": "S7Y0wBRgGi8ELbkgz2kcHkHrnPd",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "RQGNdTDKdoUCi1xsthac1og6ntg",
       "title": "相机标定",
       "depth": 2,
@@ -19155,6 +20625,7 @@
     },
     {
       "nodeToken": "VlNWwsLnsiNPDlkgd1ucyHv4n5e",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "HpKOdzYSioqoPuxwAooc5nPfnzf",
       "title": "相机IMU联合标定",
       "depth": 2,
@@ -19522,6 +20993,7 @@
     },
     {
       "nodeToken": "JEUvwzOZti7UQTkoyQNcYzhVnaf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "QgXbdgq8sormNgxBdNYc8HalnvX",
       "title": "静止目标的弹道解算",
       "depth": 2,
@@ -19631,6 +21103,7 @@
     },
     {
       "nodeToken": "Qc50wpA9BiclC3kRlb7cDQXcnVf",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "XKw8dBrGBoo5PjxpjPocGmWRnvb",
       "title": "连续追踪与匹配",
       "depth": 2,
@@ -19826,6 +21299,7 @@
     },
     {
       "nodeToken": "UslHw6p1NiH4vRkF1r2c4xnnnCb",
+      "parentNodeToken": "TNdTw9WMSiNBFPkzHDycp3kpnMe",
       "documentId": "A2L2dWbpboJBpnxEvL3c1cxFnAb",
       "title": "运动预测：装甲板平动",
       "depth": 2,
@@ -20204,6 +21678,7 @@
     },
     {
       "nodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
+      "parentNodeToken": "",
       "documentId": "XfAKd6eqboBp25xU7tfcNNdrnse",
       "title": "机械组培训文档",
       "depth": 0,
@@ -20218,6 +21693,7 @@
     },
     {
       "nodeToken": "EWVTwcPUAibOvQkeVkfc004rnBh",
+      "parentNodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
       "documentId": "EHHXdVZszotvRLxHTBJcaP6lnug",
       "title": "培训流程参考",
       "depth": 1,
@@ -20776,6 +22252,7 @@
     },
     {
       "nodeToken": "BvKdw4p0RiDGCLkWsQicZE4TnOh",
+      "parentNodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
       "documentId": "AHzAdVESdoSEjgxnAvJc8g1an2t",
       "title": "机械组正式培训流程",
       "depth": 1,
@@ -20836,7 +22313,7 @@
           "id": "EqRldS9vxolcBDxgAUhcWJF7nIf",
           "type": "heading",
           "level": 1,
-          "text": "机械组须知@ou_8cd390e04ed53903b980ce62397beecc"
+          "text": "机械组须知"
         },
         {
           "id": "FgbkdrZMvo1VBAxqnMScAVKbnod",
@@ -20897,7 +22374,7 @@
           "id": "JyEHdTAkHovw0uxKcQGcOIR3n4d",
           "type": "heading",
           "level": 1,
-          "text": "常用标准件介绍&标准件库使用 @ou_9fc2854a4b3e00ae9ff545736f0df602"
+          "text": "常用标准件介绍&标准件库使用 "
         },
         {
           "id": "Ngp2d80GqoznG3xKqZCcvHFNn2c",
@@ -20993,7 +22470,7 @@
           "id": "NIyGdNLSpoIeEqxVwpuccKrXnWf",
           "type": "heading",
           "level": 1,
-          "text": "SW画图 @ou_cf07b4ecda88276f664f9efaa4af7627"
+          "text": "SW画图 "
         },
         {
           "id": "FKRFds4Jiop2i0xnHx1cfyFYnZn",
@@ -21054,13 +22531,13 @@
           "id": "YmuwdOzJOonCMexIGdKcY1V8nxc",
           "type": "heading",
           "level": 1,
-          "text": "SW装配体 @ou_8cd390e04ed53903b980ce62397beecc"
+          "text": "SW装配体 "
         },
         {
           "id": "Ogz7dm9QtoyqMExFjUncWOEmnOe",
           "type": "heading",
           "level": 1,
-          "text": "材料性质&加工工艺 @ou_38610ea47545903501ee20d000847c61"
+          "text": "材料性质&加工工艺 "
         },
         {
           "id": "D7Z6dRiRqozQ7kxPO2Pcf7Dzn8c",
@@ -21146,7 +22623,7 @@
           "id": "MBtYdd9ieovgLIx9WKdcGZdln9c",
           "type": "heading",
           "level": 1,
-          "text": "轴系设计@ou_8cd390e04ed53903b980ce62397beecc"
+          "text": "轴系设计"
         },
         {
           "id": "TTk7dgQEEoGzZ9xZdLMcKisDnEb",
@@ -21197,7 +22674,7 @@
           "id": "HadRdpvIPoQT3KxPedvct7ZKn4e",
           "type": "heading",
           "level": 1,
-          "text": "机械传动@ou_8cd390e04ed53903b980ce62397beecc"
+          "text": "机械传动"
         },
         {
           "id": "Mj4Hd5KPAoQdphx8OTUcTcktn0b",
@@ -21258,7 +22735,7 @@
           "id": "PlyydNqDIolleYxpkFlcUWDnnOc",
           "type": "heading",
           "level": 1,
-          "text": "步兵&英雄&哨兵结构特点 @ou_5ab705f4a9b6d3caa70c74bc49bb50ed "
+          "text": "步兵&英雄&哨兵结构特点  "
         },
         {
           "id": "OiEwdw3zIoOqfzxw5nMcf4CYnKd",
@@ -21447,6 +22924,7 @@
     },
     {
       "nodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
+      "parentNodeToken": "YTo0wGVSBiz3JakP0vJc07cinoc",
       "documentId": "PW4GdD3FAoVPKyxb63hc316yncb",
       "title": "机械课程文档",
       "depth": 1,
@@ -21461,6 +22939,7 @@
     },
     {
       "nodeToken": "R4ciwvNiLibr6bkGeoJciDpJnyg",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "MArkdgNcooEktOxGiCwcg40CnEe",
       "title": "机械组须知",
       "depth": 2,
@@ -21652,6 +23131,7 @@
     },
     {
       "nodeToken": "YAnTwtbwriKDw8keiqmcL0ronpc",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "TGyBdTDknoTOROxC4m8cqF6GnQc",
       "title": "常用标准件介绍",
       "depth": 2,
@@ -21666,6 +23146,7 @@
     },
     {
       "nodeToken": "TvMbwDJkNihs5lkSlhkcBhyMnmf",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "BlETduXzeodSfqxrWzhcTKdSnsf",
       "title": "SW画图",
       "depth": 2,
@@ -22574,6 +24055,7 @@
     },
     {
       "nodeToken": "UyZuwYuMRi1eMBku4Qqc6Il0nMg",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "YUgwd2NKCoHGSWxgy8gc7BjXnCg",
       "title": "SW装配体",
       "depth": 2,
@@ -23088,6 +24570,7 @@
     },
     {
       "nodeToken": "Ly5wwPxnOiBHHgkvTEfcoXrtnec",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "JjNpd1pQtoKP3KxGWq5cm2rLnFc",
       "title": "材料性质&加工工艺",
       "depth": 2,
@@ -24817,6 +26300,7 @@
     },
     {
       "nodeToken": "GTFCwhaRaiOcoOkTqHscuZwRnIx",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "LecSdx3XboQE4ZxlKzJc1tbVnPe",
       "title": "轴系设计",
       "depth": 2,
@@ -24825,6 +26309,7 @@
     },
     {
       "nodeToken": "GPHtwkgZ6i4rWqkoFYycT8mfnwc",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "W7rpdRTaUoD44KxcJu3cgsDAnPh",
       "title": "机械传动",
       "depth": 2,
@@ -24833,6 +26318,7 @@
     },
     {
       "nodeToken": "GaTjwKtc5iS7MFkIWSicINijnYb",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "Kq2KdKTD6okH3xxq99NczZ18npg",
       "title": "整车设计1",
       "depth": 2,
@@ -24841,6 +26327,7 @@
     },
     {
       "nodeToken": "OsdpwrVtTiI0lrkE5ltcgPchnBd",
+      "parentNodeToken": "Xyjtw9ubgiSPEbkfarzcE4fTn9b",
       "documentId": "XNrpdWJAeok1aqxIJ4Pc6VKwnx3",
       "title": "整车设计2",
       "depth": 2,
@@ -24849,6 +26336,7 @@
     },
     {
       "nodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
+      "parentNodeToken": "",
       "documentId": "FnJidwYH2oRHuSxLbJPcCGT4n2j",
       "title": "电控组培训文档",
       "depth": 0,
@@ -25223,6 +26711,7 @@
     },
     {
       "nodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
       "documentId": "D4SFdXdUtoIcAoxqjhlcv1IVnzf",
       "title": "配置",
       "depth": 1,
@@ -25307,6 +26796,7 @@
     },
     {
       "nodeToken": "CQBYwmiuOiN6MHk6gX8c6nTCnkf",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
       "documentId": "H3rndLWsDozHvrxnEabcG3D1nob",
       "title": "【工具链】VSCode+Freemater（本地CMake&GNU）",
       "depth": 2,
@@ -25829,6 +27319,7 @@
     },
     {
       "nodeToken": "Zcx7wurp5iWQGEkm35bcMeEPnYf",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
       "documentId": "AtWYdHRA7o4Pgsxi69QcA19Onyd",
       "title": "【控制板】基本配置",
       "depth": 2,
@@ -26203,6 +27694,7 @@
     },
     {
       "nodeToken": "Ui7YwavnYir5V9kIKZRcRxB4nif",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
       "documentId": "XcaNdmBm7ohoDoxBUKScrskPnpe",
       "title": "【控制板】DSP",
       "depth": 2,
@@ -26330,6 +27822,7 @@
     },
     {
       "nodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
+      "parentNodeToken": "L6kbweC9eiZKDbkajoXckCJSnZb",
       "documentId": "DAgxdPaYfoCHmixE8wlcFan2nFg",
       "title": "【工具链】归档",
       "depth": 2,
@@ -26354,6 +27847,7 @@
     },
     {
       "nodeToken": "K84ew0iMjiLF5gkXxyGcKtYPnrS",
+      "parentNodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
       "documentId": "YQ1EdLDunocXXNx6sizct14tnLb",
       "title": "【工具链】Keil+FreeMaster",
       "depth": 3,
@@ -26508,6 +28002,7 @@
     },
     {
       "nodeToken": "UCu0wPyNwiBzgCkq5C1cQU7wnMc",
+      "parentNodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
       "documentId": "FjAydAt7hoP69pxblwHc8WHbnfd",
       "title": "【工具链】CLion+Ozone",
       "depth": 3,
@@ -27081,6 +28576,7 @@
     },
     {
       "nodeToken": "FU0gwtlkBi2Tg1kOqwNcnbUTnth",
+      "parentNodeToken": "FhazwImE1iCQQ2k0eJgcFFkGn2I",
       "documentId": "Or4Qd4ckgowclwxb1XLcerNGnug",
       "title": "【工具链】VSCode+FreeMaster",
       "depth": 3,
@@ -27312,6 +28808,7 @@
     },
     {
       "nodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
       "documentId": "CTBMdqzpZoQKYyx8153cnivsnMb",
       "title": "嵌入式",
       "depth": 1,
@@ -27353,6 +28850,7 @@
     },
     {
       "nodeToken": "OhGrwCQkbicRzHk7DGbcXKdonVg",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "MbR9dtggqoDMQOxLW21cmvCWnLd",
       "title": "【基础】通识",
       "depth": 2,
@@ -27582,6 +29080,7 @@
     },
     {
       "nodeToken": "GRQbwQ6pGiCEoDkJuKQcFpMUn0e",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "OmevdbCdFosrktx3CS8cPTbun2e",
       "title": "【基础】嵌入式系统",
       "depth": 2,
@@ -28432,6 +29931,7 @@
     },
     {
       "nodeToken": "WNRcw3Meui8kfak76gBcfBHMnKe",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "UEMgdjyUgoDMNHx6K0Cc5ZQtnzc",
       "title": "【基础】GPIO",
       "depth": 2,
@@ -29364,6 +30864,7 @@
     },
     {
       "nodeToken": "WdD7wLpkdi5hLQkZE5fcsl0mnbf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "BipzdytVtoyoQTxBxGTc0G1Xnkf",
       "title": "【基础】中断EXTI",
       "depth": 2,
@@ -29958,6 +31459,7 @@
     },
     {
       "nodeToken": "C6yrwb45KiHTa9kEepscPrecnHd",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "Ld70dCyBLozY4QxrAtpcJ1DGn5f",
       "title": "【通信】前置知识",
       "depth": 2,
@@ -30733,6 +32235,7 @@
     },
     {
       "nodeToken": "Tf1VwJThXi5PI4k0aqTcVa8lnEf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "PhHvdozn5oT0orxVPWocHO78ndd",
       "title": "【通信】UART",
       "depth": 2,
@@ -31352,6 +32855,7 @@
     },
     {
       "nodeToken": "OXkmwDmB4ikuaxkXpmscONxpnuh",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "AMkrdAXxzoU9HsxKaqac0RGhnte",
       "title": "【通信】DMA",
       "depth": 2,
@@ -31382,6 +32886,7 @@
     },
     {
       "nodeToken": "QnvvwIVHjiND7ZkULelctFmHn9b",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "Y0jldaFitoKiLJxly7Oc3TV9n3f",
       "title": "【通信】PWM",
       "depth": 2,
@@ -31696,6 +33201,7 @@
     },
     {
       "nodeToken": "V7gmw5A2xiWT00k03D9cQ93hnHh",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "NMncde4nqowpTGx2FdAcKcATnmh",
       "title": "【通信】I2C/SPI",
       "depth": 2,
@@ -31710,6 +33216,7 @@
     },
     {
       "nodeToken": "J3eQwZeE2iK3HOkYEFAcOeZFnQc",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "LdN3dXVIfos9hYxd00mcZA74nCd",
       "title": "【通信】CAN",
       "depth": 2,
@@ -32735,6 +34242,7 @@
     },
     {
       "nodeToken": "IVKuwMg5biiphRkLuGjcMaJAnNe",
+      "parentNodeToken": "J3eQwZeE2iK3HOkYEFAcOeZFnQc",
       "documentId": "ZxoldGmnxodqdjxXsShcpyc9n7e",
       "title": "CAN任务",
       "depth": 3,
@@ -32795,6 +34303,7 @@
     },
     {
       "nodeToken": "Xid0wzJq4imhijkR1BYc3y4enMg",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "Pc3RdudJqoYM1NxKW3VceG97nCh",
       "title": "【通信】FDCAN",
       "depth": 2,
@@ -33218,6 +34727,7 @@
     },
     {
       "nodeToken": "GcfiwgsEyikDLRkvPsMcuysmnih",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "NTKudEsNQophNnx5fywcVnFXnib",
       "title": "【通信】USB",
       "depth": 2,
@@ -33288,6 +34798,7 @@
     },
     {
       "nodeToken": "Qc8PwPjasiz87QkO2cIc0oqJnog",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "Bwd2dHBeMoQ9P4xQTppc9Yu8nVf",
       "title": "【通信】EtherCAT",
       "depth": 2,
@@ -33845,6 +35356,7 @@
     },
     {
       "nodeToken": "Gqd4wJeSji6ua8kLVoacOR2cnOb",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "Tg4LdOjwHojRzVxOqopcEECynkd",
       "title": "【系统】时钟",
       "depth": 2,
@@ -34175,6 +35687,7 @@
     },
     {
       "nodeToken": "CFW3wWwOjiA21pksmgIcERi2nkf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "DLs4dHCPQo8Jq5x7Iosci5Lfnie",
       "title": "【系统】ADC",
       "depth": 2,
@@ -34189,6 +35702,7 @@
     },
     {
       "nodeToken": "Wy4cwTXkTicgbsknOyWcVC6EnMd",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "RPgsd1pZeoZsqYxEe4LcS3dLnDh",
       "title": "【架构】C++类与代码架构",
       "depth": 2,
@@ -35271,6 +36785,7 @@
     },
     {
       "nodeToken": "KuCfwz6EYioIEVkPSB6cx2MCnoc",
+      "parentNodeToken": "Wy4cwTXkTicgbsknOyWcVC6EnMd",
       "documentId": "KeK9d40waoK8SVxjLuJceY1mnNb",
       "title": "HW: 编写一个c++类",
       "depth": 3,
@@ -35747,6 +37262,7 @@
     },
     {
       "nodeToken": "NCm8wtkcNi2yRQkK3zycK0hInvd",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "T2qSd3g1MoavMdxglvTctS42nne",
       "title": "【架构】裸机开发",
       "depth": 2,
@@ -35781,6 +37297,7 @@
     },
     {
       "nodeToken": "NrZmws671iXmEgkDNUrc9gLXnOf",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "TLzOdxgeqoQC63x8e80cQLdEnjc",
       "title": "【架构】整体控制逻辑",
       "depth": 2,
@@ -36751,6 +38268,7 @@
     },
     {
       "nodeToken": "CRRWwfoDJi5pJSkajrzcxPfhn4g",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "OyqydkPnBorWGmx1NXycp7UHnzg",
       "title": "【架构】ThreadX",
       "depth": 2,
@@ -37857,6 +39375,7 @@
     },
     {
       "nodeToken": "JXHGwJ1MOiwVWikTUeGcHXIjnlb",
+      "parentNodeToken": "CRRWwfoDJi5pJSkajrzcxPfhn4g",
       "documentId": "VbZoddnaJoZSxRxxPWYcyaoin9c",
       "title": "任务：ThreadX简单任务",
       "depth": 3,
@@ -38058,6 +39577,7 @@
     },
     {
       "nodeToken": "LB9LwJ0BJimJt0kZFTucczG2nUe",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "I42jd37AyoXFtexh9HCcJmC0nhe",
       "title": "【控制板】STM32H723",
       "depth": 2,
@@ -38598,6 +40118,7 @@
     },
     {
       "nodeToken": "KhALwMDAbirpWzkL1qYc6mvLndB",
+      "parentNodeToken": "LB9LwJ0BJimJt0kZFTucczG2nUe",
       "documentId": "NXy1dRSZqoJAgixd2rkcGXU5nOe",
       "title": "自制H723主控资料",
       "depth": 3,
@@ -38662,6 +40183,7 @@
     },
     {
       "nodeToken": "S8IQw6YwhifR5zk2ix7cHOf2n6d",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "BZ4sdMv0PoiR96xvGqbcsSe0nWe",
       "title": "【通信协议】BMI088",
       "depth": 2,
@@ -38719,6 +40241,7 @@
     },
     {
       "nodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
+      "parentNodeToken": "RUkrwMC5UiTIeIkzQNKcJqDnnEh",
       "documentId": "QbrCdT5vYoO4jbxeaW0csssrnTb",
       "title": "【嵌入式】HPM芯片开发经验与教程",
       "depth": 2,
@@ -38733,6 +40256,7 @@
     },
     {
       "nodeToken": "Myv8w0o67ivlPUkaXKacs3tOnYe",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "XOJmdT2DEozY0Rxgr2vcHfnAnad",
       "title": "HPMicro 简介与选型",
       "depth": 3,
@@ -38860,6 +40384,7 @@
     },
     {
       "nodeToken": "JsONwrQv6i0KxpkeHAKcHBjWnef",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "ZjxDdWhFgos4U2xtc10cnNIcnpc",
       "title": "配置HPM开发环境",
       "depth": 3,
@@ -39340,6 +40865,7 @@
     },
     {
       "nodeToken": "WKKaweoauiycSCk4tPUcTN10nUb",
+      "parentNodeToken": "JsONwrQv6i0KxpkeHAKcHBjWnef",
       "documentId": "O2wOdENG4oZ0rDxHkobcCbACncb",
       "title": "自研HPM5361开发板资料",
       "depth": 4,
@@ -39376,6 +40902,7 @@
     },
     {
       "nodeToken": "UOhzwXFZPi7oUWkEtrkcImprnJg",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "YjjpdFZQMo56EZxEGmucboOYng8",
       "title": "开发工具与调试手段",
       "depth": 3,
@@ -39390,6 +40917,7 @@
     },
     {
       "nodeToken": "WupPwc562iqJCukLssocahzcnoP",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "MF8PdWH19oiPN4xhlF0c0QQWn3b",
       "title": "中断",
       "depth": 3,
@@ -39485,6 +41013,7 @@
     },
     {
       "nodeToken": "OczCws5CViXfxmk9E0acjbaCn6e",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "D6PjdrhfaoJmMRxkommctzoqnLd",
       "title": "CAN",
       "depth": 3,
@@ -39745,6 +41274,7 @@
     },
     {
       "nodeToken": "WMORwj2fmiysHykkDDecIykSnnb",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "OAsyd8K7VoDhGIxaSnlcn5ABnjq",
       "title": "串口（UART）与DMA的使用",
       "depth": 3,
@@ -39852,6 +41382,7 @@
     },
     {
       "nodeToken": "LVXYwZnkii5j6ekwPJac8Hhen8c",
+      "parentNodeToken": "Q31owWuR9iYr1TkTHXuc4Gp2n5c",
       "documentId": "BYugdbznEosMt5xwBhYcyzyznvb",
       "title": "时钟系统与系统时基",
       "depth": 3,
@@ -39912,6 +41443,7 @@
     },
     {
       "nodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
       "documentId": "Ri2udKHuXo3sqNxGbgkcdccInJd",
       "title": "控制",
       "depth": 1,
@@ -39926,6 +41458,7 @@
     },
     {
       "nodeToken": "EZm4wwivJieDPwkht8RcstpznWw",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "UkZWdU2ldoJiO1xW4zlcqYOtncg",
       "title": "【控制器】PID控制",
       "depth": 2,
@@ -40143,6 +41676,7 @@
     },
     {
       "nodeToken": "AvoswHkWgi2VXDkOze3cT77Znrf",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "QiKmdh6YwoltDQxXyvScJpcjnAd",
       "title": "【控制器】滤波",
       "depth": 2,
@@ -40151,6 +41685,7 @@
     },
     {
       "nodeToken": "NnbIwo31XikS09kgm9RcVzqSntc",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "Xsekd2BN5o536XxfliYcmL8Xn4d",
       "title": "【控制器】LQR控制",
       "depth": 2,
@@ -40165,6 +41700,7 @@
     },
     {
       "nodeToken": "VV9Gwer10i3g3RkWBsJcKwHAnah",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "NezZdlg5rolrSkxlvFQcfhFTnvC",
       "title": "【电机】电机学模型",
       "depth": 2,
@@ -40593,6 +42129,7 @@
     },
     {
       "nodeToken": "PuuWwgWgwitCdjk9h4zc35ynnte",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "TqKTdo9eEoirXdxkuMBcCgKznac",
       "title": "【电机】控制电机",
       "depth": 2,
@@ -40617,6 +42154,7 @@
     },
     {
       "nodeToken": "Xf03w5FG6i4cGVkRldzcbKpxntg",
+      "parentNodeToken": "PuuWwgWgwitCdjk9h4zc35ynnte",
       "documentId": "I1W2dNzkxoQbDWxKEHKcfcdKnUc",
       "title": "任务：电机控制",
       "depth": 3,
@@ -40729,6 +42267,7 @@
     },
     {
       "nodeToken": "PLpfwgjfDi41Ztk2u6ycAwRVnwd",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "RVYVdYV7soefYuxI592cXjITnWg",
       "title": "【解算】底盘解算",
       "depth": 2,
@@ -40862,6 +42401,7 @@
     },
     {
       "nodeToken": "BplHw7TfXiL3aCkXw8CcMcy3nbe",
+      "parentNodeToken": "PLpfwgjfDi41Ztk2u6ycAwRVnwd",
       "documentId": "SrZrdAvS8oYldsxL27TceeqznUc",
       "title": "任务：底盘解算",
       "depth": 3,
@@ -40914,6 +42454,7 @@
     },
     {
       "nodeToken": "RKmQwyB0ZiEwrCkCSYPc3R2JnFb",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "CO2XdYKHso8qFQxijbYcn4H7n8c",
       "title": "【解算】姿态解算",
       "depth": 2,
@@ -41824,6 +43365,7 @@
     },
     {
       "nodeToken": "WcLXwFHadiOPrWk3c4ZcStNOnVf",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "MQEqden6poCjw4xnIQgck4ynnAd",
       "title": "【仿真】Matlab仿真",
       "depth": 2,
@@ -41838,6 +43380,7 @@
     },
     {
       "nodeToken": "FyJZw9kNlisfhKkKRcycwbLSnQb",
+      "parentNodeToken": "NASXwyDHTiBrd0kmR3rcpSEtnZf",
       "documentId": "VwBQdPJ89oGMf3xaKPVcIHiRnHc",
       "title": "【控制器】机械臂控制",
       "depth": 2,
@@ -41852,6 +43395,7 @@
     },
     {
       "nodeToken": "SUyDwqkUciUkPIkfkxccYqmgn6c",
+      "parentNodeToken": "FyJZw9kNlisfhKkKRcycwbLSnQb",
       "documentId": "LsqndtRx0oD37zxZG4EcwI3fnQc",
       "title": "机械臂重力向量计算",
       "depth": 3,
@@ -43713,6 +45257,7 @@
     },
     {
       "nodeToken": "WahuwDddqi3mJakJx5tcjLGRnRf",
+      "parentNodeToken": "FyJZw9kNlisfhKkKRcycwbLSnQb",
       "documentId": "DMfBdAbBko1BtoxEkIZcb1binuf",
       "title": "机械臂重力参数标定",
       "depth": 3,
@@ -44609,6 +46154,7 @@
     },
     {
       "nodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
       "documentId": "O5WadDGYRoTGc7xa4Omcrdf6nob",
       "title": "开发",
       "depth": 1,
@@ -44623,6 +46169,7 @@
     },
     {
       "nodeToken": "YxdMwAPfviL95gkxBtDcdCf0nqc",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
       "documentId": "ZbGAddDJRo508kxoFX4ce4lcnCa",
       "title": "【开发】工作流",
       "depth": 2,
@@ -44789,6 +46336,7 @@
     },
     {
       "nodeToken": "OKdvwMA3HifoKnkDlY0cDbi7nsF",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
       "documentId": "PxjDdA3HGoKqe4xQBglcS4M7nSg",
       "title": "【开发】裁判系统相关",
       "depth": 2,
@@ -45137,6 +46685,7 @@
     },
     {
       "nodeToken": "ZGqpw265Eik2XnkdMU3cpVsInsb",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
       "documentId": "RRI7dOghkoTCiqxJkV9ci6pSned",
       "title": "【开发】小经验",
       "depth": 2,
@@ -45547,6 +47096,7 @@
     },
     {
       "nodeToken": "DQbkwoRDbis4Pgkzqdgc4gDVnWb",
+      "parentNodeToken": "YCpQw8iluiL0xvkp5nicZE5wnnc",
       "documentId": "UN1sde5qGohB66xPkBdcwaXBnYb",
       "title": "【开发与维护】ECAT2CAN模块开发",
       "depth": 2,
@@ -45636,6 +47186,7 @@
     },
     {
       "nodeToken": "QJ7zw6UNsiUEeakK3cWcmq9pnce",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
       "documentId": "BubtdicCloYHkuxiDlNcfvM4n4d",
       "title": "测试",
       "depth": 1,
@@ -45650,6 +47201,7 @@
     },
     {
       "nodeToken": "UZdHwXCOLi709wkrPA5cFL5ynUf",
+      "parentNodeToken": "QJ7zw6UNsiUEeakK3cWcmq9pnce",
       "documentId": "Epw7dcExAojdPzxa1XocKlzAnue",
       "title": "红外散布靶使用说明",
       "depth": 2,
@@ -45760,6 +47312,7 @@
     },
     {
       "nodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
+      "parentNodeToken": "OmZIwPfZBiILOdkY5sWc8zsMnYe",
       "documentId": "MsXZdPzpkoBEdwxKueLcUhZ0nHb",
       "title": "上位机控制框架",
       "depth": 1,
@@ -45855,7 +47408,7 @@
         {
           "id": "doxcnbRuPKHJAuetGiPy4yrdaEe",
           "type": "paragraph",
-          "text": "@ou_bf9ace36d5105612a36d873d2875aefc"
+          "text": ""
         },
         {
           "id": "doxcnmmpy5rdwgVMTw6DqjPbJRh",
@@ -45866,6 +47419,7 @@
     },
     {
       "nodeToken": "P3xfwLC1FiUsxnkfLEZc3VQcnAc",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "PQSidwsnNozdIMxqCmWcLpRln4b",
       "title": "ecat2can/usb2can",
       "depth": 2,
@@ -46309,6 +47863,7 @@
     },
     {
       "nodeToken": "SA7JwdCZYihx0XkQDixc6bEHnAd",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "XaIJdC7whoZTEIxObxXcTjqwnYf",
       "title": "Linux 串口通讯",
       "depth": 2,
@@ -47276,6 +48831,7 @@
     },
     {
       "nodeToken": "WiXrw8Cgzi9CtSkSK4UcD5RDnog",
+      "parentNodeToken": "SA7JwdCZYihx0XkQDixc6bEHnAd",
       "documentId": "XG67dDn73o2FyZxW8BjcAkPend6",
       "title": "Linux udev 串口固定命名",
       "depth": 3,
@@ -48132,6 +49688,7 @@
     },
     {
       "nodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "WNytdhikho5Df5xqXW6cGZC7noc",
       "title": "ROS2 control 系列文档",
       "depth": 2,
@@ -48281,12 +49838,13 @@
         {
           "id": "doxcnfuRD5NkT9chH7GpPTZB5Qf",
           "type": "paragraph",
-          "text": "@ou_d317dc1e1e7159d848688d35ab4f48a6有时间按照这个文档写一下"
+          "text": "有时间按照这个文档写一下"
         }
       ]
     },
     {
       "nodeToken": "Am5Zwph55iOzWQkvgU2cx8vZnAb",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
       "documentId": "Il0fdEv2HoJULAxzKmecV68YnkD",
       "title": "ROS2 控制系统概述",
       "depth": 3,
@@ -49235,6 +50793,7 @@
     },
     {
       "nodeToken": "ODilw7hXdiMO0Gktbz2cy1MvnIc",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
       "documentId": "LuOndpiHio5D3RxPVVWcmvklnCe",
       "title": "ROS2 Controller Manager",
       "depth": 3,
@@ -49905,6 +51464,7 @@
     },
     {
       "nodeToken": "KjuywWQmKi04AFk70Vec7zI5nnh",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
       "documentId": "IyLadq3OsoYZB4x9C1McsDN9nRc",
       "title": "ROS2 controller",
       "depth": 3,
@@ -52324,6 +53884,7 @@
     },
     {
       "nodeToken": "AfHUwZ0HBiC35HkKc9Ecyi3Mn0d",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
       "documentId": "J7pldpHnDopcKPxQrKKc8rPTnIb",
       "title": "ROS2 hardware_interface",
       "depth": 3,
@@ -55556,6 +57117,7 @@
     },
     {
       "nodeToken": "V9TjwUH35irjslka303cOsgpnie",
+      "parentNodeToken": "XPmTwM8cgiYHrck4ObxcGuZNnse",
       "documentId": "HO0jd86Zxo0VQ0xS0vkct3IVnPc",
       "title": "获取机器人的 urdf 文件",
       "depth": 3,
@@ -55686,6 +57248,7 @@
     },
     {
       "nodeToken": "U1cPwscmxiM4mQkfz26c1Q3NnIb",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "LHiCdlafyot1RXxHPhfcfEocn9d",
       "title": "RM26整车控制数据流",
       "depth": 2,
@@ -56296,6 +57859,7 @@
     },
     {
       "nodeToken": "ZYcmwUbzmif23MkaEyoczvBmn5f",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "XhVQd84s4oFqITx9QwlcASRJnxf",
       "title": "机械臂控制理论",
       "depth": 2,
@@ -57985,6 +59549,7 @@
     },
     {
       "nodeToken": "Ehr2wAZHuibNfWkFzXaczYIin1d",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "CCjad3FY0osFnrxsLbic6bD3nGe",
       "title": "麦轮功率控制",
       "depth": 2,
@@ -59195,6 +60760,7 @@
     },
     {
       "nodeToken": "Kjo6wp9LyiRK0FkjZpvcfk6XnWd",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "KetbdTrvdohdmwxMUxjcoiaLnIc",
       "title": "夹爪控制",
       "depth": 2,
@@ -59272,6 +60838,7 @@
     },
     {
       "nodeToken": "NjCIwMVHTi7gmAkulTocu7AlnKh",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "NdJidLQfAobA1OxFzljctyALnud",
       "title": "半自动存取矿程序",
       "depth": 2,
@@ -59342,6 +60909,7 @@
     },
     {
       "nodeToken": "VYFXw4NIGizW3yk9g2OcOeKBn2c",
+      "parentNodeToken": "GG4bwnFuniAaB7kTEdecSw1Znfb",
       "documentId": "MbludyjoBoNRoGxxJv7c4R4vnjh",
       "title": "其他",
       "depth": 2,

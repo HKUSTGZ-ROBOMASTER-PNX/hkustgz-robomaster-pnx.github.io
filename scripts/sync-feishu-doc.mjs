@@ -99,7 +99,7 @@ function getContent(block) {
   return elements.map((element) => {
     if (element.text_run?.content) return element.text_run.content;
     if (element.mention_doc?.title) return element.mention_doc.title;
-    if (element.mention_user?.user_id) return `@${element.mention_user.user_id}`;
+    if (element.mention_user?.user_id) return "";
     return "";
   }).join("");
 }
@@ -161,6 +161,7 @@ const tokenResponse = await requestJson("https://open.feishu.cn/open-apis/auth/v
 const accessToken = tokenResponse.tenant_access_token;
 const wiki = parseWikiUrl(wikiUrl);
 let targets;
+let wikiNodes = [];
 if (configuredDocumentId && !configuredDocumentId.includes("需要填写")) {
   targets = [{ obj_token: configuredDocumentId, node_token: "", title: "PNX 培训中心", depth: 0 }];
 } else if (!wiki.isSpace) {
@@ -170,8 +171,8 @@ if (configuredDocumentId && !configuredDocumentId.includes("需要填写")) {
   }
   targets = [{ ...node, depth: 0 }];
 } else {
-  const nodes = await listWikiNodes(wiki.token, accessToken);
-  targets = nodes.filter((node) => node.obj_type === "docx");
+  wikiNodes = await listWikiNodes(wiki.token, accessToken);
+  targets = wikiNodes.filter((node) => node.obj_type === "docx");
 }
 
 if (!targets.length) throw new Error("知识库中没有找到可读取的新版文档。");
@@ -183,6 +184,7 @@ for (const target of targets) {
   const document = await fetchDocument(target.obj_token, accessToken);
   documents.push({
     nodeToken: target.node_token,
+    parentNodeToken: target.parent_node_token ?? "",
     documentId: target.obj_token,
     title: document.title,
     depth: target.depth ?? 0,
@@ -191,7 +193,16 @@ for (const target of targets) {
   });
 }
 
-const output = { sourceUrl: wikiUrl, spaceId: wiki.isSpace ? wiki.token : "", syncedAt, documents };
+const nodes = wikiNodes.map((node) => ({
+  nodeToken: node.node_token,
+  parentNodeToken: node.parent_node_token ?? "",
+  title: node.title ?? "未命名节点",
+  depth: node.depth ?? 0,
+  objType: node.obj_type,
+  documentId: node.obj_type === "docx" ? node.obj_token : "",
+  hasChild: Boolean(node.has_child)
+}));
+const output = { sourceUrl: wikiUrl, spaceId: wiki.isSpace ? wiki.token : "", syncedAt, nodes, documents };
 
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");

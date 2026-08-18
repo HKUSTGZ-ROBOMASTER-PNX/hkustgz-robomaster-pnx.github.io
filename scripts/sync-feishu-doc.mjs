@@ -21,6 +21,8 @@ const appSecret = process.env.FEISHU_APP_SECRET;
 const configuredDocumentId = process.env.FEISHU_DOCUMENT_ID;
 const wikiUrl = process.env.FEISHU_WIKI_URL || "https://zanpw3z2hb6.feishu.cn/wiki/space/7666438057763015890?ccm_open_type=lark_wiki_spaceLink&open_tab_from=wiki_home";
 const outputPath = resolve("src/data/feishu-training.json");
+const assetsDir = resolve("public/feishu-images");
+const downloadedImages = new Map();
 
 if (!appId || !appSecret) {
   console.error("缺少 FEISHU_APP_ID 或 FEISHU_APP_SECRET。请先参考 .env.example 配置环境变量。");
@@ -104,7 +106,20 @@ function getContent(block) {
   }).join("");
 }
 
-function convertBlock(block) {
+async function downloadImage(token, accessToken) {
+  if (downloadedImages.has(token)) return downloadedImages.get(token);
+  const response = await fetch(`https://open.feishu.cn/open-apis/drive/v1/medias/${token}/download`, authOptions(accessToken));
+  if (!response.ok) throw new Error(`${response.status} 图片下载失败：${token}`);
+  const contentType = response.headers.get("content-type") ?? "image/png";
+  const extension = contentType.includes("jpeg") || contentType.includes("jpg") ? "jpg" : contentType.includes("webp") ? "webp" : "png";
+  const fileName = `${token}.${extension}`;
+  await writeFile(resolve(assetsDir, fileName), Buffer.from(await response.arrayBuffer()));
+  const publicPath = `/feishu-images/${fileName}`;
+  downloadedImages.set(token, publicPath);
+  return publicPath;
+}
+
+async function convertBlock(block, accessToken) {
   const type = block.block_type;
   const names = {
     2: "paragraph",
@@ -121,10 +136,27 @@ function convertBlock(block) {
     13: "ordered",
     14: "code",
     15: "quote",
+    27: "image",
     22: "divider"
   };
   const convertedType = names[type];
   if (!convertedType) return null;
+  if (convertedType === "image") {
+    const image = block.image ?? {};
+    try {
+      return {
+        id: block.block_id,
+        type: "image",
+        src: await downloadImage(image.token, accessToken),
+        width: image.width,
+        height: image.height,
+        alt: image.caption?.content ?? "飞书文档图片"
+      };
+    } catch (error) {
+      console.warn(error instanceof Error ? error.message : `图片下载失败：${image.token}`);
+      return null;
+    }
+  }
   return {
     id: block.block_id,
     type: convertedType,
@@ -148,7 +180,7 @@ async function fetchDocument(documentId, accessToken) {
   const document = await requestJson(`https://open.feishu.cn/open-apis/docx/v1/documents/${documentId}`, authOptions(accessToken));
   return {
     title: document.data?.document?.title ?? "未命名文档",
-    blocks: blocks.map(convertBlock).filter(Boolean)
+    blocks: (await Promise.all(blocks.map((block) => convertBlock(block, accessToken)))).filter(Boolean)
   };
 }
 
@@ -159,6 +191,7 @@ const tokenResponse = await requestJson("https://open.feishu.cn/open-apis/auth/v
 });
 
 const accessToken = tokenResponse.tenant_access_token;
+await mkdir(assetsDir, { recursive: true });
 const wiki = parseWikiUrl(wikiUrl);
 let targets;
 let wikiNodes = [];

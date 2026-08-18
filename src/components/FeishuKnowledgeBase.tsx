@@ -6,9 +6,13 @@ import trainingDocument from "@/data/feishu-training.json";
 
 type TrainingBlock = {
   id: string;
-  type: "paragraph" | "heading" | "bullet" | "ordered" | "quote" | "code" | "divider";
+  type: "paragraph" | "heading" | "bullet" | "ordered" | "quote" | "code" | "divider" | "image";
   level?: number;
   text?: string;
+  src?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
 };
 
 type KnowledgeDocument = {
@@ -33,7 +37,7 @@ const documents = (trainingDocument.documents ?? []) as KnowledgeDocument[];
 const nodes = (trainingDocument.nodes ?? []) as KnowledgeNode[];
 
 function visibleBlocks(document: KnowledgeDocument) {
-  return document.blocks.filter((block) => block.type === "divider" || Boolean(block.text?.trim()));
+  return document.blocks.filter((block) => block.type === "divider" || block.type === "image" || Boolean(block.text?.trim()));
 }
 
 function DocumentBody({ document }: { document: KnowledgeDocument }) {
@@ -56,6 +60,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
     }
     const text = block.text?.trim() ?? "";
     if (block.type === "divider") content.push(<hr key={block.id} className="my-8 border-white/10" />);
+    else if (block.type === "image" && block.src) content.push(<figure key={block.id} className="my-8"><img src={block.src} alt={block.alt ?? "飞书文档图片"} width={block.width} height={block.height} loading="lazy" className="h-auto max-h-[720px] w-auto max-w-full rounded border border-white/10 object-contain" />{block.alt && block.alt !== "飞书文档图片" && <figcaption className="mt-2 text-sm text-white/45">{block.alt}</figcaption>}</figure>);
     else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{text}</h2>);
     else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{text}</h3>);
     else if (block.type === "quote") content.push(<blockquote key={block.id} className="border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-5 py-3 leading-7 text-white/72">{text}</blockquote>);

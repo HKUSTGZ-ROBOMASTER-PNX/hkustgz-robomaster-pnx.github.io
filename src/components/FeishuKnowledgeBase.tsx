@@ -10,9 +10,17 @@ type TextLink = {
   url: string;
 };
 
+type TableCell = {
+  id: string;
+  text: string;
+  links?: TextLink[];
+  rowSpan?: number;
+  colSpan?: number;
+};
+
 type TrainingBlock = {
   id: string;
-  type: "paragraph" | "heading" | "bullet" | "ordered" | "quote" | "code" | "divider" | "image";
+  type: "paragraph" | "heading" | "bullet" | "ordered" | "quote" | "code" | "divider" | "image" | "table";
   level?: number;
   text?: string;
   src?: string;
@@ -21,6 +29,8 @@ type TrainingBlock = {
   alt?: string;
   kind?: "board";
   links?: TextLink[];
+  columns?: number;
+  rows?: TableCell[][];
 };
 
 type KnowledgeDocument = {
@@ -118,7 +128,7 @@ function renderInlineText(text: string, links: TextLink[] | undefined, keyPrefix
 }
 
 function visibleBlocks(document: KnowledgeDocument) {
-  return document.blocks.filter((block) => block.type === "divider" || block.type === "image" || Boolean(block.text?.trim()));
+  return document.blocks.filter((block) => block.type === "divider" || block.type === "image" || block.type === "table" || Boolean(block.text?.trim()));
 }
 
 function DocumentBody({ document }: { document: KnowledgeDocument }) {
@@ -155,6 +165,28 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
       }
       const List = listType === "bullet" ? "ul" : "ol";
       content.push(<List key={`list-${index}`} className={listType === "bullet" ? "list-disc space-y-2 pl-6" : "list-decimal space-y-2 pl-6"}>{items}</List>);
+      continue;
+    }
+    if (block.type === "table") {
+      const rows = block.rows ?? [];
+      content.push(
+        <div key={block.id} className="my-8 overflow-x-auto rounded border border-white/10">
+          <table className="min-w-[640px] w-full border-collapse text-left text-sm">
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <tr key={`${block.id}-row-${rowIndex}`}>
+                  {row.map((cell) => (
+                    <td key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan} className="whitespace-pre-wrap border border-white/10 px-3 py-2 align-top leading-6 text-white/72">
+                      {renderInlineText(cell.text, cell.links, `${block.id}-${cell.id}`, documents)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      index += 1;
       continue;
     }
     if (block.type === "image" && block.src) {

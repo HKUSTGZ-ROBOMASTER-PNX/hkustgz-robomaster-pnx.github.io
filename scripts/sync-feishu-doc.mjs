@@ -211,7 +211,7 @@ async function downloadBoardImage(token, accessToken) {
   return result;
 }
 
-async function convertBlock(block, accessToken) {
+async function convertBlock(block, accessToken, blockMap) {
   const type = block.block_type;
   const names = {
     2: "paragraph",
@@ -229,11 +229,20 @@ async function convertBlock(block, accessToken) {
     14: "code",
     15: "quote",
     27: "image",
+    31: "table",
     43: "board",
     22: "divider"
   };
   const convertedType = names[type];
   if (!convertedType) return null;
+  if (convertedType === "table") {
+    return {
+      id: block.block_id,
+      type: "table",
+      columns: block.table?.property?.column_size ?? 1,
+      rows: getTableRows(block, blockMap)
+    };
+  }
   if (convertedType === "image") {
     const image = block.image ?? {};
     try {
@@ -299,9 +308,14 @@ async function fetchDocument(documentId, accessToken) {
   } while (pageToken);
 
   const document = await requestJson(`https://open.feishu.cn/open-apis/docx/v1/documents/${documentId}`, authOptions(accessToken));
+  const blockMap = new Map(blocks.map((block) => [block.block_id, block]));
+  const nestedBlockIds = new Set();
+  for (const table of blocks.filter((block) => block.block_type === 31)) {
+    for (const child of getDescendants(table, blockMap)) nestedBlockIds.add(child.block_id);
+  }
   return {
     title: document.data?.document?.title ?? "未命名文档",
-    blocks: (await Promise.all(blocks.map((block) => convertBlock(block, accessToken)))).filter(Boolean)
+    blocks: (await Promise.all(blocks.filter((block) => !nestedBlockIds.has(block.block_id)).map((block) => convertBlock(block, accessToken, blockMap)))).filter(Boolean)
   };
 }
 
@@ -361,3 +375,76 @@ const output = { sourceUrl: wikiUrl, spaceId: wiki.isSpace ? wiki.token : "", sy
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 console.log(`已同步 ${documents.length} 篇文档到 ${outputPath}`);
+
+function mergeContents(contents) {
+  let text = "";
+  const links = [];
+  for (const content of contents) {
+    if (!content.text) continue;
+    if (text) text += "\n";
+    const offset = text.length;
+    text += content.text;
+    for (const link of content.links) {
+      links.push({ start: offset + link.start, end: offset + link.end, url: link.url });
+    }
+  }
+  return { text, links };
+}
+
+function getDescendants(block, blockMap, result = []) {
+  for (const childId of block.children ?? []) {
+    const child = blockMap.get(childId);
+    if (!child) continue;
+    result.push(child);
+    getDescendants(child, blockMap, result);
+  }
+  return result;
+}
+
+function getTableCellContent(cellId, blockMap) {
+  const cell = blockMap.get(cellId);
+  if (!cell) return { text: "", links: [] };
+  const contents = getDescendants(cell, blockMap)
+    .filter((child) => blockPropertyNames[child.block_type] || child.block_type === 16)
+    .map((child) => getContent(child));
+  return mergeContents(contents);
+}
+
+function getTableRows(block, blockMap) {
+  const property = block.table?.property ?? {};
+  const columnSize = Math.max(1, property.column_size ?? 1);
+  const cellIds = block.table?.cells ?? block.children ?? [];
+  const rowSize = Math.max(1, property.row_size ?? Math.ceil(cellIds.length / columnSize));
+  const mergeInfo = property.merge_info ?? [];
+  const occupied = Array.from({ length: rowSize }, () => Array(columnSize).fill(false));
+  const rows = [];
+  let cellIndex = 0;
+
+  for (let row = 0; row < rowSize; row += 1) {
+    const cells = [];
+    for (let column = 0; column < columnSize; column += 1) {
+      if (occupied[row][column]) continue;
+      const cellId = cellIds[cellIndex];
+      if (!cellId) continue;
+      const merge = mergeInfo[cellIndex] ?? {};
+      const rowSpan = Math.max(1, merge.row_span ?? 1);
+      const colSpan = Math.max(1, merge.col_span ?? 1);
+      for (let spanRow = row; spanRow < Math.min(row + rowSpan, rowSize); spanRow += 1) {
+        for (let spanColumn = column; spanColumn < Math.min(column + colSpan, columnSize); spanColumn += 1) {
+          occupied[spanRow][spanColumn] = true;
+        }
+      }
+      const content = getTableCellContent(cellId, blockMap);
+      cells.push({
+        id: cellId,
+        text: content.text,
+        ...(content.links.length ? { links: content.links } : {}),
+        ...(rowSpan > 1 ? { rowSpan } : {}),
+        ...(colSpan > 1 ? { colSpan } : {})
+      });
+      cellIndex += 1;
+    }
+    rows.push(cells);
+  }
+  return rows;
+}

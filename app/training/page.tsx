@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ExternalLink } from "lucide-react";
-import { trainingConfig } from "@/data/training";
+import { ArrowLeft } from "lucide-react";
 import { FeishuKnowledgeBase } from "@/components/FeishuKnowledgeBase";
 
 export const metadata: Metadata = {
@@ -22,15 +21,7 @@ export default function TrainingPage() {
               <ArrowLeft size={17} />
               返回首页
             </a>
-            <a
-              href={trainingConfig.feishuUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold text-pnx-blue transition hover:text-white"
-            >
-              打开飞书原文
-              <ExternalLink size={16} />
-            </a>
+
           </div>
 
         </div>

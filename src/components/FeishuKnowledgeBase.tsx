@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, ChevronRight, FileText, Folder, Search } from "lucide-react";
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import trainingDocument from "@/data/feishu-training.json";
 
 type TextLink = {
@@ -25,6 +25,7 @@ type TrainingBlock = {
 
 type KnowledgeDocument = {
   documentId: string;
+  nodeToken?: string;
   title: string;
   depth?: number;
   sourceUrl: string;
@@ -54,7 +55,35 @@ function normalizeLink(url: string) {
   return /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(decoded) ? decoded : null;
 }
 
-function renderInlineText(text: string, links: TextLink[] | undefined, keyPrefix: string): ReactNode {
+function getDocumentIdFromLink(url: string, documents: KnowledgeDocument[]) {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return null;
+  }
+  const hostname = parsed.hostname.toLowerCase();
+  const isFeishuHost = hostname === "feishu.cn" || hostname.endsWith(".feishu.cn") || hostname === "larksuite.com" || hostname.endsWith(".larksuite.com");
+  if (!isFeishuHost) return null;
+  const segments = parsed.pathname.split("/").filter(Boolean);
+  const markerIndex = segments.findIndex((segment) => ["wiki", "docx", "document", "docs"].includes(segment.toLowerCase()));
+  const token = markerIndex >= 0 ? segments[markerIndex + 1] : "";
+  if (!token || token.toLowerCase() === "space") return null;
+  let decodedToken = token;
+  try {
+    decodedToken = decodeURIComponent(token);
+  } catch {
+    // Keep the original token when Feishu returns an invalid percent-encoding.
+  }
+  return documents.find((document) => document.documentId === decodedToken || document.nodeToken === decodedToken)?.documentId ?? null;
+}
+
+function getWebLink(url: string, documents: KnowledgeDocument[]) {
+  const documentId = getDocumentIdFromLink(url, documents);
+  return documentId ? `?doc=${encodeURIComponent(documentId)}` : url;
+}
+
+function renderInlineText(text: string, links: TextLink[] | undefined, keyPrefix: string, documents: KnowledgeDocument[]): ReactNode {
   if (!links?.length) return text;
   const ranges = links
     .map((link, index) => ({ ...link, index, url: normalizeLink(link.url) }))
@@ -69,12 +98,13 @@ function renderInlineText(text: string, links: TextLink[] | undefined, keyPrefix
     const end = Math.min(text.length, link.end);
     if (start > cursor) rendered.push(text.slice(cursor, start));
     if (end > start) {
+      const webLink = getWebLink(link.url ?? "", documents);
+      const isInternalLink = Boolean(link.url && webLink !== link.url);
       rendered.push(
         <a
           key={`${keyPrefix}-link-${link.index}`}
-          href={link.url ?? undefined}
-          target="_blank"
-          rel="noreferrer"
+          href={webLink}
+          {...(isInternalLink ? {} : { target: "_blank", rel: "noreferrer" })}
           className="text-pnx-blue underline decoration-pnx-blue/50 underline-offset-2 transition hover:text-white"
         >
           {text.slice(start, end)}
@@ -118,7 +148,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
         const item = blocks[index];
         items.push(
           <li key={item.id} className="leading-7 text-white/70">
-            {renderInlineText(item.text ?? "", item.links, item.id)}
+            {renderInlineText(item.text ?? "", item.links, item.id, documents)}
           </li>
         );
         index += 1;
@@ -141,7 +171,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
       continue;
     }
     const text = block.text ?? "";
-    const renderedText = renderInlineText(text, block.links, block.id);
+    const renderedText = renderInlineText(text, block.links, block.id, documents);
     if (block.type === "divider") content.push(<hr key={block.id} className="my-8 border-white/10" />);
     else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{renderedText}</h2>);
     else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{renderedText}</h3>);
@@ -167,6 +197,22 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
 export function FeishuKnowledgeBase() {
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(documents[0]?.documentId ?? "");
+  useEffect(() => {
+    const syncSelectedDocument = () => {
+      const requestedId = new URLSearchParams(window.location.search).get("doc");
+      setSelectedId(requestedId && documents.some((document) => document.documentId === requestedId) ? requestedId : documents[0]?.documentId ?? "");
+    };
+    syncSelectedDocument();
+    window.addEventListener("popstate", syncSelectedDocument);
+    return () => window.removeEventListener("popstate", syncSelectedDocument);
+  }, []);
+  const selectDocument = (documentId: string) => {
+    setSelectedId(documentId);
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    url.searchParams.set("doc", documentId);
+    window.history.pushState({}, "", `${url.pathname}?${url.searchParams.toString()}${url.hash}`);
+  };
   const [expanded, setExpanded] = useState<Set<string>>(
     () => new Set(nodes.filter((node) => (node.depth ?? 0) < 2).map((node) => node.nodeToken))
   );
@@ -192,7 +238,7 @@ export function FeishuKnowledgeBase() {
   };
 
   const renderDocumentButton = (document: KnowledgeDocument, depth = 0) => (
-    <button key={document.documentId} type="button" onClick={() => setSelectedId(document.documentId)} className={`flex w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
+    <button key={document.documentId} type="button" onClick={() => selectDocument(document.documentId)} className={`flex w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
       <FileText size={15} className="mt-1 shrink-0 text-white/35" aria-hidden="true" />
       <span>{document.title}</span>
     </button>

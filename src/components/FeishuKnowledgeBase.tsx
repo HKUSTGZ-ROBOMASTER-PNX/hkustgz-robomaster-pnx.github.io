@@ -326,7 +326,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
 
   return (
     <div className={`grid ${tocOpen ? "gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-3 lg:grid-cols-1"}`}>
-      <aside className="lg:sticky lg:top-8 lg:self-start">
+      <aside className="lg:sticky lg:top-16 lg:self-start">
         {tocOpen ? <>
           <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue"><List size={15} aria-hidden="true" />本文目录</span>

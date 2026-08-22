@@ -4,6 +4,12 @@ import { ChevronDown, ChevronRight, FileText, Folder, Search } from "lucide-reac
 import { useMemo, useState, type ReactNode } from "react";
 import trainingDocument from "@/data/feishu-training.json";
 
+type TextLink = {
+  start: number;
+  end: number;
+  url: string;
+};
+
 type TrainingBlock = {
   id: string;
   type: "paragraph" | "heading" | "bullet" | "ordered" | "quote" | "code" | "divider" | "image";
@@ -14,6 +20,7 @@ type TrainingBlock = {
   height?: number;
   alt?: string;
   kind?: "board";
+  links?: TextLink[];
 };
 
 type KnowledgeDocument = {
@@ -36,6 +43,49 @@ type KnowledgeNode = {
 
 const documents = (trainingDocument.documents ?? []) as KnowledgeDocument[];
 const nodes = (trainingDocument.nodes ?? []) as KnowledgeNode[];
+
+function normalizeLink(url: string) {
+  let decoded = url;
+  try {
+    decoded = decodeURIComponent(url);
+  } catch {
+    // Keep the original URL when Feishu returns an invalid percent-encoding.
+  }
+  return /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(decoded) ? decoded : null;
+}
+
+function renderInlineText(text: string, links: TextLink[] | undefined, keyPrefix: string): ReactNode {
+  if (!links?.length) return text;
+  const ranges = links
+    .map((link, index) => ({ ...link, index, url: normalizeLink(link.url) }))
+    .filter((link) => link.url && link.end > link.start && link.start < text.length)
+    .sort((left, right) => left.start - right.start);
+  if (!ranges.length) return text;
+
+  const rendered: ReactNode[] = [];
+  let cursor = 0;
+  for (const link of ranges) {
+    const start = Math.max(cursor, link.start);
+    const end = Math.min(text.length, link.end);
+    if (start > cursor) rendered.push(text.slice(cursor, start));
+    if (end > start) {
+      rendered.push(
+        <a
+          key={`${keyPrefix}-link-${link.index}`}
+          href={link.url ?? undefined}
+          target="_blank"
+          rel="noreferrer"
+          className="text-pnx-blue underline decoration-pnx-blue/50 underline-offset-2 transition hover:text-white"
+        >
+          {text.slice(start, end)}
+        </a>
+      );
+      cursor = end;
+    }
+  }
+  if (cursor < text.length) rendered.push(text.slice(cursor));
+  return rendered;
+}
 
 function visibleBlocks(document: KnowledgeDocument) {
   return document.blocks.filter((block) => block.type === "divider" || block.type === "image" || Boolean(block.text?.trim()));
@@ -65,7 +115,12 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
       const listType = block.type;
       const items = [];
       while (index < blocks.length && blocks[index].type === listType) {
-        items.push(<li key={blocks[index].id} className="leading-7 text-white/70">{blocks[index].text}</li>);
+        const item = blocks[index];
+        items.push(
+          <li key={item.id} className="leading-7 text-white/70">
+            {renderInlineText(item.text ?? "", item.links, item.id)}
+          </li>
+        );
         index += 1;
       }
       const List = listType === "bullet" ? "ul" : "ol";
@@ -85,13 +140,14 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
       }
       continue;
     }
-    const text = block.text?.trim() ?? "";
+    const text = block.text ?? "";
+    const renderedText = renderInlineText(text, block.links, block.id);
     if (block.type === "divider") content.push(<hr key={block.id} className="my-8 border-white/10" />);
-    else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{text}</h2>);
-    else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{text}</h3>);
-    else if (block.type === "quote") content.push(<blockquote key={block.id} className="border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-5 py-3 leading-7 text-white/72">{text}</blockquote>);
-    else if (block.type === "code") content.push(<pre key={block.id} className="overflow-x-auto rounded border border-white/10 bg-black/40 p-4 text-sm leading-6 text-pnx-blue"><code>{text}</code></pre>);
-    else content.push(<p key={block.id} className="leading-8 text-white/72">{text}</p>);
+    else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{renderedText}</h2>);
+    else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{renderedText}</h3>);
+    else if (block.type === "quote") content.push(<blockquote key={block.id} className="border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-5 py-3 leading-7 text-white/72">{renderedText}</blockquote>);
+    else if (block.type === "code") content.push(<pre key={block.id} className="overflow-x-auto rounded border border-white/10 bg-black/40 p-4 text-sm leading-6 text-pnx-blue"><code>{renderedText}</code></pre>);
+    else content.push(<p key={block.id} className="leading-8 text-white/72">{renderedText}</p>);
     index += 1;
   }
 

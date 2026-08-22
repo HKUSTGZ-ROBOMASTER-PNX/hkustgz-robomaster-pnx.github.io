@@ -101,12 +101,25 @@ function getContent(block) {
   const preferredName = blockPropertyNames[block.block_type];
   const value = block[preferredName] ?? Object.values(block).find((candidate) => candidate?.elements) ?? {};
   const elements = value.elements ?? [];
-  return elements.map((element) => {
-    if (element.text_run?.content) return element.text_run.content;
-    if (element.mention_doc?.title) return element.mention_doc.title;
-    if (element.mention_user?.user_id) return "";
-    return "";
-  }).join("");
+  let text = "";
+  const links = [];
+  const appendText = (content, url) => {
+    if (!content) return;
+    const start = text.length;
+    text += content;
+    if (url) links.push({ start, end: text.length, url });
+  };
+  for (const element of elements) {
+    const textRun = element.text_run;
+    if (textRun?.content) {
+      appendText(textRun.content, textRun.text_element_style?.link?.url ?? textRun.style?.link?.url);
+    } else if (element.mention_doc?.title) {
+      appendText(element.mention_doc.title, element.mention_doc.url ?? element.mention_doc.link?.url);
+    } else if (element.mention_user?.user_id) {
+      appendText("");
+    }
+  }
+  return { text, links };
 }
 
 async function findExistingAsset(token) {
@@ -263,7 +276,13 @@ async function convertBlock(block, accessToken) {
     id: block.block_id,
     type: convertedType,
     ...(convertedType === "heading" ? { level: Math.max(1, type - 2) } : {}),
-    ...(convertedType !== "divider" ? { text: getContent(block) } : {})
+    ...(convertedType !== "divider" ? (() => {
+      const content = getContent(block);
+      return {
+        text: content.text,
+        ...(content.links.length ? { links: content.links } : {})
+      };
+    })() : {})
   };
 }
 

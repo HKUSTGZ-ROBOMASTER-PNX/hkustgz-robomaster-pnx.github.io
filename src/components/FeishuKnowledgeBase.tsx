@@ -224,15 +224,15 @@ function CodeBlock({ block }: { block: TrainingBlock }) {
     }
   };
   return (
-    <div className="my-6 overflow-hidden rounded border border-white/10 bg-black/40">
-      <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-white/48">
+    <div className="my-6 min-w-0 overflow-hidden rounded border border-white/10 bg-black/40">
+      <div className="flex min-h-10 items-center justify-between gap-3 border-b border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-white/48 sm:min-h-0">
         <span>{languageInfo.label}</span>
-        <button type="button" onClick={handleCopy} className="inline-flex items-center gap-1.5 text-white/55 transition hover:text-pnx-blue" aria-label="复制代码">
+        <button type="button" onClick={handleCopy} className="inline-flex min-h-8 shrink-0 items-center gap-1.5 text-white/55 transition hover:text-pnx-blue" aria-label="复制代码">
           {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
           {copied ? "已复制" : "复制"}
         </button>
       </div>
-      <pre className={`overflow-x-auto p-4 text-sm leading-6 text-white/80 ${block.wrap ? "whitespace-pre-wrap" : ""}`}><code>{highlightCode(text, block.language)}</code></pre>
+      <pre className={`overflow-x-auto p-3 text-[0.8rem] leading-6 text-white/80 sm:p-4 sm:text-sm ${block.wrap ? "whitespace-pre-wrap break-words" : ""}`}><code>{highlightCode(text, block.language)}</code></pre>
     </div>
   );
 }
@@ -268,7 +268,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
       while (index < blocks.length && blocks[index].type === listType) {
         const item = blocks[index];
         items.push(
-          <li key={item.id} className="leading-7 text-white/70">
+          <li key={item.id} className="break-words leading-7 text-white/70">
             {renderInlineText(item.text ?? "", item.links, item.id, documents)}
           </li>
         );
@@ -281,13 +281,13 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
     if (block.type === "table") {
       const rows = block.rows ?? [];
       content.push(
-        <div key={block.id} className="my-8 overflow-x-auto rounded border border-white/10">
+        <div key={block.id} className="my-8 max-w-full overflow-x-auto rounded border border-white/10">
           <table className="min-w-[640px] w-full border-collapse text-left text-sm">
             <tbody>
               {rows.map((row, rowIndex) => (
                 <tr key={`${block.id}-row-${rowIndex}`}>
                   {row.map((cell) => (
-                    <td key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan} className="whitespace-pre-wrap border border-white/10 px-3 py-2 align-top leading-6 text-white/72">
+                    <td key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan} className="whitespace-pre-wrap break-words border border-white/10 px-3 py-2 align-top leading-6 text-white/72">
                       {renderInlineText(cell.text, cell.links, `${block.id}-${cell.id}`, documents)}
                     </td>
                   ))}
@@ -316,28 +316,28 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
     const text = block.text ?? "";
     const renderedText = renderInlineText(text, block.links, block.id, documents);
     if (block.type === "divider") content.push(<hr key={block.id} className="my-8 border-white/10" />);
-    else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{renderedText}</h2>);
-    else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{renderedText}</h3>);
-    else if (block.type === "quote") content.push(<blockquote key={block.id} className="border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-5 py-3 leading-7 text-white/72">{renderedText}</blockquote>);
+    else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 break-words pt-8 text-2xl font-bold text-white sm:text-3xl">{renderedText}</h2>);
+    else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 break-words pt-7 text-xl font-bold text-white sm:text-2xl">{renderedText}</h3>);
+    else if (block.type === "quote") content.push(<blockquote key={block.id} className="break-words border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-4 py-3 leading-7 text-white/72 sm:px-5">{renderedText}</blockquote>);
     else if (block.type === "code") content.push(<CodeBlock key={block.id} block={block} />);
-    else content.push(<p key={block.id} className="leading-8 text-white/72">{renderedText}</p>);
+    else content.push(<p key={block.id} className="break-words leading-8 text-white/72">{renderedText}</p>);
     index += 1;
   }
 
   return (
-    <div className={`grid ${tocOpen ? "gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
-      <aside className={`lg:sticky lg:top-8 lg:self-start ${tocOpen ? "" : "w-8"}`}>
+    <div className={`grid ${tocOpen ? "gap-5 lg:gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
+      <aside className={`lg:sticky lg:top-8 lg:self-start ${tocOpen ? "" : "w-10 sm:w-8"}`}>
         {tocOpen ? <>
           <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue"><List size={15} aria-hidden="true" />本文目录</span>
-            <button type="button" onClick={() => setTocOpen(false)} className="grid size-7 place-items-center text-white/45 transition hover:text-pnx-blue" aria-label="收起本文目录" title="收起本文目录">
+            <button type="button" onClick={() => setTocOpen(false)} className="grid size-9 place-items-center text-white/45 transition hover:text-pnx-blue sm:size-7" aria-label="收起本文目录" title="收起本文目录">
               <ChevronsLeft size={18} aria-hidden="true" />
             </button>
           </div>
           <nav className="border-l border-white/12 pl-4">
             {headings.map((heading) => <a key={heading.id} href={`#section-${heading.id}`} className={`block py-1.5 text-sm leading-6 transition hover:text-pnx-blue ${heading.level && heading.level > 1 ? "pl-3 text-white/48" : "text-white/68"}`}>{heading.text}</a>)}
           </nav>
-        </> : <button type="button" onClick={() => setTocOpen(true)} className="relative z-10 grid size-8 place-items-center text-white/55 transition hover:text-pnx-blue" aria-label="展开本文目录" title="展开本文目录">
+        </> : <button type="button" onClick={() => setTocOpen(true)} className="relative z-10 grid size-10 place-items-center text-white/55 transition hover:text-pnx-blue sm:size-8" aria-label="展开本文目录" title="展开本文目录">
           <ChevronsRight size={18} aria-hidden="true" />
         </button>}
       </aside>
@@ -391,9 +391,9 @@ export function FeishuKnowledgeBase() {
   };
 
   const renderDocumentButton = (document: KnowledgeDocument, depth = 0) => (
-    <button key={document.documentId} type="button" onClick={() => selectDocument(document.documentId)} className={`flex w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
+    <button key={document.documentId} type="button" onClick={() => selectDocument(document.documentId)} className={`flex min-w-0 w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
       <FileText size={15} className="mt-1 shrink-0 text-white/35" aria-hidden="true" />
-      <span>{document.title}</span>
+      <span className="min-w-0 break-words">{document.title}</span>
     </button>
   );
 
@@ -407,7 +407,7 @@ export function FeishuKnowledgeBase() {
           {children.length > 0 ? <button type="button" onClick={() => toggleNode(node.nodeToken)} className="mt-2 grid size-5 shrink-0 place-items-center text-white/45 hover:text-pnx-blue" aria-label={isExpanded ? `收起${node.title}` : `展开${node.title}`}>
             {isExpanded ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
           </button> : <span className="w-5 shrink-0" />}
-          {document ? renderDocumentButton(document, node.depth ?? 0) : <div className="flex min-w-0 items-start gap-2 py-2 text-sm font-semibold leading-6 text-white/70" style={{ paddingLeft: `${8 + Math.min(node.depth ?? 0, 5) * 12}px` }}><Folder size={15} className="mt-1 shrink-0 text-pnx-blue/70" aria-hidden="true" /><span>{node.title}</span></div>}
+          {document ? renderDocumentButton(document, node.depth ?? 0) : <div className="flex min-w-0 items-start gap-2 py-2 text-sm font-semibold leading-6 text-white/70" style={{ paddingLeft: `${8 + Math.min(node.depth ?? 0, 5) * 12}px` }}><Folder size={15} className="mt-1 shrink-0 text-pnx-blue/70" aria-hidden="true" /><span className="break-words">{node.title}</span></div>}
         </div>
         {children.length > 0 && isExpanded && <div>{children.map(renderNode)}</div>}
       </div>
@@ -417,37 +417,37 @@ export function FeishuKnowledgeBase() {
   if (!documents.length) return <div className="rounded border border-dashed border-white/18 bg-white/[0.025] p-6 text-sm leading-7 text-white/60">尚未同步知识库内容。运行 <code className="text-pnx-blue">npm run sync:feishu</code> 即可同步整个知识库。</div>;
 
   return (
-    <article className="w-full">
+    <article className="w-full min-w-0 overflow-x-hidden">
       <div className="mb-8 border-b border-white/10 pb-8">
         <p className="eyebrow">PNX Knowledge Base</p>
         <h2 className="mt-3 text-3xl font-black sm:text-5xl">PNX 培训知识库</h2>
         <p className="mt-3 text-sm text-white/48">{documents.length} 篇文档 · 最近同步 {trainingDocument.syncedAt ?? "未知"}</p>
       </div>
-      <div className={`grid ${sidebarOpen ? "gap-8 lg:grid-cols-[280px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
-        <aside className={`lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start ${sidebarOpen ? "" : "w-8"}`}>
+      <div className={`grid ${sidebarOpen ? "gap-4 lg:gap-8 lg:grid-cols-[280px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
+        <aside className={`lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start ${sidebarOpen ? "" : "w-10 sm:w-8"}`}>
           {sidebarOpen ? <>
             <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">文档目录</span>
-              <button type="button" onClick={() => setSidebarOpen(false)} className="grid size-7 place-items-center text-white/45 transition hover:text-pnx-blue" aria-label="收起侧边栏" title="收起侧边栏">
+              <button type="button" onClick={() => setSidebarOpen(false)} className="grid size-9 place-items-center text-white/45 transition hover:text-pnx-blue sm:size-7" aria-label="收起侧边栏" title="收起侧边栏">
                 <ChevronsLeft size={18} aria-hidden="true" />
               </button>
             </div>
             <label className="flex items-center gap-2 border border-white/12 bg-white/[0.035] px-3 py-2 text-sm text-white/55">
               <Search size={16} aria-hidden="true" />
-              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-white/35" />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-white/35 sm:text-sm" />
             </label>
             <nav className="mt-4 max-h-[calc(100vh-150px)] space-y-1 overflow-y-auto pr-2" aria-label="知识库文档列表">
               {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document)) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map(renderNode)}
             </nav>
-          </> : <button type="button" onClick={() => setSidebarOpen(true)} className="relative z-10 grid size-8 place-items-center border border-white/12 text-white/55 transition hover:border-pnx-blue/60 hover:text-pnx-blue" aria-label="展开侧边栏" title="展开侧边栏">
+          </> : <button type="button" onClick={() => setSidebarOpen(true)} className="relative z-10 grid size-10 place-items-center border border-white/12 text-white/55 transition hover:border-pnx-blue/60 hover:text-pnx-blue sm:size-8" aria-label="展开侧边栏" title="展开侧边栏">
             <ChevronsRight size={18} aria-hidden="true" />
           </button>}
         </aside>
-        <section className="min-w-0">
+        <section className="min-w-0 overflow-hidden">
           {selected && <>
             <div className="mb-8 border-b border-white/10 pb-6">
               <h3 className="text-3xl font-black sm:text-4xl">{selected.title}</h3>
-              <a href={selected.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm text-pnx-blue transition hover:text-white">在飞书中打开原文 ↗</a>
+              <a href={selected.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block break-words text-sm text-pnx-blue transition hover:text-white">在飞书中打开原文 ↗</a>
             </div>
             <DocumentBody document={selected} />
           </>}

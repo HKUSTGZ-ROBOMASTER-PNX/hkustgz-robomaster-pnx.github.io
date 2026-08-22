@@ -325,8 +325,8 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
   }
 
   return (
-    <div className={`grid ${tocOpen ? "gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-3 lg:grid-cols-1"}`}>
-      <aside className="lg:sticky lg:top-16 lg:self-start">
+    <div className={`grid ${tocOpen ? "gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
+      <aside className={`lg:sticky lg:top-8 lg:self-start ${tocOpen ? "" : "w-8"}`}>
         {tocOpen ? <>
           <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue"><List size={15} aria-hidden="true" />本文目录</span>
@@ -423,8 +423,8 @@ export function FeishuKnowledgeBase() {
         <h2 className="mt-3 text-3xl font-black sm:text-5xl">PNX 培训知识库</h2>
         <p className="mt-3 text-sm text-white/48">{documents.length} 篇文档 · 最近同步 {trainingDocument.syncedAt ?? "未知"}</p>
       </div>
-      <div className={`grid ${sidebarOpen ? "gap-8 lg:grid-cols-[280px_minmax(0,1fr)]" : "gap-3 lg:grid-cols-1"}`}>
-        <aside className="lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start">
+      <div className={`grid ${sidebarOpen ? "gap-8 lg:grid-cols-[280px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
+        <aside className={`lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start ${sidebarOpen ? "" : "w-8"}`}>
           {sidebarOpen ? <>
             <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">文档目录</span>

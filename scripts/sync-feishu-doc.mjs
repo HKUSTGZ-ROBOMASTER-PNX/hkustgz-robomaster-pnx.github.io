@@ -1,5 +1,6 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import sharp from "sharp";
 
 async function loadDotEnv() {
   try {
@@ -23,6 +24,8 @@ const wikiUrl = process.env.FEISHU_WIKI_URL || "https://zanpw3z2hb6.feishu.cn/wi
 const outputPath = resolve("src/data/feishu-training.json");
 const assetsDir = resolve("public/feishu-images");
 const downloadedImages = new Map();
+const downloadedBoards = new Map();
+let assetDownloadQueue = Promise.resolve();
 
 if (!appId || !appSecret) {
   console.error("缺少 FEISHU_APP_ID 或 FEISHU_APP_SECRET。请先参考 .env.example 配置环境变量。");
@@ -106,17 +109,93 @@ function getContent(block) {
   }).join("");
 }
 
+async function findExistingAsset(token) {
+  for (const extension of ["png", "jpg", "jpeg", "webp"]) {
+    const fileName = `${token}.${extension}`;
+    try {
+      await access(resolve(assetsDir, fileName));
+      return `/feishu-images/${fileName}`;
+    } catch {
+      // Try the next known image extension.
+    }
+  }
+  return null;
+}
+
+function queueAssetDownload(task) {
+  const queued = assetDownloadQueue
+    .catch(() => {})
+    .then(() => new Promise((resolveDelay) => setTimeout(resolveDelay, 350)))
+    .then(task);
+  assetDownloadQueue = queued.catch(() => {});
+  return queued;
+}
+
 async function downloadImage(token, accessToken) {
   if (downloadedImages.has(token)) return downloadedImages.get(token);
-  const response = await fetch(`https://open.feishu.cn/open-apis/drive/v1/medias/${token}/download`, authOptions(accessToken));
-  if (!response.ok) throw new Error(`${response.status} 图片下载失败：${token}`);
-  const contentType = response.headers.get("content-type") ?? "image/png";
-  const extension = contentType.includes("jpeg") || contentType.includes("jpg") ? "jpg" : contentType.includes("webp") ? "webp" : "png";
-  const fileName = `${token}.${extension}`;
-  await writeFile(resolve(assetsDir, fileName), Buffer.from(await response.arrayBuffer()));
-  const publicPath = `/feishu-images/${fileName}`;
-  downloadedImages.set(token, publicPath);
-  return publicPath;
+  const existingPath = await findExistingAsset(token);
+  if (existingPath) {
+    downloadedImages.set(token, existingPath);
+    return existingPath;
+  }
+  return queueAssetDownload(async () => {
+    const cachedPath = await findExistingAsset(token);
+    if (cachedPath) {
+      downloadedImages.set(token, cachedPath);
+      return cachedPath;
+    }
+    const response = await fetch(`https://open.feishu.cn/open-apis/drive/v1/medias/${token}/download`, authOptions(accessToken));
+    if (!response.ok) throw new Error(`${response.status} 图片下载失败：${token}`);
+    const contentType = response.headers.get("content-type") ?? "image/png";
+    const extension = contentType.includes("jpeg") || contentType.includes("jpg") ? "jpg" : contentType.includes("webp") ? "webp" : "png";
+    const fileName = `${token}.${extension}`;
+    await writeFile(resolve(assetsDir, fileName), Buffer.from(await response.arrayBuffer()));
+    const publicPath = `/feishu-images/${fileName}`;
+    downloadedImages.set(token, publicPath);
+    return publicPath;
+  });
+}
+
+function getBoardToken(block) {
+  const board = block.board ?? block.whiteboard ?? {};
+  return board.token ?? board.whiteboard_id ?? block.token ?? "";
+}
+
+async function downloadBoardImage(token, accessToken) {
+  if (downloadedBoards.has(token)) return downloadedBoards.get(token);
+
+  const response = await fetch(
+    `https://open.feishu.cn/open-apis/board/v1/whiteboards/${token}/download_as_image`,
+    {
+      ...authOptions(accessToken),
+      headers: {
+        ...authOptions(accessToken).headers,
+        Accept: "image/png"
+      }
+    }
+  );
+  if (!response.ok) throw new Error(`${response.status} 画板图片下载失败：${token}`);
+
+  const source = Buffer.from(await response.arrayBuffer());
+  let output = source;
+  try {
+    // 飞书画板导出经常包含透明/纯色留白；sharp.trim() 等价于
+    // ImageMagick 的 `mogrify -trim`，且不要求 CI 额外安装 ImageMagick。
+    output = await sharp(source).trim().png().toBuffer();
+  } catch (error) {
+    console.warn(error instanceof Error ? `画板空白裁剪失败，保留原图：${error.message}` : `画板空白裁剪失败，保留原图：${token}`);
+  }
+
+  const fileName = `${token}-board.png`;
+  await writeFile(resolve(assetsDir, fileName), output);
+  const metadata = await sharp(output).metadata().catch(() => ({}));
+  const result = {
+    src: `/feishu-images/${fileName}`,
+    width: metadata.width,
+    height: metadata.height
+  };
+  downloadedBoards.set(token, result);
+  return result;
 }
 
 async function convertBlock(block, accessToken) {
@@ -137,6 +216,7 @@ async function convertBlock(block, accessToken) {
     14: "code",
     15: "quote",
     27: "image",
+    43: "board",
     22: "divider"
   };
   const convertedType = names[type];
@@ -154,6 +234,28 @@ async function convertBlock(block, accessToken) {
       };
     } catch (error) {
       console.warn(error instanceof Error ? error.message : `图片下载失败：${image.token}`);
+      return null;
+    }
+  }
+  if (convertedType === "board") {
+    const token = getBoardToken(block);
+    if (!token) {
+      console.warn(`画板块缺少 token，已跳过：${block.block_id}`);
+      return null;
+    }
+    try {
+      const board = await downloadBoardImage(token, accessToken);
+      return {
+        id: block.block_id,
+        type: "image",
+        kind: "board",
+        src: board.src,
+        width: board.width,
+        height: board.height,
+        alt: "飞书画板"
+      };
+    } catch (error) {
+      console.warn(error instanceof Error ? error.message : `画板下载失败：${token}`);
       return null;
     }
   }

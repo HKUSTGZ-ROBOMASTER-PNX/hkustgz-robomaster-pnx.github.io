@@ -13,6 +13,7 @@ type TrainingBlock = {
   width?: number;
   height?: number;
   alt?: string;
+  kind?: "board";
 };
 
 type KnowledgeDocument = {
@@ -44,6 +45,19 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
   const blocks = visibleBlocks(document);
   const headings = blocks.filter((block) => block.type === "heading" && block.text?.trim());
   const content = [];
+  const renderImage = (block: TrainingBlock, inGallery: boolean) => (
+    <figure key={block.id} className={inGallery ? "min-w-0" : "my-8"}>
+      <img
+        src={block.src}
+        alt={block.alt ?? "飞书文档图片"}
+        width={block.width}
+        height={block.height}
+        loading="lazy"
+        className={inGallery ? "h-auto max-h-[520px] w-full rounded border border-white/10 object-contain" : "h-auto max-h-[720px] w-auto max-w-full rounded border border-white/10 object-contain"}
+      />
+      {block.alt && block.alt !== "飞书文档图片" && <figcaption className="mt-2 text-sm text-white/45">{block.alt}</figcaption>}
+    </figure>
+  );
   let index = 0;
   while (index < blocks.length) {
     const block = blocks[index];
@@ -58,9 +72,21 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
       content.push(<List key={`list-${index}`} className={listType === "bullet" ? "list-disc space-y-2 pl-6" : "list-decimal space-y-2 pl-6"}>{items}</List>);
       continue;
     }
+    if (block.type === "image" && block.src) {
+      const images = [];
+      while (index < blocks.length && blocks[index].type === "image" && blocks[index].src) {
+        images.push(blocks[index]);
+        index += 1;
+      }
+      if (images.length > 1) {
+        content.push(<div key={`image-gallery-${images[0].id}`} className="my-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{images.map((image) => renderImage(image, true))}</div>);
+      } else {
+        content.push(renderImage(images[0], false));
+      }
+      continue;
+    }
     const text = block.text?.trim() ?? "";
     if (block.type === "divider") content.push(<hr key={block.id} className="my-8 border-white/10" />);
-    else if (block.type === "image" && block.src) content.push(<figure key={block.id} className="my-8"><img src={block.src} alt={block.alt ?? "飞书文档图片"} width={block.width} height={block.height} loading="lazy" className="h-auto max-h-[720px] w-auto max-w-full rounded border border-white/10 object-contain" />{block.alt && block.alt !== "飞书文档图片" && <figcaption className="mt-2 text-sm text-white/45">{block.alt}</figcaption>}</figure>);
     else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{text}</h2>);
     else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{text}</h3>);
     else if (block.type === "quote") content.push(<blockquote key={block.id} className="border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-5 py-3 leading-7 text-white/72">{text}</blockquote>);

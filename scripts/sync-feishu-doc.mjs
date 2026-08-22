@@ -285,6 +285,7 @@ async function convertBlock(block, accessToken, blockMap) {
     id: block.block_id,
     type: convertedType,
     ...(convertedType === "heading" ? { level: Math.max(1, type - 2) } : {}),
+    ...(convertedType === "code" ? { language: block.code?.style?.language ?? 1, wrap: Boolean(block.code?.style?.wrap) } : {}),
     ...(convertedType !== "divider" ? (() => {
       const content = getContent(block);
       return {

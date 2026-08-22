@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronRight, FileText, Folder, Search } from "lucide-react";
+import { Check, ChevronDown, ChevronRight, Copy, FileText, Folder, List, PanelLeftClose, PanelLeftOpen, Search } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import trainingDocument from "@/data/feishu-training.json";
 
@@ -28,6 +28,8 @@ type TrainingBlock = {
   height?: number;
   alt?: string;
   kind?: "board";
+  language?: number;
+  wrap?: boolean;
   links?: TextLink[];
   columns?: number;
   rows?: TableCell[][];
@@ -127,6 +129,114 @@ function renderInlineText(text: string, links: TextLink[] | undefined, keyPrefix
   return rendered;
 }
 
+const codeLanguageLabels: Record<number, { label: string; key: string }> = {
+  1: { label: "纯文本", key: "text" },
+  7: { label: "Bash", key: "bash" },
+  9: { label: "C++", key: "cpp" },
+  10: { label: "C", key: "c" },
+  12: { label: "CSS", key: "css" },
+  18: { label: "Dockerfile", key: "dockerfile" },
+  22: { label: "Go", key: "go" },
+  24: { label: "HTML", key: "html" },
+  28: { label: "JSON", key: "json" },
+  29: { label: "Java", key: "java" },
+  30: { label: "JavaScript", key: "javascript" },
+  32: { label: "Kotlin", key: "kotlin" },
+  13: { label: "CoffeeScript", key: "javascript" },
+  39: { label: "Markdown", key: "markdown" },
+  43: { label: "PHP", key: "php" },
+  49: { label: "Python", key: "python" },
+  53: { label: "Rust", key: "rust" },
+  56: { label: "SQL", key: "sql" },
+  61: { label: "Swift", key: "swift" },
+  63: { label: "TypeScript", key: "typescript" },
+  66: { label: "XML", key: "xml" },
+  67: { label: "YAML", key: "yaml" },
+  68: { label: "CMake", key: "cmake" },
+  69: { label: "Diff", key: "diff" },
+  75: { label: "TOML", key: "toml" },
+  46: { label: "PowerShell", key: "bash" }
+};
+
+const codeKeywords = new Set([
+  "as", "async", "await", "break", "case", "catch", "class", "const", "continue", "def", "delete", "do", "else", "enum", "export", "extends", "finally", "for", "from", "fn", "function", "if", "import", "in", "interface", "let", "match", "namespace", "new", "of", "package", "private", "protected", "public", "return", "select", "static", "struct", "switch", "template", "this", "throw", "try", "type", "typename", "using", "var", "void", "while", "with", "yield"
+]);
+
+function codeLanguage(language?: number) {
+  return codeLanguageLabels[language ?? 1] ?? { label: "代码", key: "text" };
+}
+
+function highlightCode(source: string, language?: number): ReactNode {
+  const languageInfo = codeLanguage(language);
+  if (languageInfo.key === "text") return source;
+  const tokenPattern = /(\/\*[\s\S]*?\*\/|\/\/[^\n]*|#[^\n]*|`(?:\\.|[^`])*`|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_$][\w$]*\b)/g;
+  const nodes: ReactNode[] = [];
+  let cursor = 0;
+  let match;
+  let key = 0;
+  while ((match = tokenPattern.exec(source))) {
+    const token = match[0];
+    if (match.index > cursor) nodes.push(source.slice(cursor, match.index));
+    const className = token.startsWith("//") || token.startsWith("/*") || token.startsWith("#")
+      ? "text-white/40 italic"
+      : token.startsWith('"') || token.startsWith("'") || token.startsWith("`")
+        ? "text-emerald-300"
+        : /^\d/.test(token)
+          ? "text-amber-300"
+          : codeKeywords.has(token)
+            ? "text-pnx-blue"
+            : /^(true|false|null|None|undefined|True|False)$/.test(token)
+              ? "text-fuchsia-300"
+              : "text-cyan-200";
+    nodes.push(<span key={`code-token-${key++}`} className={className}>{token}</span>);
+    cursor = match.index + token.length;
+  }
+  if (cursor < source.length) nodes.push(source.slice(cursor));
+  return nodes;
+}
+
+async function copyCodeText(text: string) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
+
+function CodeBlock({ block }: { block: TrainingBlock }) {
+  const [copied, setCopied] = useState(false);
+  const text = block.text ?? "";
+  const languageInfo = codeLanguage(block.language);
+  const handleCopy = async () => {
+    try {
+      await copyCodeText(text);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  };
+  return (
+    <div className="my-6 overflow-hidden rounded border border-white/10 bg-black/40">
+      <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-white/48">
+        <span>{languageInfo.label}</span>
+        <button type="button" onClick={handleCopy} className="inline-flex items-center gap-1.5 text-white/55 transition hover:text-pnx-blue" aria-label="复制代码">
+          {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+          {copied ? "已复制" : "复制"}
+        </button>
+      </div>
+      <pre className={`overflow-x-auto p-4 text-sm leading-6 text-white/80 ${block.wrap ? "whitespace-pre-wrap" : ""}`}><code>{highlightCode(text, block.language)}</code></pre>
+    </div>
+  );
+}
+
 function visibleBlocks(document: KnowledgeDocument) {
   return document.blocks.filter((block) => block.type === "divider" || block.type === "image" || block.type === "table" || Boolean(block.text?.trim()));
 }
@@ -135,6 +245,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
   const blocks = visibleBlocks(document);
   const headings = blocks.filter((block) => block.type === "heading" && block.text?.trim());
   const content = [];
+  const [tocOpen, setTocOpen] = useState(true);
   const renderImage = (block: TrainingBlock, inGallery: boolean) => (
     <figure key={block.id} className={inGallery ? "min-w-0" : "my-8"}>
       <img
@@ -208,7 +319,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
     else if (block.type === "heading" && (block.level ?? 1) <= 1) content.push(<h2 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-8 text-2xl font-bold text-white sm:text-3xl">{renderedText}</h2>);
     else if (block.type === "heading") content.push(<h3 id={`section-${block.id}`} key={block.id} className="scroll-mt-8 pt-7 text-xl font-bold text-white sm:text-2xl">{renderedText}</h3>);
     else if (block.type === "quote") content.push(<blockquote key={block.id} className="border-l-2 border-pnx-blue/80 bg-pnx-blue/[0.05] px-5 py-3 leading-7 text-white/72">{renderedText}</blockquote>);
-    else if (block.type === "code") content.push(<pre key={block.id} className="overflow-x-auto rounded border border-white/10 bg-black/40 p-4 text-sm leading-6 text-pnx-blue"><code>{renderedText}</code></pre>);
+    else if (block.type === "code") content.push(<CodeBlock key={block.id} block={block} />);
     else content.push(<p key={block.id} className="leading-8 text-white/72">{renderedText}</p>);
     index += 1;
   }
@@ -216,10 +327,14 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
   return (
     <div className="grid gap-10 lg:grid-cols-[180px_minmax(0,1fr)]">
       <aside className="lg:sticky lg:top-8 lg:self-start">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-pnx-blue">本文目录</p>
-        <nav className="mt-4 border-l border-white/12 pl-4">
+        <button type="button" onClick={() => setTocOpen((current) => !current)} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-pnx-blue transition hover:text-white" aria-expanded={tocOpen}>
+          <List size={15} aria-hidden="true" />
+          本文目录
+          <span className="text-white/35">{tocOpen ? "收起" : "展开"}</span>
+        </button>
+        {tocOpen && <nav className="mt-4 border-l border-white/12 pl-4">
           {headings.map((heading) => <a key={heading.id} href={`#section-${heading.id}`} className={`block py-1.5 text-sm leading-6 transition hover:text-pnx-blue ${heading.level && heading.level > 1 ? "pl-3 text-white/48" : "text-white/68"}`}>{heading.text}</a>)}
-        </nav>
+        </nav>}
       </aside>
       <div className="min-w-0 space-y-5">{content}</div>
     </div>
@@ -228,6 +343,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
 
 export function FeishuKnowledgeBase() {
   const [query, setQuery] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedId, setSelectedId] = useState(documents[0]?.documentId ?? "");
   useEffect(() => {
     const syncSelectedDocument = () => {
@@ -302,8 +418,14 @@ export function FeishuKnowledgeBase() {
         <h2 className="mt-3 text-3xl font-black sm:text-5xl">PNX 培训知识库</h2>
         <p className="mt-3 text-sm text-white/48">{documents.length} 篇文档 · 最近同步 {trainingDocument.syncedAt ?? "未知"}</p>
       </div>
-      <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
-        <aside className="lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start">
+      <div className={`grid gap-8 ${sidebarOpen ? "lg:grid-cols-[280px_minmax(0,1fr)]" : "lg:grid-cols-1"}`}>
+      <div className="col-span-full mb-4 flex justify-end">
+        <button type="button" onClick={() => setSidebarOpen((current) => !current)} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-white/50 transition hover:text-pnx-blue" aria-expanded={sidebarOpen}>
+          {sidebarOpen ? <PanelLeftClose size={15} aria-hidden="true" /> : <PanelLeftOpen size={15} aria-hidden="true" />}
+          {sidebarOpen ? "收起侧边栏" : "展开侧边栏"}
+        </button>
+      </div>
+        <aside className={sidebarOpen ? "lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start" : "hidden"}>
           <label className="flex items-center gap-2 border border-white/12 bg-white/[0.035] px-3 py-2 text-sm text-white/55">
             <Search size={16} aria-hidden="true" />
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-white/35" />

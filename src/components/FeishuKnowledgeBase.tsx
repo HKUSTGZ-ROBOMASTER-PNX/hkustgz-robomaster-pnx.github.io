@@ -325,16 +325,21 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
   }
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[180px_minmax(0,1fr)]">
-      <aside className="lg:sticky lg:top-8 lg:self-start">
-        <button type="button" onClick={() => setTocOpen((current) => !current)} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-pnx-blue transition hover:text-white" aria-expanded={tocOpen}>
-          <List size={15} aria-hidden="true" />
-          本文目录
-          <span className="text-white/35">{tocOpen ? "收起" : "展开"}</span>
-        </button>
-        {tocOpen && <nav className="mt-4 border-l border-white/12 pl-4">
-          {headings.map((heading) => <a key={heading.id} href={`#section-${heading.id}`} className={`block py-1.5 text-sm leading-6 transition hover:text-pnx-blue ${heading.level && heading.level > 1 ? "pl-3 text-white/48" : "text-white/68"}`}>{heading.text}</a>)}
-        </nav>}
+    <div className={`grid ${tocOpen ? "gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[0_minmax(0,1fr)]"}`}>
+      <aside className={`lg:sticky lg:top-8 lg:self-start ${tocOpen ? "" : "w-0"}`}>
+        {tocOpen ? <>
+          <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue"><List size={15} aria-hidden="true" />本文目录</span>
+            <button type="button" onClick={() => setTocOpen(false)} className="grid size-7 place-items-center text-white/45 transition hover:text-pnx-blue" aria-label="收起本文目录" title="收起本文目录">
+              <ChevronsLeft size={18} aria-hidden="true" />
+            </button>
+          </div>
+          <nav className="border-l border-white/12 pl-4">
+            {headings.map((heading) => <a key={heading.id} href={`#section-${heading.id}`} className={`block py-1.5 text-sm leading-6 transition hover:text-pnx-blue ${heading.level && heading.level > 1 ? "pl-3 text-white/48" : "text-white/68"}`}>{heading.text}</a>)}
+          </nav>
+        </> : <button type="button" onClick={() => setTocOpen(true)} className="relative z-10 grid size-8 place-items-center text-white/55 transition hover:text-pnx-blue" aria-label="展开本文目录" title="展开本文目录">
+          <ChevronsRight size={18} aria-hidden="true" />
+        </button>}
       </aside>
       <div className="min-w-0 space-y-5">{content}</div>
     </div>
@@ -418,26 +423,25 @@ export function FeishuKnowledgeBase() {
         <h2 className="mt-3 text-3xl font-black sm:text-5xl">PNX 培训知识库</h2>
         <p className="mt-3 text-sm text-white/48">{documents.length} 篇文档 · 最近同步 {trainingDocument.syncedAt ?? "未知"}</p>
       </div>
-      <div className={`grid gap-8 ${sidebarOpen ? "lg:grid-cols-[280px_minmax(0,1fr)]" : "lg:grid-cols-1"}`}>
-      {!sidebarOpen && <div className="col-span-full mb-4 flex justify-start">
-        <button type="button" onClick={() => setSidebarOpen(true)} className="grid size-8 place-items-center border border-white/12 text-white/55 transition hover:border-pnx-blue/60 hover:text-pnx-blue" aria-label="展开侧边栏" title="展开侧边栏">
-          <ChevronsRight size={18} aria-hidden="true" />
-        </button>
-      </div>}
-        <aside className={sidebarOpen ? "lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start" : "hidden"}>
-          <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
-            <span className="text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">文档目录</span>
-            <button type="button" onClick={() => setSidebarOpen(false)} className="grid size-7 place-items-center text-white/45 transition hover:text-pnx-blue" aria-label="收起侧边栏" title="收起侧边栏">
-              <ChevronsLeft size={18} aria-hidden="true" />
-            </button>
-          </div>
-          <label className="flex items-center gap-2 border border-white/12 bg-white/[0.035] px-3 py-2 text-sm text-white/55">
-            <Search size={16} aria-hidden="true" />
-            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-white/35" />
-          </label>
-          <nav className="mt-4 max-h-[calc(100vh-150px)] space-y-1 overflow-y-auto pr-2" aria-label="知识库文档列表">
-            {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document)) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map(renderNode)}
-          </nav>
+      <div className={`grid ${sidebarOpen ? "gap-8 lg:grid-cols-[280px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[0_minmax(0,1fr)]"}`}>
+        <aside className={`lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start ${sidebarOpen ? "" : "w-0"}`}>
+          {sidebarOpen ? <>
+            <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">文档目录</span>
+              <button type="button" onClick={() => setSidebarOpen(false)} className="grid size-7 place-items-center text-white/45 transition hover:text-pnx-blue" aria-label="收起侧边栏" title="收起侧边栏">
+                <ChevronsLeft size={18} aria-hidden="true" />
+              </button>
+            </div>
+            <label className="flex items-center gap-2 border border-white/12 bg-white/[0.035] px-3 py-2 text-sm text-white/55">
+              <Search size={16} aria-hidden="true" />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-white/35" />
+            </label>
+            <nav className="mt-4 max-h-[calc(100vh-150px)] space-y-1 overflow-y-auto pr-2" aria-label="知识库文档列表">
+              {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document)) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map(renderNode)}
+            </nav>
+          </> : <button type="button" onClick={() => setSidebarOpen(true)} className="relative z-10 grid size-8 place-items-center border border-white/12 text-white/55 transition hover:border-pnx-blue/60 hover:text-pnx-blue" aria-label="展开侧边栏" title="展开侧边栏">
+            <ChevronsRight size={18} aria-hidden="true" />
+          </button>}
         </aside>
         <section className="min-w-0">
           {selected && <>

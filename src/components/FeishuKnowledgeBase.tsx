@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronDown, ChevronRight, ChevronsLeft, ChevronsRight, Copy, FileText, Folder, List, Search } from "lucide-react";
+import { Check, ChevronDown, ChevronRight, ChevronsLeft, ChevronsRight, Copy, FileText, Folder, List, Search, X } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import trainingDocument from "@/data/feishu-training.json";
 
@@ -241,9 +241,13 @@ function visibleBlocks(document: KnowledgeDocument) {
   return document.blocks.filter((block) => block.type === "divider" || block.type === "image" || block.type === "table" || Boolean(block.text?.trim()));
 }
 
+function documentHeadings(document: KnowledgeDocument) {
+  return visibleBlocks(document).filter((block) => block.type === "heading" && block.text?.trim());
+}
+
 function DocumentBody({ document }: { document: KnowledgeDocument }) {
   const blocks = visibleBlocks(document);
-  const headings = blocks.filter((block) => block.type === "heading" && block.text?.trim());
+  const headings = documentHeadings(document);
   const content = [];
   const [tocOpen, setTocOpen] = useState(true);
   const renderImage = (block: TrainingBlock, inGallery: boolean) => (
@@ -326,7 +330,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
 
   return (
     <div className={`grid ${tocOpen ? "gap-5 lg:gap-10 lg:grid-cols-[180px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
-      <aside className={`lg:sticky lg:top-8 lg:self-start ${tocOpen ? "" : "w-10 sm:w-8"}`}>
+      <aside className={`hidden lg:block lg:sticky lg:top-8 lg:self-start ${tocOpen ? "" : "w-8"}`}>
         {tocOpen ? <>
           <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue"><List size={15} aria-hidden="true" />本文目录</span>
@@ -349,6 +353,7 @@ function DocumentBody({ document }: { document: KnowledgeDocument }) {
 export function FeishuKnowledgeBase() {
   const [query, setQuery] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [mobileDirectoryOpen, setMobileDirectoryOpen] = useState(false);
   const [selectedId, setSelectedId] = useState(documents[0]?.documentId ?? "");
   useEffect(() => {
     const syncSelectedDocument = () => {
@@ -370,6 +375,7 @@ export function FeishuKnowledgeBase() {
     () => new Set(nodes.filter((node) => (node.depth ?? 0) < 2).map((node) => node.nodeToken))
   );
   const selected = documents.find((document) => document.documentId === selectedId) ?? documents[0];
+  const selectedHeadings = selected ? documentHeadings(selected) : [];
   const filteredDocuments = useMemo(() => documents.filter((document) => document.title.toLowerCase().includes(query.trim().toLowerCase())), [query]);
   const childrenByParent = useMemo(() => {
     const result = new Map<string, KnowledgeNode[]>();
@@ -390,14 +396,14 @@ export function FeishuKnowledgeBase() {
     });
   };
 
-  const renderDocumentButton = (document: KnowledgeDocument, depth = 0) => (
-    <button key={document.documentId} type="button" onClick={() => selectDocument(document.documentId)} className={`flex min-w-0 w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
+  const renderDocumentButton = (document: KnowledgeDocument, depth = 0, onSelect?: () => void) => (
+    <button key={document.documentId} type="button" onClick={() => { selectDocument(document.documentId); onSelect?.(); }} className={`flex min-w-0 w-full items-start gap-2 border-l-2 py-2 pr-2 text-left text-sm leading-6 transition ${selected?.documentId === document.documentId ? "border-pnx-blue bg-pnx-blue/[0.09] text-white" : "border-transparent text-white/58 hover:border-white/25 hover:text-white"}`} style={{ paddingLeft: `${8 + Math.min(depth, 5) * 12}px` }}>
       <FileText size={15} className="mt-1 shrink-0 text-white/35" aria-hidden="true" />
       <span className="min-w-0 break-words">{document.title}</span>
     </button>
   );
 
-  const renderNode = (node: KnowledgeNode): ReactNode => {
+  const renderNode = (node: KnowledgeNode, onSelect?: () => void): ReactNode => {
     const children = childrenByParent.get(node.nodeToken) ?? [];
     const document = node.documentId ? documents.find((item) => item.documentId === node.documentId) : undefined;
     const isExpanded = expanded.has(node.nodeToken);
@@ -407,9 +413,9 @@ export function FeishuKnowledgeBase() {
           {children.length > 0 ? <button type="button" onClick={() => toggleNode(node.nodeToken)} className="mt-2 grid size-5 shrink-0 place-items-center text-white/45 hover:text-pnx-blue" aria-label={isExpanded ? `收起${node.title}` : `展开${node.title}`}>
             {isExpanded ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
           </button> : <span className="w-5 shrink-0" />}
-          {document ? renderDocumentButton(document, node.depth ?? 0) : <div className="flex min-w-0 items-start gap-2 py-2 text-sm font-semibold leading-6 text-white/70" style={{ paddingLeft: `${8 + Math.min(node.depth ?? 0, 5) * 12}px` }}><Folder size={15} className="mt-1 shrink-0 text-pnx-blue/70" aria-hidden="true" /><span className="break-words">{node.title}</span></div>}
+          {document ? renderDocumentButton(document, node.depth ?? 0, onSelect) : <div className="flex min-w-0 items-start gap-2 py-2 text-sm font-semibold leading-6 text-white/70" style={{ paddingLeft: `${8 + Math.min(node.depth ?? 0, 5) * 12}px` }}><Folder size={15} className="mt-1 shrink-0 text-pnx-blue/70" aria-hidden="true" /><span className="break-words">{node.title}</span></div>}
         </div>
-        {children.length > 0 && isExpanded && <div>{children.map(renderNode)}</div>}
+        {children.length > 0 && isExpanded && <div>{children.map((child) => renderNode(child, onSelect))}</div>}
       </div>
     );
   };
@@ -423,8 +429,37 @@ export function FeishuKnowledgeBase() {
         <h2 className="mt-3 text-3xl font-black sm:text-5xl">PNX 培训知识库</h2>
         <p className="mt-3 text-sm text-white/48">{documents.length} 篇文档 · 最近同步 {trainingDocument.syncedAt ?? "未知"}</p>
       </div>
+      {!mobileDirectoryOpen && <button type="button" onClick={() => setMobileDirectoryOpen(true)} className="fixed bottom-4 right-4 z-40 inline-flex min-h-11 items-center gap-2 rounded-full border border-pnx-blue/70 bg-pnx-ink px-4 py-2 text-sm font-bold text-pnx-blue shadow-glow lg:hidden" aria-label="打开目录" title="打开目录">
+        <List size={17} aria-hidden="true" />
+        目录
+      </button>}
+      {mobileDirectoryOpen && <div className="fixed inset-0 z-50 bg-pnx-ink p-4 lg:hidden" role="dialog" aria-modal="true" aria-label="移动端目录">
+        <div className="mx-auto flex h-full max-w-lg flex-col overflow-hidden border border-white/12 bg-white/[0.03]">
+          <div className="flex min-h-14 items-center justify-between border-b border-white/10 px-4">
+            <span className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-pnx-blue"><List size={17} aria-hidden="true" />目录</span>
+            <button type="button" onClick={() => setMobileDirectoryOpen(false)} className="grid size-10 place-items-center text-white/60 transition hover:text-pnx-blue" aria-label="关闭目录" title="关闭目录">
+              <X size={20} aria-hidden="true" />
+            </button>
+          </div>
+          <div className="min-h-0 flex-1 overflow-y-auto p-4">
+            <label className="flex items-center gap-2 border border-white/12 bg-white/[0.035] px-3 py-2 text-sm text-white/55">
+              <Search size={16} aria-hidden="true" />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-white/35" />
+            </label>
+            <nav className="mt-4 space-y-1" aria-label="移动端知识库文档列表">
+              {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document, 0, () => setMobileDirectoryOpen(false))) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map((node) => renderNode(node, () => setMobileDirectoryOpen(false)))}
+            </nav>
+            {selected && selectedHeadings.length > 0 && <div className="mt-8 border-t border-white/10 pt-5">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">本文目录</p>
+              <nav className="border-l border-white/12 pl-4" aria-label="移动端本文目录">
+                {selectedHeadings.map((heading) => <a key={heading.id} href={`#section-${heading.id}`} onClick={() => setMobileDirectoryOpen(false)} className={`block py-1.5 text-sm leading-6 transition hover:text-pnx-blue ${heading.level && heading.level > 1 ? "pl-3 text-white/48" : "text-white/68"}`}>{heading.text}</a>)}
+              </nav>
+            </div>}
+          </div>
+        </div>
+      </div>}
       <div className={`grid ${sidebarOpen ? "gap-4 lg:gap-8 lg:grid-cols-[280px_minmax(0,1fr)]" : "gap-0 lg:grid-cols-[32px_minmax(0,1fr)]"}`}>
-        <aside className={`lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start ${sidebarOpen ? "" : "w-10 sm:w-8"}`}>
+        <aside className={`hidden lg:block lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start ${sidebarOpen ? "" : "w-8"}`}>
           {sidebarOpen ? <>
             <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">文档目录</span>
@@ -437,7 +472,7 @@ export function FeishuKnowledgeBase() {
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-white/35 sm:text-sm" />
             </label>
             <nav className="mt-4 max-h-[calc(100vh-150px)] space-y-1 overflow-y-auto pr-2" aria-label="知识库文档列表">
-              {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document)) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map(renderNode)}
+              {query.trim() ? filteredDocuments.map((document) => renderDocumentButton(document)) : nodes.filter((node) => !node.parentNodeToken || !nodes.some((parent) => parent.nodeToken === node.parentNodeToken)).map((node) => renderNode(node))}
             </nav>
           </> : <button type="button" onClick={() => setSidebarOpen(true)} className="relative z-10 grid size-10 place-items-center border border-white/12 text-white/55 transition hover:border-pnx-blue/60 hover:text-pnx-blue sm:size-8" aria-label="展开侧边栏" title="展开侧边栏">
             <ChevronsRight size={18} aria-hidden="true" />

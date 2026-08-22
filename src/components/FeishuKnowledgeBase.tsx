@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronDown, ChevronRight, Copy, FileText, Folder, List, PanelLeftClose, PanelLeftOpen, Search } from "lucide-react";
+import { Check, ChevronDown, ChevronRight, ChevronsLeft, ChevronsRight, Copy, FileText, Folder, List, Search } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import trainingDocument from "@/data/feishu-training.json";
 
@@ -419,13 +419,18 @@ export function FeishuKnowledgeBase() {
         <p className="mt-3 text-sm text-white/48">{documents.length} 篇文档 · 最近同步 {trainingDocument.syncedAt ?? "未知"}</p>
       </div>
       <div className={`grid gap-8 ${sidebarOpen ? "lg:grid-cols-[280px_minmax(0,1fr)]" : "lg:grid-cols-1"}`}>
-      <div className="col-span-full mb-4 flex justify-end">
-        <button type="button" onClick={() => setSidebarOpen((current) => !current)} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-white/50 transition hover:text-pnx-blue" aria-expanded={sidebarOpen}>
-          {sidebarOpen ? <PanelLeftClose size={15} aria-hidden="true" /> : <PanelLeftOpen size={15} aria-hidden="true" />}
-          {sidebarOpen ? "收起侧边栏" : "展开侧边栏"}
+      {!sidebarOpen && <div className="col-span-full mb-4 flex justify-start">
+        <button type="button" onClick={() => setSidebarOpen(true)} className="grid size-8 place-items-center border border-white/12 text-white/55 transition hover:border-pnx-blue/60 hover:text-pnx-blue" aria-label="展开侧边栏" title="展开侧边栏">
+          <ChevronsRight size={18} aria-hidden="true" />
         </button>
-      </div>
+      </div>}
         <aside className={sidebarOpen ? "lg:sticky lg:top-8 lg:max-h-[calc(100vh-64px)] lg:self-start" : "hidden"}>
+          <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+            <span className="text-xs font-bold uppercase tracking-[0.16em] text-pnx-blue">文档目录</span>
+            <button type="button" onClick={() => setSidebarOpen(false)} className="grid size-7 place-items-center text-white/45 transition hover:text-pnx-blue" aria-label="收起侧边栏" title="收起侧边栏">
+              <ChevronsLeft size={18} aria-hidden="true" />
+            </button>
+          </div>
           <label className="flex items-center gap-2 border border-white/12 bg-white/[0.035] px-3 py-2 text-sm text-white/55">
             <Search size={16} aria-hidden="true" />
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文档" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-white/35" />
